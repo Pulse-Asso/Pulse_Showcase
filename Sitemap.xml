@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Page d'accueil -->
+  <url>
+    <loc>https://pulse-showcase.onrender.com/index.html</loc>
+    <lastmod>2024-10-30</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- Exemple d'une autre page si elle existe (par exemple, la page "equipe") -->
+  <url>
+    <loc>https://pulse-showcase.onrender.com/equipe.php</loc>
+    <lastmod>2024-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Exemple d'une page d'action (si accessible) -->
+  <url>
+    <loc>https://pulse-showcase.onrender.com/action/action_quote.php</loc>
+    <lastmod>2024-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+</urlset>

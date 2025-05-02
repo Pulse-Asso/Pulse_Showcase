@@ -1,0 +1,87 @@
+/* Conteneur principal */
+.alert-fail {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 320px; /* Largeur fixe pour un rendu cohérent */
+  background-color: #f8d7da; /* Fond rouge pâle */
+  border: 1px solid #f5c2c7; /* Bordure rouge claire */
+  color: #842029;            /* Texte rouge foncé */
+  padding: 1rem 1.5rem;
+  z-index: 9999;
+  margin: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 0.75rem;
+  
+  /* Animation de slide-in */
+  animation: slideInRight 0.5s ease-in-out forwards;
+}
+
+/* Animation d'apparition depuis la droite */
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100%); /* Hors de l'écran à droite */
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animation de sortie (optionnelle) */
+@keyframes slideOutRight {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Contenu interne en flex */
+.alert-fail .alert-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Icône */
+.alert-fail .alert-icon {
+  fill: currentColor;
+  height: 1.5rem;
+  width: 1.5rem;
+  color: #d32f2f; /* Rouge vif pour l'icône */
+}
+
+/* Titre */
+.alert-fail .alert-title {
+  font-weight: 600;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Message */
+.alert-fail .alert-message {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* Bouton de fermeture */
+.alert-fail .alert-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: transparent;
+  border: none;
+  color: #d32f2f;
+  cursor: pointer;
+}
+
+/* Icône de fermeture */
+.alert-fail .alert-close-icon {
+  height: 1.2rem;
+  width: 1.2rem;
+}

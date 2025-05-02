@@ -1,0 +1,82 @@
+.alert-success {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    /* Dégradé vertical du vert clair au vert plus soutenu */
+    background: linear-gradient(135deg, #A7F3D0 0%, #6EE7B7 100%);
+    color: #065f46;
+    padding: 1rem 1.5rem;
+    z-index: 9999;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 16px rgba(16, 185, 129, 0.3);
+  
+    animation: slideInRight 0.5s ease-in-out forwards;
+  }
+  
+  /* Vous pouvez conserver le border si vous le souhaitez :
+     border: 1px solid #10b981;
+  */
+  
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideOutRight {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+  
+  .alert-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .alert-icon {
+    fill: currentColor;
+    height: 1.5rem;
+    width: 1.5rem;
+    color: #065f46; /* Icône plus foncée pour contraster avec le dégradé */
+  }
+  
+  .alert-title {
+    font-weight: 700;
+    margin: 0;
+    font-size: 1rem;
+  }
+  
+  .alert-message {
+    font-size: 0.875rem;
+    margin: 0;
+  }
+  
+  /* Bouton de fermeture */
+  .alert-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: transparent;
+    border: none;
+    color: #065f46;
+    cursor: pointer;
+  }
+  
+  .alert-close-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  

@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://pulse-showcase.onrender.com/sitemap.xml
