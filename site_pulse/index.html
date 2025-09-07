@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pulse - L'application étudiante</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="keywords" content="événements étudiants, communication universitaire, associations étudiantes, EPF, EM Lyon, vie étudiante, projet universitaire, réseau inter-écoles, application étudiante, application communication universitaire, évènements étudiants">
+    <meta content="L'application d'évènements universitaires pour booster la communication sur vos campus" name="description">
+    <meta property="og:title" content="Pulse - L'application étudiante">
+    <meta property="og:description" content="L'application d'évènements universitaires pour booster la communication sur vos campus">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="pulse">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="article:author" content="Vianney Otton">
+    <meta property="article:author" content="Nathalie Saada">
+    <meta property="article:author" content="Damien Drozd">
+    <meta property="article:published_time" content="15/08/2024">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    
+    <!-- Spinner Start -->
+    <div id="spinner" class="show position-fixed w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="loading"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="#" class="navbar-brand">
+                    <img src="img/balnc_transparent.png" alt="Pulse" height="40">
+                </a>
+                
+                <ul class="navbar-nav">
+                    <li><a href="#hero" class="nav-link">À propos</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Fonctionnalités</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="fonctionnalites-enseignement.html" class="dropdown-item">Enseignement supérieur</a></li>
+                            <li><a href="fonctionnalites-commune.html" class="dropdown-item">Commune</a></li>
+                            <li><a href="fonctionnalites-association.html" class="dropdown-item">Association</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="page2 Nath.html" class="nav-link">L'équipe</a></li>
+                    <li><a href="#contact" class="nav-link">Partenariats</a></li>
+                    <li><a href="https://forms.gle/u26uAQ3QdyvvLwHX9" class="btn btn-primary">Obtenir un devis</a></li>
+                </ul>
+                
+                <button class="navbar-toggler">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Hero Section Start -->
+    <section class="hero-section" id="hero">
+        <div class="hero-content">
+            <!-- Text Content -->
+            <div class="hero-text">
+                <h1 class="hero-title">Booster la vie locale avec <span class="highlight">GENPULSE</span></h1>
+                <p class="hero-subtitle">Un outil unique qui rassemble la vie associative, étudiante et citoyenne en un seul endroit</p>
+                <div class="hero-buttons">
+                    <a href="#features" class="btn btn-primary btn-lg">
+                        <i class="fas fa-rocket"></i>
+                        En savoir plus
+                    </a>
+                    <a href="#contact" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-play"></i>
+                        Demander une démo
+                    </a>
+                </div>
+            </div>
+            
+           
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- section raison d etre de genpulse -->
+    <section class="app-showcase-section" id="app-showcase">
+        <div class="app-showcase-container">
+            <!-- Phone Side -->
+            <div class="app-phone-side">
+                <div class="phone-container" style="background-color: #FFE3B2; padding: 20px; border-radius: 20px; position: relative; width: 380px; height: 420px;">
+                    <!-- Phone Image -->
+                    <img src="img/home_e.png" alt="GENPULSE App Interface" class="phone-image" style="width: 300px; height: auto; position: relative; z-index: 2;">
+                    
+                                         <!-- Floating Like Icons -->
+                     <div class="floating-likes" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 30;">
+                         <img src="img/like.png" alt="Like" style="position: absolute; top: 10px; left: 5px; width: 60px; height: 60px; animation: float 3s ease-in-out infinite;">
+                         <img src="img/like.png" alt="Like" style="position: absolute; top: 80px; right: 15px; width: 50px; height: 50px; animation: float 3s ease-in-out infinite 0.5s;">
+                         <img src="img/like.png" alt="Like" style="position: absolute; bottom: 100px; left: 5px; width: 70px; height: 70px; animation: float 3s ease-in-out infinite 1s;">
+                         <img src="img/like.png" alt="Like" style="position: absolute; bottom: 20px; right: 20px; width: 56px; height: 56px; animation: float 3s ease-in-out infinite 1.5s;">
+                     </div>
+                     
+                     <!-- Floating Notification Icons -->
+                     <div class="floating-notifications" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 30;">
+                         <img src="img/notif.png" alt="Notification" style="position: absolute; top: 50px; left: -60px; width: 64px; height: 64px; animation: float 3s ease-in-out infinite 0.3s;">
+                         <img src="img/notif.png" alt="Notification" style="position: absolute; top: 150px; right: -60px; width: 54px; height: 54px; animation: float 3s ease-in-out infinite 0.8s;">
+                         <img src="img/notif.png" alt="Notification" style="position: absolute; bottom: 50px; left: -40px; width: 66px; height: 66px; animation: float 3s ease-in-out infinite 1.2s;">
+                         <img src="img/notif.png" alt="Notification" style="position: absolute; bottom: 80px; right: -40px; width: 58px; height: 58px; animation: float 3s ease-in-out infinite 1.7s;">
+                     </div>
+                </div>
+            </div>
+            
+            <!-- Content Side -->
+            <div class="app-content">
+                <h2>La <strong>raison d'être de GENPULSE</strong></h2>
+                <p>Pallier les problèmes de communication rencontrés actuellement grâce à notre solution :</p>
+                <ul class="benefits-list">
+                    <li>Rassembler la communication massive éparpillée sur les réseaux sociaux, mails et autres canaux en un seul point d’accès clair</li>
+                    <li>Réduire la surcharge informationnelle en rendant l'information accessible et visible rapidement</li>
+                    <li>Cibler les informations en choisissant à qui vous voulez les partager</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- section raison d etre de genpulse End -->
+
+    <!-- section notre solution Start -->
+    <section class="section solution-section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <p class="section-subtitle">Notre solution</p>
+                <h2>1er canal de communication où tous les acteurs sont interconnectés</h2>
+                <p>Nous rejoindre c'est intégrer un réseau </p>
+            </div>
+            
+            <!-- Canal Privé - Design exact selon l'image -->
+            <div class="solution-feature-card canal-prive">
+                <div class="feature-content">
+                    <h3>Un canal privé</h3>
+                    <p>Un espace dédié aux universités, pour centraliser la vie du campus (associations étudiantes, Crous, administration)</p>
+                    <ul class="feature-benefits">
+                        <li><i class="fas fa-check"></i> Accès sécurisé</li>
+                        <li><i class="fas fa-check"></i> Communication interne</li>
+                        <li><i class="fas fa-check"></i> Gestion centralisée</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-image">
+                    <img src="img/prive.png" alt="Canal privé universitaire">
+                    <div class="feature-overlay">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <!-- Bulles flottantes pour le canal privé -->
+                    <div class="floating-bubbles">
+                        <div class="bubble bubble-events">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>événements</span>
+                        </div>
+                        <div class="bubble bubble-communication">
+                            <i class="fas fa-comments"></i>
+                            <span>Communication</span>
+                        </div>
+                        <div class="bubble bubble-secure">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Sécurisé</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Canal Public -->
+            <div class="solution-feature-card canal-public">
+                <div class="feature-image">
+                    <img src="img/public.png" alt="Canal public communautaire">
+                    <div class="feature-overlay">
+                        <i class="fas fa-unlock"></i>
+                    </div>
+                    <!-- Bulles flottantes pour le canal public -->
+                    <div class="floating-bubbles">
+                        <div class="bubble bubble-events">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>événements</span>
+                        </div>
+                        <div class="bubble bubble-communication">
+                            <i class="fas fa-comments"></i>
+                            <span>Communication</span>
+                        </div>
+                        <div class="bubble bubble-public">
+                            <i class="fas fa-users"></i>
+                            <span>Public</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-content">
+                    <h3>Un canal public</h3>
+                    <p>Un espace commun pour les mairies, associations et partenaires locaux, afin de donner de la visibilité aux événements et renforcer le lien social</p>
+                    <ul class="feature-benefits">
+                        <li><i class="fas fa-check"></i> Visibilité maximale</li>
+                        <li><i class="fas fa-check"></i> Collaboration locale</li>
+                        <li><i class="fas fa-check"></i> Engagement citoyen</li>
+                    </ul>
+                </div>
+            </div>
+            
+
+        </div>
+    </section>
+    <!-- section notre solution End -->
+
+    <!-- section fonctionnalités personnalisées Start -->
+    <section class="section section-alt" id="profile-features">
+        <div class="container">
+            <div class="section-title">
+                <p class="section-subtitle">Fonctionnalités personnalisées</p>
+                <h2>Découvrez les fonctionnalités selon votre profil</h2>
+                <p>Choisissez votre profil pour découvrir les fonctionnalités adaptées à vos besoins</p>
+            </div>
+            
+            <div class="profile-features-grid">
+                <a href="fonctionnalites-enseignement.html" class="profile-feature-card">
+                    <div class="profile-feature-image">
+                        <img src="img/ecole.jpg" alt="Enseignement supérieur">
+                    </div>
+                    <h3>Enseignement supérieur</h3>
+                    <p>Fonctionnalités dédiées aux universités, écoles et établissements d'enseignement supérieur</p>
+                    <div class="btn btn-primary profile-btn">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <a href="fonctionnalites-commune.html" class="profile-feature-card">
+                    <div class="profile-feature-image">
+                        <img src="img/commune.jpg" alt="Communes & Mairies">
+                    </div>
+                    <h3>Communes & Mairies</h3>
+                    <p>Solutions adaptées aux mairies et collectivités locales pour dynamiser la vie citoyenne</p>
+                    <div class="btn btn-primary profile-btn">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <a href="fonctionnalites-association.html" class="profile-feature-card">
+                    <div class="profile-feature-image">
+                        <img src="img/asso.jpg" alt="Associations">
+                    </div>
+                    <h3>Associations</h3>
+                    <p>Outils spécialement conçus pour les associations et organisations à but non lucratif</p>
+                    <div class="btn btn-primary profile-btn">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- section fonctionnalités personnalisées End -->
+
+
+
+    <!-- section stats Start -->
+    <section class="section stats-section modern-stats-section">
+        <div class="stats-background">
+            <div class="floating-particles"></div>
+            <div class="gradient-overlay"></div>
+        </div>
+        
+        <div class="container">
+            <div class="section-title animated-title">
+                <h2 class="glow-text">Adopté par des milliers d'utilisateurs dans 4 régions</h2>
+                <div class="title-underline"></div>
+            </div>
+            
+            <div class="stats-grid modern-stats-grid">
+                <div class="stat-item modern-stat-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="counter" data-target="90">0</h3>
+                        <span class="stat-symbol">%</span>
+                        <p>De visibilité</p>
+                    </div>
+                    <div class="stat-glow"></div>
+                </div>
+                
+                <div class="stat-item modern-stat-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="counter" data-target="1000">0</h3>
+                        <span class="stat-symbol">+</span>
+                        <p>Étudiants actifs</p>
+                    </div>
+                    <div class="stat-glow"></div>
+                </div>
+                
+                <div class="stat-item modern-stat-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="counter" data-target="150">0</h3>
+                        <span class="stat-symbol">+</span>
+                        <p>Événements créés</p>
+                    </div>
+                    <div class="stat-glow"></div>
+                </div>
+                
+                <div class="stat-item modern-stat-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="stat-content">
+                        <h3 class="counter" data-target="100">0</h3>
+                        <span class="stat-symbol">%</span>
+                        <p>Satisfaction utilisateurs</p>
+                    </div>
+                    <div class="stat-glow"></div>
+                </div>
+            </div>
+            
+            <div class="stats-decoration">
+                <div class="floating-element element-1"></div>
+                <div class="floating-element element-2"></div>
+                <div class="floating-element element-3"></div>
+                <div class="floating-element element-4"></div>
+            </div>
+        </div>
+    </section>
+    <!-- section stats End -->
+
+    <!-- Section Partenariats Start -->
+    <section class="section" id="partenariats">
+        <div class="container">
+            <div class="section-title">
+                <p class="section-subtitle">Partenariats</p>
+                <h2>Nous font confiance</h2>
+            </div>
+            
+            <div class="partners-slider">
+                <div class="partners-track">
+                    <div class="partners-container">
+                        <img src="img/bde.jpg" alt="BDE" class="partner-logo">
+                        <img src="img/uva.png" alt="UVA" class="partner-logo">
+                        <img src="img/bds.jpg" alt="BDS" class="partner-logo">
+                        <img src="img/epf.png" alt="EPF" class="partner-logo">
+                        <img src="img/bde_ice.jpg" alt="BDE ICE" class="partner-logo">
+                        <img src="img/je.jpg" alt="JE" class="partner-logo">
+                    </div>
+                    <div class="partners-container">
+                        <img src="img/bde.jpg" alt="BDE" class="partner-logo">
+                        <img src="img/uva.png" alt="UVA" class="partner-logo">
+                        <img src="img/bds.jpg" alt="BDS" class="partner-logo">
+                        <img src="img/epf.png" alt="EPF" class="partner-logo">
+                        <img src="img/bde_ice.jpg" alt="BDE ICE" class="partner-logo">
+                        <img src="img/je.jpg" alt="JE" class="partner-logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section Partenariats End -->
+
+    <!-- section témoignages Start -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-title">
+                <p class="section-subtitle">Témoignages</p>
+                <h2>Ce que disent nos utilisateurs</h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Pulse a révolutionné la communication sur notre campus. Les étudiants sont plus engagés que jamais !"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">M</div>
+                        <div class="testimonial-info">
+                            <h4>Marie Dubois</h4>
+                            <p>Directrice des affaires étudiantes, EPF</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "Enfin une application qui centralise tout ! Plus besoin de naviguer entre plusieurs réseaux sociaux."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">T</div>
+                        <div class="testimonial-info">
+                            <h4>Thomas Martin</h4>
+                            <p>Président BDE, EM Lyon</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        "L'interface est intuitive et les fonctionnalités répondent parfaitement à nos besoins."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">S</div>
+                        <div class="testimonial-info">
+                            <h4>Sophie Bernard</h4>
+                            <p>Étudiante, 3ème année</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section témoignages End -->
+
+    <!-- section cta Start -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="solution-cta">
+                <div class="cta-content">
+                    <h3>Prêt à rejoindre le réseau ?</h3>
+                    <p>Découvrez comment GENPULSE peut transformer votre expérience</p>
+                    <a href="#contact" class="btn btn-primary btn-lg">Commencer maintenant</a>
+                </div>
+                <div class="cta-image">
+                    <img src="img/im3.jpg" alt="Équipe GENPULSE">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section cta End -->
+
+    <!-- Contact Section Start -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <p class="section-subtitle">Contact</p>
+                <h2>Une question ou une démonstration ?</h2>
+                <p>Notre équipe est là pour vous accompagner dans votre transition vers Pulse.</p>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>Informations de contact</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 3 Résidence du parc, Massy</p>
+                    <p><i class="fas fa-phone"></i> +33 782582528</p>
+                    <p><i class="fas fa-envelope"></i> pulse.pro.event@gmail.com</p>
+                    
+                    <div class="d-flex gap-2 mt-4">
+                        <a href="#" class="btn btn-secondary">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="btn btn-secondary">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="btn btn-secondary">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="btn btn-secondary">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <form id="contactForm" action="contact.php" method="POST">
+                        <div class="grid grid-2">
+                            <div>
+                                <label for="name">Nom complet</label>
+                                <input type="text" id="name" name="name" class="form-control" required>
+                            </div>
+                            <div>
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <label for="subject">Sujet</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg w-100">
+                                <i class="fas fa-paper-plane"></i>
+                                Envoyer le message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Footer Start -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Pulse</h4>
+                    <p>L'application qui révolutionne la communication universitaire en centralisant tous les événements et informations sur une seule plateforme intuitive.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Liens rapides</h4>
+                    <a href="#about">À propos</a>
+                    <a href="#features">Fonctionnalités</a>
+                    <a href="#benefits">Avantages</a>
+                    <a href="page2 Nath.html">L'équipe</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="mentions-legales.pdf" target="_blank">Mentions légales</a>
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">Conditions d'utilisation</a>
+                    <a href="#">FAQ</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>3 Résidence du parc, Massy</p>
+                    <p>+33 782582528</p>
+                    <p>pulse.pro.event@gmail.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Pulse. Tous droits réservés. Conçu avec ❤️ pour la communauté étudiante.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Custom Cursor Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.querySelector('.custom-cursor');
+            
+            document.addEventListener('mousemove', function(e) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+            
+            // Add hover effect to interactive elements
+            const interactiveElements = document.querySelectorAll('a, button, .nav-link, .dropdown-item, .btn');
+            
+            interactiveElements.forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    cursor.classList.add('hover');
+                });
+                
+                element.addEventListener('mouseleave', function() {
+                    cursor.classList.remove('hover');
+                });
+            });
+            
+            // Animation des compteurs (une seule fois) - Optimisée pour les performances
+            let countersAnimated = false;
+            
+            function animateCounters() {
+                if (countersAnimated) return; // Évite l'animation multiple
+                
+                const counters = document.querySelectorAll('.counter');
+                
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const duration = 1500; // Réduit à 1.5 secondes
+                    const increment = target / (duration / 16); // 60 FPS
+                    let current = 0;
+                    
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current < target) {
+                            counter.textContent = Math.floor(current);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target;
+                            counter.classList.add('animate');
+                        }
+                    };
+                    
+                    updateCounter();
+                });
+                
+                countersAnimated = true; // Marque comme animé
+            }
+            
+            // Intersection Observer optimisé pour déclencher les animations
+            const observerOptions = {
+                threshold: 0.3, // Réduit le seuil pour déclencher plus tôt
+                rootMargin: '0px 0px -50px 0px' // Réduit la marge
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.classList.contains('modern-stats-section')) {
+                            // Délai réduit pour une meilleure réactivité
+                            setTimeout(animateCounters, 500);
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            // Observer la section stats
+            const statsSection = document.querySelector('.modern-stats-section');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+            
+            // Animation au scroll optimisée pour les cartes
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, { threshold: 0.05 }); // Seuil réduit pour déclencher plus tôt
+            
+            const statCards = document.querySelectorAll('.modern-stat-card');
+            statCards.forEach(card => {
+                card.style.animationPlayState = 'paused';
+                cardObserver.observe(card);
+            });
+        });
+    </script>
+</body>
+
+</html>

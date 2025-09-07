@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pulse - L'application étudiante</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="keywords" content="événements étudiants, communication universitaire, associations étudiantes, EPF, EM Lyon, vie étudiante, projet universitaire, réseau inter-écoles, application étudiante, application communication universitaire, évènements étudiants">
+    <meta content="L'application d'évènements universitaires pour booster la communication sur vos campus" name="description">
+    <meta property="og:title" content="Pulse - L'application étudiante">
+    <meta property="og:description" content="L'application d'évènements universitaires pour booster la communication sur vos campus">
+    <meta property="og:image" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="pulse">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="article:author" content="Vianney Otton">
+    <meta property="article:author" content="Nathalie Saada">
+    <meta property="article:author" content="Damien Drozd">
+    <meta property="article:published_time" content="15/08/2024">
+
+
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500&family=Jost:wght@500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* Ajouté pour garantir la largeur complète */
+        .container-xxl {
+            max-width: 100% !important; /* Assurez-vous que la largeur maximale est 100% */
+            padding-left: 0; /* Supprimez les marges internes à gauche */
+            padding-right: 0; /* Supprimez les marges internes à droite */
+        }
+
+        /* Assurez-vous que les éléments positionnés utilisent toute la largeur disponible */
+        .position-relative, .position-fixed {
+            width: 100% !important;
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="51">
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- en tête -->
+        <div class="container-xxl position-relative p-0" id="home">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="index.html" class="navbar-brand p-0">
+                    <!--<h1 class="m-0">PULSE</h1>-->
+                    <img src="img/balnc_transparent.png" alt="Logo" width="170px">
+
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav mx-auto py-0">
+                        <a href="index.html" class="nav-item nav-link">A propos</a>
+                        <a href="index.html" class="nav-item nav-link">Pour qui ?</a>
+                        <a href="index.html" class="nav-item nav-link">Fonctionnalités</a>
+                        <a href="index.html" class="nav-item nav-link">Bienfaits</a>
+                        <a href="index.html" class="nav-item nav-link">L'équipe</a>
+                        <a href="index.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <a href="https://forms.gle/u26uAQ3QdyvvLwHX9" class="btn btn-custom rounded-pill py-2 px-4 ms-3 d-none d-lg-block">Obtenir un devis</a>
+                    
+                </div>
+            </nav>
+            <!-- Introduction -->
+            <div class="container-xxl bg-primary hero-header">
+                <div class="container px-lg-5">
+                    <div class="row g-5">
+                        <div class="col-lg-8 text-center text-lg-start">
+                            <h1 class="text-white mb-4 animated slideInDown">A propos de PULSE</h1>
+                            <h4 class="text-white pb-3 animated slideInDown">Philosophie - Equipe</h4>
+                            <a href="index.html#contactForm" class="btn btn-secondary-gradient py-sm-3 px-4 px-sm-5 rounded-pill animated slideInRight">Contactez nous</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- fin en tête -->
+
+    
+
+        <section class="Philosophie">
+            <div class="container-xxl py-5" id="Philosophie">
+                <div class="container py-5 px-lg-5">
+                    <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                        <h5 class="text-primary-gradient fw-medium">La philosophie Pulse</h5>
+                        <h1 class="mb-5 ">Vision - Mission - Valeurs</h1>
+                    </div>
+                    <div class="philosophy-item">
+                        <h3 class="text-primary-gradient fw-medium">Vision</h3>
+                        <div class="item-content">
+                            <p>Devenir la plateforme de référence qui révolutionne l'expérience étudiante en connectant tous les acteurs de la vie universitaire.</p>
+                        </div>
+                    </div>
+            
+                    <div class="philosophy-item">
+                        <h3 class="text-primary-gradient fw-medium">Mission</h3>
+                        <div class="item-content">
+                            <p>Notre mission est de simplifier la communication entre l'administration, les associations étudiantes et les étudiants grâce à une application mobile innovante qui centralise toutes les informations essentielles. Nous nous engageons à :</p>
+                            <u1>
+                            <li>Fournir un accès facile et instantané à toutes les informations académiques et extrascolaires pertinentes</li>
+                            <li>Favoriser les interactions et l'engagement au sein de la communauté étudiante</li>
+                            <li>Créer un réseau inter-écoles permettant aux étudiants de découvrir et de participer aux événements organisés par d'autres établissements</li>
+                            <li>Fluidifier les échanges entre l'administration et les étudiants</li>
+                            <li>Améliorer continuellement notre plateforme pour répondre aux besoins évolutifs des étudiants</li>
+                            </u1>
+                        </div>
+                    </div>
+            
+                    <div class="philosophy-item">
+                        <h3 class="text-primary-gradient fw-medium">Valeurs</h3>
+                        <div class="item-content">
+                            <ul>
+                                <li>Communauté: Nous croyons en la force du collectif et cherchons à créer des liens significatifs entre tous les acteurs du campus.</li>
+                                <li>Simplicité: Nous nous efforçons de rendre la vie étudiante plus simple et fluide grâce à des outils intuitifs et efficaces.</li>
+                                <li>Fiabilité: Nous garantissons la sécurité et la confidentialité des données tout en fournissant des informations précises et à jour.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            </section>
+
+
+
+            <div class="separator"></div> <!--Séparateur-->
+     
+
+            <!-- Notre équipe test -->
+        <section>
+            <div class="red-bar"></div>
+
+            <div class="container-xxl py-5" id="equipe">
+                <div class="container py-5 px-lg-5">
+                    <div class="text-center pb-4 wow fadeInUp" data-wow-delay="0.1s">
+                        <h5 class="text-primary-gradient fw-medium">Les fondateurs du projet</h5>
+                        <h1 class="mb-5">Notre équipe</h1>
+                    </div>
+    
+                    <div class="row gy-5 gx-4 justify-content-center align-items-stretch">
+                        <!-- Première image et texte -->
+                        <div class="col-lg-3 col-sm-6 text-center wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="profile-box">
+                                <div class="profile-img-container">
+                                    <img src="img/vianney.jpg" class="img-fluid rounded-circle" alt="Image 1">
+                                </div>
+                                <h5 class="mt-4 mb-3">Vianney Otton</h5>
+                                <h5 class="text-uppercase-light mb-3">INGENIEUR EPF & MIM EM-LYON</h5>
+                                <p class="mb-0">“J'ai constaté que trop d'étudiants n'arrivaient plus à suivre les différents flux d'informations, les écoles en sont conscientes mais n'ont pas d'outil adapté. J'ai donc compris qu'il y avait un réel besoin de centralisation.”</p>
+                            </div>
+                        </div>
+            
+                        <!-- Ligne de séparation verticale -->
+                        <div class="col-lg-1 d-none d-lg-block">
+                            <div class="position-relative h-100">
+                                <div class="vr" style="height: 100%; width: 2px; background-color: #ffffff; margin: auto;"></div>
+                            </div>
+                        </div>
+            
+                        <!-- Deuxième image et texte -->
+                        <div class="col-lg-3 col-sm-6 text-center wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="profile-box">
+                                <div class="profile-img-container">
+                                    <img src="img/nat.jpg" class="img-fluid rounded-circle" alt="Image 2">
+                                </div>
+                                <h5 class="mt-4 mb-3">Nathalie Saada</h5>
+                                <h5 class="text-uppercase-light mb-3">MASTER ENGINEERING MANAGEMENT EPF</h5>
+                                <p class="mb-0">"Notre défi : Mettre en place la solution qui dynamisera la vie étudiante et simplifiera la communication entre l'administration et les élèves."</p>
+                            </div>
+                        </div>
+            
+                        <!-- Ligne de séparation verticale -->
+                        <div class="col-lg-1 d-none d-lg-block">
+                            <div class="position-relative h-100">
+                                <div class="vr" style="height: 100%; width: 1px; background-color: #ffffff; margin: auto;"></div>
+                            </div>
+                        </div>
+            
+                        <!-- Troisième image et texte -->
+                        <div class="col-lg-3 col-sm-6 text-center wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="profile-box">
+                                <div class="profile-img-container">
+                                    <img src="img/damien.jpg" class="img-fluid rounded-circle" alt="Image 3">
+                                </div>
+                                <h5 class="mt-4 mb-3">Damien Drozd</h5>
+                                <h5 class="text-uppercase-light mb-3">INGENIEUR NUMERIQUE YNOV</h5>
+                                <p class="mb-0">"En plus des évènements de son campus, on pourrait découvrir et participer à ceux d'autres écoles. Alors, pourquoi ne pas créer un réseau inter-écoles pour centraliser les événements auxquels chacun peut accéder ?"</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> 
+            <!-- Images Section End test -->
+
+        
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up text-white"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
