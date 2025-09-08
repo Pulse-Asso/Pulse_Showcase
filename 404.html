@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>404 — Page Not Found</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --fg: #e6edf3;
+      --muted: #9db1c7;
+      --accent: #3b82f6;
+      --panel: rgba(255,255,255,0.04);
+      --panel-border: rgba(148,163,184,0.25);
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #ffffff;
+        --fg: #0b1020;
+        --muted: #5b6b7b;
+        --accent: #2563eb;
+        --panel: #f8fafc;
+        --panel-border: #e5e7eb;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Noto Sans", "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    main {
+      min-height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 4rem 1.5rem;
+    }
+    .card {
+      width: 100%;
+      max-width: 720px;
+      text-align: center;
+      background: var(--panel);
+      border: 1px solid var(--panel-border);
+      border-radius: 12px;
+      padding: 2.25rem 1.75rem;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+    }
+    h1 {
+      margin: 0 0 .5rem;
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      letter-spacing: -0.02em;
+    }
+    p {
+      margin: .5rem 0 1.25rem;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+    .actions {
+      display: flex;
+      gap: .75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: .75rem;
+    }
+    a.button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: .7rem 1rem;
+      border-radius: .55rem;
+      text-decoration: none;
+      font-weight: 600;
+      background: var(--accent);
+      color: #ffffff;
+      border: 1px solid transparent;
+      transition: transform .06s ease, filter .06s ease, opacity .2s ease;
+    }
+    a.button:hover { transform: translateY(-1px); filter: brightness(1.05); }
+    a.button:active { transform: translateY(0); filter: none; }
+    a.secondary {
+      background: transparent;
+      color: var(--accent);
+      border-color: var(--accent);
+    }
+    .code {
+      display: inline-block;
+      padding: .2rem .45rem;
+      border-radius: .35rem;
+      background: rgba(127,127,127,0.15);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: .95em;
+    }
+    footer {
+      margin-top: 1.15rem;
+      font-size: .9rem;
+      color: var(--muted);
+    }
+  </style>
+  <!-- If deployed behind a service worker, ensure 404 falls back to this file for unknown routes. -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%93%8D%3C/text%3E%3C/svg%3E">
+  <meta name="theme-color" content="#0b0c10" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="404 Not Found">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="referrer" content="no-referrer-when-downgrade">
+  <meta name="format-detection" content="telephone=no">
+</head>
+<body>
+  <main role="main">
+    <section class="card" role="alert" aria-live="polite">
+      <div aria-hidden="true" style="font-size: 3rem; margin-bottom: .35rem">🗺️</div>
+      <h1>404 — Page Not Found</h1>
+      <p>The page you’re looking for doesn’t exist, moved, or never was.</p>
+      <div class="actions">
+        <a class="button" href="/">Home</a>
+        <a class="button secondary" href="javascript:history.back()">Go back</a>
+      </div>
+      <footer>Request served by <span class="code">/404.html</span>.</footer>
+    </section>
+  </main>
+</body>
+</html>
+
