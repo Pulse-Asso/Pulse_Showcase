@@ -4,6 +4,10 @@
 <head>
     <meta charset="utf-8">
     <title>Fonctionnalités Association - Pulse</title>
+
+    <meta name="description" content="Pulse pour associations : centralisez vos communications et événements, engagez vos membres, gérez posts, bons plans,
+     billetterie et notifications.">
+    
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Fonctionnalités Pulse dédiées aux associations et organisations à but non lucratif" name="description">
 
@@ -31,7 +35,7 @@
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
                 <a href="index.html" class="navbar-brand">
-                    <img src="img/balnc_transparent.png" alt="Pulse" height="40">
+                    <img src="img/logo_pulse.png" alt="Pulse" height="40">
                 </a>
                 
                 <ul class="navbar-nav">
@@ -44,8 +48,8 @@
                             <li><a href="fonctionnalites-association.html" class="dropdown-item active">Association</a></li>
                         </ul>
                     </li>
-                    <li><a href="page2 Nath.html" class="nav-link">L'équipe</a></li>
-                    <li><a href="index.html#contact" class="nav-link">Partenariats</a></li>
+                    <li><a href="equipe.html" class="nav-link">L'équipe</a></li>
+                    <li><a href="partenariats.html" class="nav-link">Partenariats</a></li>
                     <li><a href="https://forms.gle/u26uAQ3QdyvvLwHX9" class="btn btn-primary">Obtenir un devis</a></li>
                 </ul>
                 
@@ -561,31 +565,7 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-    
-    <!-- Custom Cursor Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const cursor = document.querySelector('.custom-cursor');
-            
-            document.addEventListener('mousemove', function(e) {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-            });
-            
-            // Add hover effect to interactive elements
-            const interactiveElements = document.querySelectorAll('a, button, .nav-link, .dropdown-item, .btn');
-            
-            interactiveElements.forEach(element => {
-                element.addEventListener('mouseenter', function() {
-                    cursor.classList.add('hover');
-                });
-                
-                element.addEventListener('mouseleave', function() {
-                    cursor.classList.remove('hover');
-                });
-            });
-        });
-    </script>
+    <script src="js/cursor.js"></script>
 </body>
 
 </html>

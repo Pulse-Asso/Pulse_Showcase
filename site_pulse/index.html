@@ -5,7 +5,11 @@
     <meta charset="utf-8">
     <title>Pulse - L'application étudiante</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta name="keywords" content="événements étudiants, communication universitaire, associations étudiantes, EPF, EM Lyon, vie étudiante, projet universitaire, réseau inter-écoles, application étudiante, application communication universitaire, évènements étudiants">
+
+    
+    <meta name="keywords" content="événements étudiants, communication universitaire, associations étudiantes, EPF, EM Lyon, vie étudiante, projet universitaire, 
+    réseau inter-écoles, application étudiante, application communication universitaire, évènements étudiants">
+    
     <meta content="L'application d'évènements universitaires pour booster la communication sur vos campus" name="description">
     <meta property="og:title" content="Pulse - L'application étudiante">
     <meta property="og:description" content="L'application d'évènements universitaires pour booster la communication sur vos campus">
@@ -18,8 +22,8 @@
     <meta property="article:author" content="Damien Drozd">
     <meta property="article:published_time" content="15/08/2024">
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <!-- Favicon --> <!-- mettre le logo de l'application -->
+    <link href="img/favicon.ico" rel="icon"> <!-- dire à vianney qu'il faut un logo pour le haut de l'onglet  -->
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,6 +35,7 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 
 <body>
@@ -43,12 +48,12 @@
     </div>
     <!-- Spinner End -->
 
-    <!-- Navbar Start -->
+    <!-- Navbar Start --> <!-- Faire un fichier navbar pour l'intégrér dans toutes les pages -->
     <nav class="navbar">
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
-                <a href="#" class="navbar-brand">
-                    <img src="img/balnc_transparent.png" alt="Pulse" height="40">
+                <a href="index.html" class="navbar-brand">
+                    <img src="img/Logo_Pulse.png" alt="Pulse" height="40">
                 </a>
                 
                 <ul class="navbar-nav">
@@ -61,9 +66,9 @@
                             <li><a href="fonctionnalites-association.html" class="dropdown-item">Association</a></li>
                         </ul>
                     </li>
-                    <li><a href="page2 Nath.html" class="nav-link">L'équipe</a></li>
-                    <li><a href="#contact" class="nav-link">Partenariats</a></li>
-                    <li><a href="https://forms.gle/u26uAQ3QdyvvLwHX9" class="btn btn-primary">Obtenir un devis</a></li>
+                    <li><a href="equipe.html" class="nav-link">L'équipe</a></li>
+                    <li><a href="partenariats.html" class="nav-link">Partenariats</a></li>
+                    <li><a href="https://forms.gle/u26uAQ3QdyvvLwHX9" class="btn btn-primary">Obtenir un devis</a></li> <!-- mettre le formulaire de contact à la place -->
                 </ul>
                 
                 <button class="navbar-toggler">
@@ -461,19 +466,11 @@
                     <p><i class="fas fa-phone"></i> +33 782582528</p>
                     <p><i class="fas fa-envelope"></i> pulse.pro.event@gmail.com</p>
                     
-                    <div class="d-flex gap-2 mt-4">
-                        <a href="#" class="btn btn-secondary">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="btn btn-secondary">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="btn btn-secondary">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="btn btn-secondary">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
+                    <div class="d-flex gap-2 mt-4 social">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a> <!-- Ajout des icônes de réseaux sociaux -->
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a> <!-- Ajout des icônes de réseaux sociaux -->
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a> <!-- Ajout des icônes de réseaux sociaux -->
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a> <!-- Ajout des icônes de réseaux sociaux -->
                     </div>
                 </div>
                 
@@ -513,7 +510,7 @@
     </section>
     <!-- Contact Section End -->
 
-    <!-- Footer Start -->
+    <!-- Footer Start -->  <!-- Faire un fichier footer pour l'intégrér dans toutes les pages -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -524,16 +521,16 @@
                 
                 <div class="footer-section">
                     <h4>Liens rapides</h4>
-                    <a href="#about">À propos</a>
-                    <a href="#features">Fonctionnalités</a>
-                    <a href="#benefits">Avantages</a>
-                    <a href="page2 Nath.html">L'équipe</a>
+                    <a href="#about">À propos</a> 
+                    <a href="#features">Fonctionnalités</a> 
+                    <a href="#benefits">Avantages</a> 
+                    <a href="equipe.html">L'équipe</a>
                     <a href="#contact">Contact</a>
                 </div>
                 
                 <div class="footer-section">
                     <h4>Support</h4>
-                    <a href="mentions-legales.pdf" target="_blank">Mentions légales</a>
+                    <a href="mentions-legales.pdf" target="_blank">Mentions légales</a> <!-- Ouvrir dans un nouvel onglet et création de la page des mentions légales-->
                     <a href="#">Politique de confidentialité</a>
                     <a href="#">Conditions d'utilisation</a>
                     <a href="#">FAQ</a>
@@ -548,7 +545,7 @@
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2024 Pulse. Tous droits réservés. Conçu avec ❤️ pour la communauté étudiante.</p>
+                <p>&copy; 2025 Pulse. Tous droits réservés. Conçu avec ❤️ pour la communauté étudiante.</p>
             </div>
         </div>
     </footer>
@@ -564,100 +561,8 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/cursor.js"></script>
     
-    <!-- Custom Cursor Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const cursor = document.querySelector('.custom-cursor');
-            
-            document.addEventListener('mousemove', function(e) {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-            });
-            
-            // Add hover effect to interactive elements
-            const interactiveElements = document.querySelectorAll('a, button, .nav-link, .dropdown-item, .btn');
-            
-            interactiveElements.forEach(element => {
-                element.addEventListener('mouseenter', function() {
-                    cursor.classList.add('hover');
-                });
-                
-                element.addEventListener('mouseleave', function() {
-                    cursor.classList.remove('hover');
-                });
-            });
-            
-            // Animation des compteurs (une seule fois) - Optimisée pour les performances
-            let countersAnimated = false;
-            
-            function animateCounters() {
-                if (countersAnimated) return; // Évite l'animation multiple
-                
-                const counters = document.querySelectorAll('.counter');
-                
-                counters.forEach(counter => {
-                    const target = parseInt(counter.getAttribute('data-target'));
-                    const duration = 1500; // Réduit à 1.5 secondes
-                    const increment = target / (duration / 16); // 60 FPS
-                    let current = 0;
-                    
-                    const updateCounter = () => {
-                        current += increment;
-                        if (current < target) {
-                            counter.textContent = Math.floor(current);
-                            requestAnimationFrame(updateCounter);
-                        } else {
-                            counter.textContent = target;
-                            counter.classList.add('animate');
-                        }
-                    };
-                    
-                    updateCounter();
-                });
-                
-                countersAnimated = true; // Marque comme animé
-            }
-            
-            // Intersection Observer optimisé pour déclencher les animations
-            const observerOptions = {
-                threshold: 0.3, // Réduit le seuil pour déclencher plus tôt
-                rootMargin: '0px 0px -50px 0px' // Réduit la marge
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (entry.target.classList.contains('modern-stats-section')) {
-                            // Délai réduit pour une meilleure réactivité
-                            setTimeout(animateCounters, 500);
-                        }
-                    }
-                });
-            }, observerOptions);
-            
-            // Observer la section stats
-            const statsSection = document.querySelector('.modern-stats-section');
-            if (statsSection) {
-                observer.observe(statsSection);
-            }
-            
-            // Animation au scroll optimisée pour les cartes
-            const cardObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.animationPlayState = 'running';
-                    }
-                });
-            }, { threshold: 0.05 }); // Seuil réduit pour déclencher plus tôt
-            
-            const statCards = document.querySelectorAll('.modern-stat-card');
-            statCards.forEach(card => {
-                card.style.animationPlayState = 'paused';
-                cardObserver.observe(card);
-            });
-        });
-    </script>
 </body>
 
 </html>

@@ -33,34 +33,42 @@
 }
 
 /* Curseur personnalisé - Effet global */
-body {
-    cursor: none;
+
+/* Masquer le curseur natif partout (y compris liens/boutons) */
+html, body { cursor: none; }
+a, button, .nav-link, .dropdown-item, .btn, [role="button"],
+input[type="button"], input[type="submit"], label, select {
+  cursor: none !important;
 }
 
+/* Facultatif: garder l'I‑beam dans les champs de texte */
+/* input, textarea { cursor: text; } */
+
+/* Curseur personnalisé */
 .custom-cursor {
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    background: var(--primary);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transition: all 0s ease; /* Réduction du délai de 0.1s à 0.05s */
-    mix-blend-mode: difference;
-    transform: translate(-50%, -50%);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ff5a16;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform .15s ease, background-color .2s, box-shadow .2s, opacity .2s;
 }
 
+/* Effet au survol d'éléments interactifs */
 .custom-cursor.hover {
-    background: white;
-    transform: scale(1.5);
+  transform: translate(-50%, -50%) scale(1.5);
+  box-shadow: 0 0 0 3px rgba(255,90,22,.35);
 }
 
-/* Empêcher le curseur de grossir lors du clic sur les boutons */
-.btn:active .custom-cursor,
-button:active .custom-cursor,
-a:active .custom-cursor {
-    transform: scale(1) !important;
-}
+.custom-cursor.active { transform: translate(-50%, -50%) scale(0.9); }
+
+/* Curseur personnalisé FIN */
+
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -259,6 +267,28 @@ p {
     color: white;
 }
 
+
+
+
+/* SOCIAL MEDIA START */
+
+.social a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:60px;          /* avant: 44px */
+  height:60px;         /* avant: 44px */
+  border-radius:50%;
+  background:#1f2937;
+  color:#fff;
+  font-size:24px;      /* avant: 18px */
+  text-decoration:none;
+  transition:background .2s, transform .1s;
+}
+.social{ gap:16px !important; } /* plus d'espace entre les boutons */
+.social a:hover{ background:#ff4d2d; transform:translateY(-1px); }
+.social a i{ line-height:1; }
+
 /* ===== SECTION HÉRO ===== */
 /* Hero Section - WeWard Style */
 .hero-section {
@@ -274,6 +304,15 @@ p {
     overflow: hidden;
     padding-top: 120px; /* Augmente l'espace entre le header et le contenu */
 }
+
+/* Responsive desktop */
+@media (min-width:768px){
+  .social a{ width:64px; height:64px; font-size:28px; }
+}
+/* SOCIAL MEDIA END */
+
+
+
 
 
 
