@@ -1,42 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<head>
-    <meta charset="utf-8">
-    <title>Pulse - L'application étudiante</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    
-    <meta name="keywords" content="événements étudiants, communication universitaire, associations étudiantes, EPF, EM Lyon, vie étudiante, projet universitaire, 
-    réseau inter-écoles, application étudiante, application communication universitaire, évènements étudiants">
-    
-    <meta content="L'application d'évènements universitaires pour booster la communication sur vos campus" name="description">
-    <meta property="og:title" content="Pulse - L'application étudiante">
-    <meta property="og:description" content="L'application d'évènements universitaires pour booster la communication sur vos campus">
-    <meta property="og:image" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="pulse">
-    <meta property="og:locale" content="fr_FR">
-    <meta property="article:author" content="Vianney Otton">
-    <meta property="article:author" content="Nathalie Saada">
-    <meta property="article:author" content="Damien Drozd">
-    <meta property="article:published_time" content="15/08/2024">
-
-    <!-- Favicon --> <!-- mettre le logo de l'application -->
-    <link href="img/favicon.ico" rel="icon"> <!-- dire à vianney qu'il faut un logo pour le haut de l'onglet  -->
-
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
-</head>
+<?php include '../components/head.php'; ?>
 
 <body>
     <!-- Custom Cursor -->
@@ -48,36 +13,8 @@
     </div>
     <!-- Spinner End -->
 
-    <!-- Navbar Start --> <!-- Faire un fichier navbar pour l'intégrér dans toutes les pages -->
-    <nav class="navbar">
-        <div class="container">
-            <div class="d-flex justify-content-between align-items-center">
-                <a href="index.html" class="navbar-brand">
-                    <img src="img/Logo_Pulse.png" alt="Pulse" height="40">
-                </a>
-                
-                <ul class="navbar-nav">
-                    <li><a href="#hero" class="nav-link">À propos</a></li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle">Fonctionnalités</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="fonctionnalites-enseignement.html" class="dropdown-item">Enseignement supérieur</a></li>
-                            <li><a href="fonctionnalites-commune.html" class="dropdown-item">Commune</a></li>
-                            <li><a href="fonctionnalites-association.html" class="dropdown-item">Association</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="equipe.html" class="nav-link">L'équipe</a></li>
-                    <li><a href="partenariats.html" class="nav-link">Partenariats</a></li>
-                    <li><a href="https://forms.gle/u26uAQ3QdyvvLwHX9" class="btn btn-primary">Obtenir un devis</a></li> <!-- mettre le formulaire de contact à la place -->
-                </ul>
-                
-                <button class="navbar-toggler">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
-    <!-- Navbar End -->
+<?php include '../components/navbar.php'; ?>
+
 
     <!-- Hero Section Start -->
     <section class="hero-section" id="hero">
@@ -110,22 +47,22 @@
             <div class="app-phone-side">
                 <div class="phone-container" style="background-color: #FFE3B2; padding: 20px; border-radius: 20px; position: relative; width: 380px; height: 420px;">
                     <!-- Phone Image -->
-                    <img src="img/home_e.png" alt="GENPULSE App Interface" class="phone-image" style="width: 300px; height: auto; position: relative; z-index: 2;">
+                    <img src="../img/home_e.png" alt="GENPULSE App Interface" class="phone-image" style="width: 300px; height: auto; position: relative; z-index: 2;">
                     
                                          <!-- Floating Like Icons -->
                      <div class="floating-likes" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 30;">
-                         <img src="img/like.png" alt="Like" style="position: absolute; top: 10px; left: 5px; width: 60px; height: 60px; animation: float 3s ease-in-out infinite;">
-                         <img src="img/like.png" alt="Like" style="position: absolute; top: 80px; right: 15px; width: 50px; height: 50px; animation: float 3s ease-in-out infinite 0.5s;">
-                         <img src="img/like.png" alt="Like" style="position: absolute; bottom: 100px; left: 5px; width: 70px; height: 70px; animation: float 3s ease-in-out infinite 1s;">
-                         <img src="img/like.png" alt="Like" style="position: absolute; bottom: 20px; right: 20px; width: 56px; height: 56px; animation: float 3s ease-in-out infinite 1.5s;">
+                         <img src="../img/like.png" alt="Like" style="position: absolute; top: 10px; left: 5px; width: 60px; height: 60px; animation: float 3s ease-in-out infinite;">
+                         <img src="../img/like.png" alt="Like" style="position: absolute; top: 80px; right: 15px; width: 50px; height: 50px; animation: float 3s ease-in-out infinite 0.5s;">
+                         <img src="../img/like.png" alt="Like" style="position: absolute; bottom: 100px; left: 5px; width: 70px; height: 70px; animation: float 3s ease-in-out infinite 1s;">
+                         <img src="../img/like.png" alt="Like" style="position: absolute; bottom: 20px; right: 20px; width: 56px; height: 56px; animation: float 3s ease-in-out infinite 1.5s;">
                      </div>
                      
                      <!-- Floating Notification Icons -->
                      <div class="floating-notifications" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 30;">
-                         <img src="img/notif.png" alt="Notification" style="position: absolute; top: 50px; left: -60px; width: 64px; height: 64px; animation: float 3s ease-in-out infinite 0.3s;">
-                         <img src="img/notif.png" alt="Notification" style="position: absolute; top: 150px; right: -60px; width: 54px; height: 54px; animation: float 3s ease-in-out infinite 0.8s;">
-                         <img src="img/notif.png" alt="Notification" style="position: absolute; bottom: 50px; left: -40px; width: 66px; height: 66px; animation: float 3s ease-in-out infinite 1.2s;">
-                         <img src="img/notif.png" alt="Notification" style="position: absolute; bottom: 80px; right: -40px; width: 58px; height: 58px; animation: float 3s ease-in-out infinite 1.7s;">
+                         <img src="../img/notif.png" alt="Notification" style="position: absolute; top: 50px; left: -60px; width: 64px; height: 64px; animation: float 3s ease-in-out infinite 0.3s;">
+                         <img src="../img/notif.png" alt="Notification" style="position: absolute; top: 150px; right: -60px; width: 54px; height: 54px; animation: float 3s ease-in-out infinite 0.8s;">
+                         <img src="../img/notif.png" alt="Notification" style="position: absolute; bottom: 50px; left: -40px; width: 66px; height: 66px; animation: float 3s ease-in-out infinite 1.2s;">
+                         <img src="../img/notif.png" alt="Notification" style="position: absolute; bottom: 80px; right: -40px; width: 58px; height: 58px; animation: float 3s ease-in-out infinite 1.7s;">
                      </div>
                 </div>
             </div>
@@ -166,7 +103,7 @@
                 </div>
                 
                 <div class="feature-image">
-                    <img src="img/prive.png" alt="Canal privé universitaire">
+                    <img src="../img/prive.png" alt="Canal privé universitaire">
                     <div class="feature-overlay">
                         <i class="fas fa-lock"></i>
                     </div>
@@ -191,7 +128,7 @@
             <!-- Canal Public -->
             <div class="solution-feature-card canal-public">
                 <div class="feature-image">
-                    <img src="img/public.png" alt="Canal public communautaire">
+                    <img src="../img/public.png" alt="Canal public communautaire">
                     <div class="feature-overlay">
                         <i class="fas fa-unlock"></i>
                     </div>
@@ -239,7 +176,7 @@
             <div class="profile-features-grid">
                 <a href="fonctionnalites-enseignement.html" class="profile-feature-card">
                     <div class="profile-feature-image">
-                        <img src="img/ecole.jpg" alt="Enseignement supérieur">
+                        <img src="../img/ecole.jpg" alt="Enseignement supérieur">
                     </div>
                     <h3>Enseignement supérieur</h3>
                     <p>Fonctionnalités dédiées aux universités, écoles et établissements d'enseignement supérieur</p>
@@ -250,7 +187,7 @@
                 
                 <a href="fonctionnalites-commune.html" class="profile-feature-card">
                     <div class="profile-feature-image">
-                        <img src="img/commune.jpg" alt="Communes & Mairies">
+                        <img src="../img/commune.jpg" alt="Communes & Mairies">
                     </div>
                     <h3>Communes & Mairies</h3>
                     <p>Solutions adaptées aux mairies et collectivités locales pour dynamiser la vie citoyenne</p>
@@ -261,7 +198,7 @@
                 
                 <a href="fonctionnalites-association.html" class="profile-feature-card">
                     <div class="profile-feature-image">
-                        <img src="img/asso.jpg" alt="Associations">
+                        <img src="../img/asso.jpg" alt="Associations">
                     </div>
                     <h3>Associations</h3>
                     <p>Outils spécialement conçus pour les associations et organisations à but non lucratif</p>
@@ -360,20 +297,20 @@
             <div class="partners-slider">
                 <div class="partners-track">
                     <div class="partners-container">
-                        <img src="img/bde.jpg" alt="BDE" class="partner-logo">
-                        <img src="img/uva.png" alt="UVA" class="partner-logo">
-                        <img src="img/bds.jpg" alt="BDS" class="partner-logo">
-                        <img src="img/epf.png" alt="EPF" class="partner-logo">
-                        <img src="img/bde_ice.jpg" alt="BDE ICE" class="partner-logo">
-                        <img src="img/je.jpg" alt="JE" class="partner-logo">
+                        <img src="../img/bde.jpg" alt="BDE" class="partner-logo">
+                        <img src="../img/uva.png" alt="UVA" class="partner-logo">
+                        <img src="../img/bds.jpg" alt="BDS" class="partner-logo">
+                        <img src="../img/epf.png" alt="EPF" class="partner-logo">
+                        <img src="../img/bde_ice.jpg" alt="BDE ICE" class="partner-logo">
+                        <img src="../img/je.jpg" alt="JE" class="partner-logo">
                     </div>
                     <div class="partners-container">
-                        <img src="img/bde.jpg" alt="BDE" class="partner-logo">
-                        <img src="img/uva.png" alt="UVA" class="partner-logo">
-                        <img src="img/bds.jpg" alt="BDS" class="partner-logo">
-                        <img src="img/epf.png" alt="EPF" class="partner-logo">
-                        <img src="img/bde_ice.jpg" alt="BDE ICE" class="partner-logo">
-                        <img src="img/je.jpg" alt="JE" class="partner-logo">
+                        <img src="../img/bde.jpg" alt="BDE" class="partner-logo">
+                        <img src="../img/uva.png" alt="UVA" class="partner-logo">
+                        <img src="../img/bds.jpg" alt="BDS" class="partner-logo">
+                        <img src="../img/epf.png" alt="EPF" class="partner-logo">
+                        <img src="../img/bde_ice.jpg" alt="BDE ICE" class="partner-logo">
+                        <img src="../img/je.jpg" alt="JE" class="partner-logo">
                     </div>
                 </div>
             </div>
@@ -443,113 +380,20 @@
                     <a href="#contact" class="btn btn-primary btn-lg">Commencer maintenant</a>
                 </div>
                 <div class="cta-image">
-                    <img src="img/im3.jpg" alt="Équipe GENPULSE">
+                    <img src="../img/im3.jpg" alt="Équipe GENPULSE">
                 </div>
             </div>
         </div>
     </section>
     <!-- section cta End -->
 
-    <!-- Contact Section Start -->
-    <section class="section" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <p class="section-subtitle">Contact</p>
-                <h2>Une question ou une démonstration ?</h2>
-                <p>Notre équipe est là pour vous accompagner dans votre transition vers Pulse.</p>
-            </div>
-            
-            <div class="grid grid-2">
-                <div class="card">
-                    <h3>Informations de contact</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> 3 Résidence du parc, Massy</p>
-                    <p><i class="fas fa-phone"></i> +33 782582528</p>
-                    <p><i class="fas fa-envelope"></i> pulse.pro.event@gmail.com</p>
-                    
-                    <div class="d-flex gap-2 mt-4 social">
-                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a> <!-- Ajout des icônes de réseaux sociaux -->
-                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a> <!-- Ajout des icônes de réseaux sociaux -->
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a> <!-- Ajout des icônes de réseaux sociaux -->
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a> <!-- Ajout des icônes de réseaux sociaux -->
-                    </div>
-                </div>
-                
-                <div class="card">
-                    <form id="contactForm" action="contact.php" method="POST">
-                        <div class="grid grid-2">
-                            <div>
-                                <label for="name">Nom complet</label>
-                                <input type="text" id="name" name="name" class="form-control" required>
-                            </div>
-                            <div>
-                                <label for="email">Email</label>
-                                <input type="email" id="email" name="email" class="form-control" required>
-                            </div>
-                        </div>
-                        
-                        <div class="mt-3">
-                            <label for="subject">Sujet</label>
-                            <input type="text" id="subject" name="subject" class="form-control" required>
-                        </div>
-                        
-                        <div class="mt-3">
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" class="form-control" rows="5" required></textarea>
-                        </div>
-                        
-                        <div class="mt-4">
-                            <button type="submit" class="btn btn-primary btn-lg w-100">
-                                <i class="fas fa-paper-plane"></i>
-                                Envoyer le message
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Contact Section End -->
+    <!-- section contact Start -->
+    <?php include '../components/contact.php'; ?>
+    <!-- section contact End -->
 
-    <!-- Footer Start -->  <!-- Faire un fichier footer pour l'intégrér dans toutes les pages -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Pulse</h4>
-                    <p>L'application qui révolutionne la communication universitaire en centralisant tous les événements et informations sur une seule plateforme intuitive.</p>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Liens rapides</h4>
-                    <a href="#about">À propos</a> 
-                    <a href="#features">Fonctionnalités</a> 
-                    <a href="#benefits">Avantages</a> 
-                    <a href="equipe.html">L'équipe</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Support</h4>
-                    <a href="mentions-legales.pdf" target="_blank">Mentions légales</a> <!-- Ouvrir dans un nouvel onglet et création de la page des mentions légales-->
-                    <a href="#">Politique de confidentialité</a>
-                    <a href="#">Conditions d'utilisation</a>
-                    <a href="#">FAQ</a>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <p>3 Résidence du parc, Massy</p>
-                    <p>+33 782582528</p>
-                    <p>pulse.pro.event@gmail.com</p>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Pulse. Tous droits réservés. Conçu avec ❤️ pour la communauté étudiante.</p>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer End -->
+    <!-- section footer Start -->
+    <?php include '../components/footer.php'; ?>
+    <!-- section footer End -->
 
     <!-- Back to Top -->
     <a href="#" class="back-to-top">
@@ -560,8 +404,8 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-    <script src="js/cursor.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/cursor.js"></script>
     
 </body>
 
