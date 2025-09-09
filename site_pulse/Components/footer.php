@@ -8,19 +8,19 @@
             
             <div class="footer-section">
                 <h4>Liens rapides</h4>
-                <a href="#about">À propos</a> 
-                <a href="#features">Fonctionnalités</a> 
-                <a href="#benefits">Avantages</a> 
-                <a href="equipe.html">L'équipe</a>
-                <a href="#contact">Contact</a>
+                <a href="index.php#about">À propos</a> 
+                <a href="index.php#features">Fonctionnalités</a> 
+                <a href="index.php#benefits">Avantages</a> 
+                <a href="equipe.php">L'équipe</a>
+                <a href="index.php#contact">Contact</a>
             </div>
             
             <div class="footer-section">
                 <h4>Support</h4>
                 <a href="mentions-legales.php" target="_blank">Mentions légales</a>
-                <a href="#">Politique de confidentialité</a>
-                <a href="#">Conditions d'utilisation</a>
-                <a href="#">FAQ</a>
+                <a href="politique-confidentialite.php">Politique de confidentialité</a>
+                <a href="conditions-utilisation.php">Conditions d'utilisation</a>
+                <a href="faq.php">FAQ</a>
             </div>
             
             <div class="footer-section">
