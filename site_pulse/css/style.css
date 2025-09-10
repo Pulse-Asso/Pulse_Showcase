@@ -557,17 +557,17 @@ p {
     background: white;
     border-radius: var(--border-radius-lg);
     padding: 0;
-    padding-bottom: 5.5rem; /* Réserve de l'espace pour le bouton afin d'éviter qu'il ne touche le texte */
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
     border: 1px solid rgba(0, 0, 0, 0.05);
     text-align: center;
     position: relative;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     min-height: 450px; /* Hauteur minimale pour éviter le chevauchement */
     text-decoration: none;
     color: inherit;
-    display: block;
 }
 
 .profile-feature-card:hover {
@@ -592,9 +592,7 @@ p {
     transition: transform 0.3s ease;
 }
 
-.profile-feature-card:hover .profile-feature-image img {
-    /* Retrait de l'animation de zoom sur l'image */
-}
+.profile-feature-card:hover .profile-feature-image img { transform: none; }
 
 /* Contenu textuel de la carte */
 .profile-feature-card h3 {
@@ -606,8 +604,14 @@ p {
 
 .profile-feature-card p {
     color: var(--text-secondary);
-    margin: 0 1.5rem 3rem; /* Plus d'espace en bas pour éviter le chevauchement */
+    margin: 0 1.5rem 0;
     line-height: 1.6;
+}
+
+/* Conteneur de contenu pour réserver l'espace du bouton */
+.profile-feature-content {
+    padding-bottom: 5.5rem; /* Espace réservé pour le bouton */
+    flex: 1 1 auto;
 }
 
 /* Bouton de la carte avec effet hover */
@@ -4002,9 +4006,7 @@ p {
     transform: translateY(10px); /* Descend les images de 10 pixels */
 }
 
-.visual-item:hover {
-    /* Zoom effect removed */
-}
+.visual-item:hover { transform: none; }
 
 .visual-image {
     width: 100%;
@@ -5231,4 +5233,5 @@ p {
 
 /* ===== Ajouts: Utilitaire de hauteur ===== */
 .min-vh-50 {
-    min-height: 50vh
+    min-height: 50vh;
+}

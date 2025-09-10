@@ -178,8 +178,10 @@
                     <div class="profile-feature-image">
                         <img src="../img/ecole.jpg" alt="Enseignement supérieur">
                     </div>
-                    <h3>Enseignement supérieur</h3>
-                    <p>Fonctionnalités dédiées aux universités, écoles et établissements d'enseignement supérieur</p>
+                    <div class="profile-feature-content">
+                        <h3>Enseignement supérieur</h3>
+                        <p>Fonctionnalités dédiées aux universités, écoles et établissements d'enseignement supérieur</p>
+                    </div>
                     <div class="btn btn-primary profile-btn">
                         <i class="fas fa-arrow-right"></i>
                     </div>
@@ -189,8 +191,10 @@
                     <div class="profile-feature-image">
                         <img src="../img/commune.jpg" alt="Communes & Mairies">
                     </div>
-                    <h3>Communes & Mairies</h3>
-                    <p>Solutions adaptées aux mairies et collectivités locales pour dynamiser la vie citoyenne</p>
+                    <div class="profile-feature-content">
+                        <h3>Communes & Mairies</h3>
+                        <p>Solutions adaptées aux mairies et collectivités locales pour dynamiser la vie citoyenne</p>
+                    </div>
                     <div class="btn btn-primary profile-btn">
                         <i class="fas fa-arrow-right"></i>
                     </div>
@@ -200,8 +204,10 @@
                     <div class="profile-feature-image">
                         <img src="../img/asso.jpg" alt="Associations">
                     </div>
-                    <h3>Associations</h3>
-                    <p>Outils spécialement conçus pour les associations et organisations à but non lucratif</p>
+                    <div class="profile-feature-content">
+                        <h3>Associations</h3>
+                        <p>Outils spécialement conçus pour les associations et organisations à but non lucratif</p>
+                    </div>
                     <div class="btn btn-primary profile-btn">
                         <i class="fas fa-arrow-right"></i>
                     </div>
