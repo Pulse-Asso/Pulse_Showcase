@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -14,6 +15,21 @@
     <!-- Spinner End -->
 
 <?php include '../components/navbar.php'; ?>
+
+    <?php if (!empty($_SESSION['status'])): ?>
+    <section class="section" style="padding-top: 1rem; padding-bottom: 0;">
+        <div class="container">
+            <div class="row justify-content-center mb-4">
+                <div class="col-lg-9">
+                    <div class="alert <?php echo $_SESSION['status'] === 'success' ? 'alert-success' : 'alert-danger'; ?>" role="alert">
+                        <?php echo htmlspecialchars($_SESSION['message'] ?? (($_SESSION['status'] === 'success') ? 'Votre demande a été envoyée avec succès.' : 'Une erreur est survenue.')); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <?php unset($_SESSION['status'], $_SESSION['message']); ?>
+    <?php endif; ?>
 
 
     <!-- Hero Section Start -->
