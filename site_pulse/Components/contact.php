@@ -11,7 +11,7 @@
                 </p>
             </div>
             
-            <div class="grid grid-2" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div class="single-contact" style="max-width: 800px; margin: 0 auto;">
                 <div class="card" style="background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 1px solid rgba(0, 0, 0, 0.05);">
                     <h3 style="margin-bottom: 1rem; color: #1e293b;">Informations de contact</h3>
                     <p style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; color: #64748b;">
@@ -23,53 +23,28 @@
                     <p style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 2rem; color: #64748b;">
                         <i class="fas fa-envelope" style="color: #ff6b35;"></i> pulse.pro.event@gmail.com
                     </p>
-                    
-                    <div style="display: flex; gap: 0.5rem; margin-top: 2rem;">
-                        <a href="#" class="btn btn-secondary" style="background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0; padding: 0.75rem 1rem; border-radius: 10px; text-decoration: none; transition: all 0.3s ease;">
-                            <i class="fab fa-twitter"></i>
+
+                    <div style="display: flex; gap: 0.75rem; margin-top: 2rem; flex-wrap: wrap;">
+                        <a href="https://twitter.com" aria-label="Twitter" title="Twitter" class="btn btn-secondary" style="background: #e8f5fd; color: #1d9bf0; border: 1px solid #bae3ff; padding: 0.75rem 1rem; border-radius: 10px; text-decoration: none; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-twitter" style="font-size: 1.25rem;"></i><span style="font-weight: 600;">Twitter</span>
                         </a>
-                        <a href="#" class="btn btn-secondary" style="background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0; padding: 0.75rem 1rem; border-radius: 10px; text-decoration: none; transition: all 0.3s ease;">
-                            <i class="fab fa-facebook-f"></i>
+                        <a href="https://facebook.com" aria-label="Facebook" title="Facebook" class="btn btn-secondary" style="background: #eef2ff; color: #1877f2; border: 1px solid #c7d2fe; padding: 0.75rem 1rem; border-radius: 10px; text-decoration: none; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-facebook-f" style="font-size: 1.25rem;"></i><span style="font-weight: 600;">Facebook</span>
                         </a>
-                        <a href="#" class="btn btn-secondary" style="background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0; padding: 0.75rem 1rem; border-radius: 10px; text-decoration: none; transition: all 0.3s ease;">
-                            <i class="fab fa-instagram"></i>
+                        <a href="https://instagram.com" aria-label="Instagram" title="Instagram" class="btn btn-secondary" style="background: #fff1f2; color: #e1306c; border: 1px solid #fecdd3; padding: 0.75rem 1rem; border-radius: 10px; text-decoration: none; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-instagram" style="font-size: 1.25rem;"></i><span style="font-weight: 600;">Instagram</span>
                         </a>
-                        <a href="#" class="btn btn-secondary" style="background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0; padding: 0.75rem 1rem; border-radius: 10px; text-decoration: none; transition: all 0.3s ease;">
-                            <i class="fab fa-linkedin-in"></i>
+                        <a href="https://www.linkedin.com" aria-label="LinkedIn" title="LinkedIn" class="btn btn-secondary" style="background: #eff6ff; color: #0a66c2; border: 1px solid #bfdbfe; padding: 0.75rem 1rem; border-radius: 10px; text-decoration: none; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem;">
+                            <i class="fab fa-linkedin-in" style="font-size: 1.25rem;"></i><span style="font-weight: 600;">LinkedIn</span>
                         </a>
                     </div>
-                </div>
-                
-                <div class="card" style="background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 1px solid rgba(0, 0, 0, 0.05);">
-                    <form id="contactForm" action="../contact.php" method="POST">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
-                            <div>
-                                <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1e293b;">Nom complet</label>
-                                <input type="text" id="name" name="name" class="form-control" required style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 1rem;">
-                            </div>
-                            <div>
-                                <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1e293b;">Email</label>
-                                <input type="email" id="email" name="email" class="form-control" required style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 1rem;">
-                            </div>
-                        </div>
-                        
-                        <div style="margin-bottom: 1rem;">
-                            <label for="subject" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1e293b;">Sujet</label>
-                            <input type="text" id="subject" name="subject" class="form-control" required style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 1rem;">
-                        </div>
-                        
-                        <div style="margin-bottom: 2rem;">
-                            <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1e293b;">Message</label>
-                            <textarea id="message" name="message" class="form-control" rows="5" required style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 1rem; resize: vertical;"></textarea>
-                        </div>
-                        
-                        <div>
-                            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; background: linear-gradient(135deg, #ff6b35, #f7931e); color: white; border: none; padding: 1rem 2rem; border-radius: 30px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: all 0.3s ease;">
-                                <i class="fas fa-paper-plane"></i>
-                                Envoyer le message
-                            </button>
-                        </div>
-                    </form>
+
+                    <div style="margin-top: 2rem;">
+                        <a href="../contact.php" class="btn btn-primary btn-lg" style="width: 100%; background: linear-gradient(135deg, #ff6b35, #f7931e); color: white; border: none; padding: 1rem 2rem; border-radius: 30px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: all 0.3s ease; display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem; text-decoration: none;">
+                            <i class="fas fa-envelope"></i>
+                            Aller sur la page contact
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
