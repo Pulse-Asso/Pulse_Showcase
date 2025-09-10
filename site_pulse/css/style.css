@@ -557,6 +557,7 @@ p {
     background: white;
     border-radius: var(--border-radius-lg);
     padding: 0;
+    padding-bottom: 5.5rem; /* Réserve de l'espace pour le bouton afin d'éviter qu'il ne touche le texte */
     box-shadow: var(--shadow);
     transition: all 0.3s ease;
     border: 1px solid rgba(0, 0, 0, 0.05);
