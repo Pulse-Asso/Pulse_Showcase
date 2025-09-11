@@ -103,6 +103,9 @@ p {
     margin-bottom: 1rem;
 }
 
+/* 0) Hygiène img pour éviter l'espace fantôme */
+img { display: block; max-width: 100%; height: auto; }
+
 /* Container */
 .container {
     max-width: 1200px;
@@ -1244,7 +1247,7 @@ p {
 /* WeWard App Showcase Section */
 .app-showcase-section {
     background: white;
-    padding: 10rem 0 6rem 0; /* Augmenté le padding-top de 6rem à 10rem */
+    padding: clamp(3rem, 6vw, 6rem) 0; /* padding responsive et réduit */
     position: relative;
     overflow: hidden;
 }
@@ -2077,8 +2080,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 420px;
-    width: 380px;
+    width: min(90vw, 520px);
     margin: 0 auto;
 }
 
@@ -2087,18 +2089,19 @@ p {
     max-width: 100%;
     height: auto;
     filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
-    /* Retrait de l'animation hover sur le téléphone */
+    /* Le téléphone reste dans le flux */
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 /* Icônes flottantes "like" et "notification" - Section "La raison d'être de GENPULSE" */
 .floating-likes img,
 .floating-notifications img {
-    position: absolute;
-    z-index: 30; /* Au premier plan devant le téléphone */
+    position: absolute; /* décoratif => n'occupe pas de hauteur */
+    z-index: 0;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
     transition: transform 0.3s ease;
+    pointer-events: none;
 }
 
 /* Effet hover sur les icônes flottantes */
@@ -2124,20 +2127,14 @@ p {
         text-align: center;
     }
     
-    .phone-container {
-        min-height: 350px;
-        width: 320px;
-    }
+    .phone-container { width: min(92vw, 360px); }
     
     .phone-image {
         width: 250px;
     }
     
     .floating-likes img,
-    .floating-notifications img {
-        width: 40px !important;
-        height: 40px !important;
-    }
+    .floating-notifications img { width: 40px !important; height: 40px !important; }
 }
 
 /* Section Partenariats - Slider de logos */
@@ -5222,3 +5219,20 @@ p {
 .min-vh-50 {
     min-height: 50vh;
 }
+
+/* 1) Bloc "mockup téléphone" générique */
+.hero-mockup { position: relative; width: min(90vw, 520px); margin-inline: auto; }
+.hero-mockup .phone-img { position: relative; z-index: 2; }
+.hero-mockup .bg-plate { position: absolute; inset: 12% -12% -8% -12%; background:#FDE1BC; border-radius:24px; z-index:1; pointer-events:none; }
+.hero-mockup .floaters { position: absolute; inset:0; z-index:0; pointer-events:none; }
+
+/* 2) Sections: paddings et séparateurs décoratifs */
+.section { padding-block: clamp(3rem, 6vw, 6rem); }
+.section .section-divider,
+.section .decor-dot { position:absolute; left:50%; transform:translateX(-50%); bottom:clamp(-1rem, -2vw, -2rem); pointer-events:none; }
+
+/* Contact top spacing */
+#contact.section { padding-top: clamp(2rem, 5vw, 4rem) !important; }
+
+/* 3) Container global (conserve largeur, normalise padding-inline) */
+.container { max-width: 1200px; padding-inline: 1rem; margin-inline: auto; }
