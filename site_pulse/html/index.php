@@ -175,35 +175,44 @@
             
             <div class="profile-features-grid">
                 <a href="fonctionnalites-enseignement.html" class="profile-feature-card">
-                    <div class="profile-feature-image">
-                        <img src="../img/ecole.jpg" alt="Enseignement supérieur">
-                    </div>
-                    <h3>Enseignement supérieur</h3>
-                    <p>Fonctionnalités dédiées aux universités, écoles et établissements d'enseignement supérieur</p>
-                    <div class="btn btn-primary profile-btn">
-                        <i class="fas fa-arrow-right"></i>
+                    <figure class="profile-feature-image">
+                        <img src="../img/ecole.jpg" alt="Enseignement supérieur" loading="lazy" width="800" height="450">
+                    </figure>
+                    <div class="profile-feature-content">
+                        <h3>Enseignement supérieur</h3>
+                        <p>Fonctionnalités dédiées aux universités, écoles et établissements d'enseignement supérieur</p>
+                        <div class="btn btn-primary profile-btn" role="button" aria-label="Découvrir l’offre Enseignement supérieur">
+                            Découvrir 
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </div>
                     </div>
                 </a>
                 
                 <a href="fonctionnalites-commune.html" class="profile-feature-card">
-                    <div class="profile-feature-image">
-                        <img src="../img/commune.jpg" alt="Communes & Mairies">
-                    </div>
-                    <h3>Communes & Mairies</h3>
-                    <p>Solutions adaptées aux mairies et collectivités locales pour dynamiser la vie citoyenne</p>
-                    <div class="btn btn-primary profile-btn">
-                        <i class="fas fa-arrow-right"></i>
+                    <figure class="profile-feature-image">
+                        <img src="../img/commune.jpg" alt="Communes & Mairies" loading="lazy" width="800" height="450">
+                    </figure>
+                    <div class="profile-feature-content">
+                        <h3>Communes & Mairies</h3>
+                        <p>Solutions adaptées aux mairies et collectivités locales pour dynamiser la vie citoyenne</p>
+                        <div class="btn btn-primary profile-btn" role="button" aria-label="Découvrir l’offre Communes et Mairies">
+                            Découvrir 
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </div>
                     </div>
                 </a>
                 
                 <a href="fonctionnalites-association.html" class="profile-feature-card">
-                    <div class="profile-feature-image">
-                        <img src="../img/asso.jpg" alt="Associations">
-                    </div>
-                    <h3>Associations</h3>
-                    <p>Outils spécialement conçus pour les associations et organisations à but non lucratif</p>
-                    <div class="btn btn-primary profile-btn">
-                        <i class="fas fa-arrow-right"></i>
+                    <figure class="profile-feature-image">
+                        <img src="../img/asso.jpg" alt="Associations" loading="lazy" width="800" height="450">
+                    </figure>
+                    <div class="profile-feature-content">
+                        <h3>Associations</h3>
+                        <p>Outils spécialement conçus pour les associations et organisations à but non lucratif</p>
+                        <div class="btn btn-primary profile-btn" role="button" aria-label="Découvrir l’offre Associations">
+                            Découvrir 
+                            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                        </div>
                     </div>
                 </a>
             </div>
