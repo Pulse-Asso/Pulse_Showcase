@@ -32,6 +32,19 @@
     box-sizing: border-box;
 }
 
+/* Defensive: hide any dark-mode toggle widgets injected by third-party scripts */
+.darkmode-toggle,
+#darkmode-toggle,
+[data-theme-toggle],
+.theme-toggle,
+.color-mode-toggle,
+.darkmode-layer,
+.darkmode-background,
+button[aria-label*="dark"],
+button[aria-label*="Dark"],
+button[title*="dark"],
+button[title*="Dark"] { display: none !important; }
+
 /* Masquer le curseur natif partout (y compris liens/boutons) */
 html, body { cursor: none; }
 a, button, .nav-link, .dropdown-item, .btn, [role="button"],

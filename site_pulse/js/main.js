@@ -447,6 +447,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize scroll progress
     initScrollProgress();
     
+    // Guard: remove any injected dark-mode toggle widgets if present
+    (function removeDarkModeWidgets() {
+        const selectors = [
+            '.darkmode-toggle',
+            '#darkmode-toggle',
+            '[data-theme-toggle]',
+            '.theme-toggle',
+            '.color-mode-toggle',
+            '.darkmode-layer',
+            '.darkmode-background',
+            'button[aria-label*="dark"]',
+            'button[aria-label*="Dark"]',
+            'button[title*="dark"]',
+            'button[title*="Dark"]'
+        ];
+        function prune() {
+            selectors.forEach(sel => {
+                document.querySelectorAll(sel).forEach(el => {
+                    el.remove();
+                });
+            });
+        }
+        prune();
+        const observer = new MutationObserver(prune);
+        observer.observe(document.documentElement, { childList: true, subtree: true });
+    })();
+
     // // Add theme toggle (light/dark mode)
     // function initThemeToggle() {
     //     const themeToggle = document.createElement('button');
