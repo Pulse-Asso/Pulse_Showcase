@@ -9,7 +9,7 @@
             <div class="footer-section">
                 <h4>Liens rapides</h4>
                 <a href="index.php#about">À propos</a> 
-                <a href="index.php#features">Fonctionnalités</a> 
+                <a href="index.php#profile-features">Fonctionnalités</a> 
                 <a href="index.php#benefits">Avantages</a> 
                 <a href="equipe.php">L'équipe</a>
                 <a href="index.php#contact">Contact</a>

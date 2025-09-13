@@ -103,6 +103,9 @@ p {
     margin-bottom: 1rem;
 }
 
+/* 0) Hygiène img pour éviter l'espace fantôme */
+img { display: block; max-width: 100%; height: auto; }
+
 /* Container */
 .container {
     max-width: 1200px;
@@ -508,7 +511,7 @@ p {
 /* ===== SECTIONS GÉNÉRALES ===== */
 /* Sections */
 .section {
-    padding: 6rem 0;
+    padding: 4rem 0;
 }
 
 .section-alt {
@@ -545,109 +548,99 @@ p {
     box-shadow: var(--shadow-xl);
 }
 
-/* Section Fonctionnalités personnalisées - Cartes avec images */
+/* Grid des features */
 .profile-features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
+    grid-template-columns: 1fr;
     margin-top: 3rem;
 }
 
+@media (min-width: 768px) {
+    .profile-features-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1120px) {
+    .profile-features-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Carte */
 .profile-feature-card {
-    background: white;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.05);
     border-radius: var(--border-radius-lg);
-    padding: 0;
     box-shadow: var(--shadow);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    min-height: 450px; /* Hauteur minimale pour éviter le chevauchement */
-    text-decoration: none;
     color: inherit;
-    display: block;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;      /* Texte + bouton en colonne */
+    min-height: 450px;
+    overflow: hidden;
+    transition: box-shadow .3s ease;
 }
 
-.profile-feature-card:hover {
-    /* Retrait de l'animation de translation */
-    box-shadow: var(--shadow-xl);
-}
+.profile-feature-card:hover { box-shadow: var(--shadow-xl); }
 
-/* Image de la carte de fonctionnalité */
+/* Image */
 .profile-feature-image {
     width: 100%;
     height: 200px;
     overflow: hidden;
-    position: relative;
 }
-
 .profile-feature-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
-    transition: transform 0.3s ease;
+    display: block;
 }
 
-.profile-feature-card:hover .profile-feature-image img {
-    /* Retrait de l'animation de zoom sur l'image */
+/* Contenu */
+.profile-feature-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    flex: 1; /* occupe l'espace, pousse le bouton en bas */
 }
 
-/* Contenu textuel de la carte */
 .profile-feature-card h3 {
-    font-size: 1.5rem;
+    font-size: clamp(1.25rem, 1.1rem + .6vw, 1.5rem);
     font-weight: 700;
-    margin: 1.5rem 1.5rem 1rem;
     color: var(--text-primary);
+    margin: 0;
 }
 
 .profile-feature-card p {
     color: var(--text-secondary);
-    margin: 0 1.5rem 3rem; /* Plus d'espace en bas pour éviter le chevauchement */
     line-height: 1.6;
+    margin: 0;
+    flex: 1; /* pousse le bouton vers le bas */
 }
 
-/* Bouton de la carte avec effet hover */
+/* Bouton */
 .profile-btn {
-    position: absolute;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    width: 50px;
-    height: 50px;
-    border-radius: 30%;
-    padding: 0;
-    display: flex;
+    align-self: flex-end;        /* à droite sur desktop */
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.15s ease;
-    background: #FFE3B2; /* Nouvelle couleur de fond */
-    color: #FF6B35; /* Nouvelle couleur de la flèche */
-    border: none;
-    box-shadow: none; /* Suppression de toute ombre */
-    pointer-events: none; /* Empêche les clics sur le bouton lui-même */
-}
-
-.profile-btn:hover {
+    gap: .5rem;
+    height: 50px;
+    padding: 0 1.25rem;
+    border-radius: 14px;
     background: #FFE3B2;
     color: #FF6B35;
-    transform: scale(1.05);
-    box-shadow: none; /* Suppression de toute ombre au hover */
-}
-
-/* Effet hover pour transformer le bouton en "Découvrir →" */
-.profile-feature-card:hover .profile-btn {
-    width: auto;
-    padding: 0 1.5rem;
-    border-radius: 15px;
-}
-
-.profile-feature-card:hover .profile-btn::after {
-    content: " Découvrir";
-    margin-left: 0.5rem;
+    border: none;
     font-weight: 600;
-    color: #FF6B35; /* Couleur du texte "Découvrir" */
+    cursor: pointer;
+    transition: transform .2s ease, background .2s ease;
+}
+
+.profile-btn:focus-visible { outline: 3px solid rgba(255,107,53,.5); outline-offset: 2px; }
+.profile-btn:hover { transform: scale(1.05); background: #FFD38C; }
+
+@media (max-width: 479px) {
+    .profile-btn { align-self: center; } /* centré sur mobile étroit */
 }
 
 .card-icon {
@@ -1254,7 +1247,7 @@ p {
 /* WeWard App Showcase Section */
 .app-showcase-section {
     background: white;
-    padding: 10rem 0 6rem 0; /* Augmenté le padding-top de 6rem à 10rem */
+    padding: clamp(3rem, 6vw, 6rem) 0; /* padding responsive et réduit */
     position: relative;
     overflow: hidden;
 }
@@ -2087,8 +2080,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 420px;
-    width: 380px;
+    width: min(90vw, 520px);
     margin: 0 auto;
 }
 
@@ -2097,18 +2089,19 @@ p {
     max-width: 100%;
     height: auto;
     filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
-    /* Retrait de l'animation hover sur le téléphone */
+    /* Le téléphone reste dans le flux */
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 /* Icônes flottantes "like" et "notification" - Section "La raison d'être de GENPULSE" */
 .floating-likes img,
 .floating-notifications img {
-    position: absolute;
-    z-index: 30; /* Au premier plan devant le téléphone */
+    position: absolute; /* décoratif => n'occupe pas de hauteur */
+    z-index: 0;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
     transition: transform 0.3s ease;
+    pointer-events: none;
 }
 
 /* Effet hover sur les icônes flottantes */
@@ -2134,20 +2127,14 @@ p {
         text-align: center;
     }
     
-    .phone-container {
-        min-height: 350px;
-        width: 320px;
-    }
+    .phone-container { width: min(92vw, 360px); }
     
     .phone-image {
         width: 250px;
     }
     
     .floating-likes img,
-    .floating-notifications img {
-        width: 40px !important;
-        height: 40px !important;
-    }
+    .floating-notifications img { width: 40px !important; height: 40px !important; }
 }
 
 /* Section Partenariats - Slider de logos */
@@ -2439,12 +2426,12 @@ p {
 .solution-cta {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 2rem;
     align-items: center;
     background: var(--gradient-primary);
     border-radius: var(--border-radius-xl);
-    padding: 4rem;
-    margin: 4rem 0;
+    padding: 1rem;
+    margin: 2rem 0;
     color: white;
 }
 
@@ -2525,7 +2512,7 @@ p {
     .solution-cta {
         grid-template-columns: 1fr;
         gap: 2rem;
-        padding: 2rem;
+        padding: 2rem 2rem 2rem;
         text-align: center;
     }
     
@@ -5230,4 +5217,22 @@ p {
 
 /* ===== Ajouts: Utilitaire de hauteur ===== */
 .min-vh-50 {
-    min-height: 50vh
+    min-height: 50vh;
+}
+
+/* 1) Bloc "mockup téléphone" générique */
+.hero-mockup { position: relative; width: min(90vw, 520px); margin-inline: auto; }
+.hero-mockup .phone-img { position: relative; z-index: 2; }
+.hero-mockup .bg-plate { position: absolute; inset: 12% -12% -8% -12%; background:#FDE1BC; border-radius:24px; z-index:1; pointer-events:none; }
+.hero-mockup .floaters { position: absolute; inset:0; z-index:0; pointer-events:none; }
+
+/* 2) Sections: paddings et séparateurs décoratifs */
+.section { padding-block: clamp(3rem, 6vw, 6rem); }
+.section .section-divider,
+.section .decor-dot { position:absolute; left:50%; transform:translateX(-50%); bottom:clamp(-1rem, -2vw, -2rem); pointer-events:none; }
+
+/* Contact top spacing */
+#contact.section { padding-top: clamp(2rem, 5vw, 4rem) !important; }
+
+/* 3) Container global (conserve largeur, normalise padding-inline) */
+.container { max-width: 1200px; padding-inline: 1rem; margin-inline: auto; }

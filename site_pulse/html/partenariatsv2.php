@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Partenariats - Pulse</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Rejoignez notre réseau de partenaires et boostez votre visibilité auprès des étudiants et habitants" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    
+    <!-- Navbar Start -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="index.html" class="navbar-brand">
+                    <img src="img/balnc_transparent.png" alt="Pulse" height="40">
+                </a>
+                
+                <ul class="navbar-nav">
+                    <li><a href="index.html#hero" class="nav-link">À propos</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Fonctionnalités</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="fonctionnalites-enseignement.html" class="dropdown-item">Enseignement supérieur</a></li>
+                            <li><a href="fonctionnalites-commune.html" class="dropdown-item">Commune</a></li>
+                            <li><a href="fonctionnalites-association.html" class="dropdown-item">Association</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="equipe.html" class="nav-link">L'équipe</a></li>
+                    <li><a href="partenariats.html" class="nav-link active">Partenariats</a></li>
+                    <li><a href="https://forms.gle/u26uAQ3QdyvvLwHX9" class="btn btn-primary">Obtenir un devis</a></li>
+                </ul>
+                
+                <button class="navbar-toggler">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Hero Section Start -->
+    <section class="hero-section partenariats-page">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    Rejoignez notre <span class="highlight">réseau de partenaires</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Boostez votre visibilité auprès de <strong>+70 associations</strong> et de milliers d'étudiants dans <strong>4 régions</strong>
+                </p>
+                <div class="hero-buttons" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a href="#types-partenariats" class="btn btn-primary btn-lg">
+                        <i class="fas fa-handshake"></i>
+                        Découvrir les partenariats
+                    </a>
+                    <a href="#contact" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-envelope"></i>
+                        Nous contacter
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- Stats Section Start -->
+    <section class="section modern-stats-section" style="background: white; padding: 4rem 0;">
+        <div class="container">
+            <div class="section-title" style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #1e293b; margin-bottom: 1rem;">
+                    Un réseau en pleine expansion
+                </h2>
+                <p style="font-size: 1.25rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                    Rejoignez une communauté dynamique qui ne cesse de grandir
+                </p>
+            </div>
+            
+            <div class="modern-stats-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 2rem;">
+                <div class="stat-item" style="text-align: center;">
+                    <div style="position: relative; display: inline-block;">
+                        <div style="width: 60px; height: 3px; background: linear-gradient(135deg, #ff6b35, #f7931e); margin: 0 auto 1rem; border-radius: 2px;"></div>
+                        <div style="display: flex; align-items: baseline; justify-content: center; margin-bottom: 0.5rem;">
+                            <span class="counter" data-target="70" style="font-size: 2rem; font-weight: 700; color: #1e293b; font-family: 'Inter', sans-serif; line-height: 1;">0</span>
+                            <span style="font-size: 1.25rem; font-weight: 600; color: #ff6b35; margin-left: 0.25rem;">+</span>
+                        </div>
+                        <p style="font-size: 0.875rem; color: #64748b; margin: 0; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Associations actives</p>
+                    </div>
+                </div>
+                
+                <div class="stat-item" style="text-align: center;">
+                    <div style="position: relative; display: inline-block;">
+                        <div style="width: 60px; height: 3px; background: linear-gradient(135deg, #ff6b35, #f7931e); margin: 0 auto 1rem; border-radius: 2px;"></div>
+                        <div style="display: flex; align-items: baseline; justify-content: center; margin-bottom: 0.5rem;">
+                            <span class="counter" data-target="4" style="font-size: 2rem; font-weight: 700; color: #1e293b; font-family: 'Inter', sans-serif; line-height: 1;">0</span>
+                        </div>
+                        <p style="font-size: 0.875rem; color: #64748b; margin: 0; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Régions couvertes</p>
+                    </div>
+                </div>
+                
+                <div class="stat-item" style="text-align: center;">
+                    <div style="position: relative; display: inline-block;">
+                        <div style="width: 60px; height: 3px; background: linear-gradient(135deg, #ff6b35, #f7931e); margin: 0 auto 1rem; border-radius: 2px;"></div>
+                        <div style="display: flex; align-items: baseline; justify-content: center; margin-bottom: 0.5rem;">
+                            <span class="counter" data-target="1000" style="font-size: 2rem; font-weight: 700; color: #1e293b; font-family: 'Inter', sans-serif; line-height: 1;">0</span>
+                            <span style="font-size: 1.25rem; font-weight: 600; color: #ff6b35; margin-left: 0.25rem;">+</span>
+                        </div>
+                        <p style="font-size: 0.875rem; color: #64748b; margin: 0; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Étudiants actifs</p>
+                    </div>
+                </div>
+                
+                <div class="stat-item" style="text-align: center;">
+                    <div style="position: relative; display: inline-block;">
+                        <div style="width: 60px; height: 3px; background: linear-gradient(135deg, #ff6b35, #f7931e); margin: 0 auto 1rem; border-radius: 2px;"></div>
+                        <div style="display: flex; align-items: baseline; justify-content: center; margin-bottom: 0.5rem;">
+                            <span class="counter" data-target="0" style="font-size: 2rem; font-weight: 700; color: #1e293b; font-family: 'Inter', sans-serif; line-height: 1;">0</span>
+                            <span style="font-size: 1.25rem; font-weight: 600; color: #ff6b35; margin-left: 0.25rem;">€</span>
+                        </div>
+                        <p style="font-size: 0.875rem; color: #64748b; margin: 0; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Coût d'entrée</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Stats Section End -->
+
+    <!-- Types de Partenariats Section Start -->
+    <section class="section" id="types-partenariats" style="background: #fef7ed; padding: 6rem 0;">
+        <div class="container">
+            <div class="section-title" style="text-align: center; margin-bottom: 4rem;">
+                <p style="color: #ff6b35; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; font-size: 0.875rem;">Nos partenariats</p>
+                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #1e293b; margin-bottom: 1rem;">
+                    Découvrez nos différents types de partenariats
+                </h2>
+                <p style="font-size: 1.25rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                    Des opportunités variées pour promouvoir votre marque et soutenir la communauté
+                </p>
+            </div>
+            
+            <div class="grid" style="display: grid; gap: 3rem;">
+                <!-- Bons Plans -->
+                <div class="card" style="background: white; border-radius: 20px; padding: 3rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; border: 1px solid rgba(0, 0, 0, 0.05);">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; min-height: 320px;">
+                        <div>
+                            <h3 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: #1e293b;">Bons Plans & Réductions</h3>
+                            <p style="font-size: 1.125rem; color: #64748b; margin-bottom: 2rem; line-height: 1.6;">
+                                Proposez des offres exclusives aux étudiants et habitants des communes. 
+                                Restaurateurs, commerçants, services... Tous peuvent promouvoir leurs produits 
+                                dans notre section dédiée "Bons Plans".
+                            </p>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; font-size: 1rem; color: #1e293b;">
+                                    <i class="fas fa-check" style="color: #10b981; font-size: 1.125rem;"></i>
+                                    Visibilité ciblée sur votre audience
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; font-size: 1rem; color: #1e293b;">
+                                    <i class="fas fa-check" style="color: #10b981; font-size: 1.125rem;"></i>
+                                    Promotion gratuite de vos offres
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; font-size: 1rem; color: #1e293b;">
+                                    <i class="fas fa-check" style="color: #10b981; font-size: 1.125rem;"></i>
+                                    Accès direct aux étudiants et habitants
+                                </li>
+                            </ul>
+                        </div>
+                        <div style="position: relative; display: flex; align-items: center; justify-content: center; height: 100%;">
+                            <img src="img/promo.png" alt="Bons plans étudiants" style="width: 100%; height: 280px; object-fit: cover; border-radius: 15px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
+                            <div style="position: absolute; top: 30px; right: 20px; width: 50px; height: 50px; background: linear-gradient(135deg, #ff6b35, #f7931e); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; color: white; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);">
+                                <i class="fas fa-tags"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Soutien Associatif -->
+                <div class="card" style="background: white; border-radius: 20px; padding: 3rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; border: 1px solid rgba(0, 0, 0, 0.05);">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; min-height: 320px;">
+                        <div style="order: 2;">
+                            <h3 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: #1e293b;">Soutien Associatif</h3>
+                            <p style="font-size: 1.125rem; color: #64748b; margin-bottom: 2rem; line-height: 1.6;">
+                                Soutenez des associations et projets associatifs. Nous vous accompagnons 
+                                pour trouver la bonne association selon la catégorie, le projet, 
+                                la localisation et les événements qui vous correspondent.
+                            </p>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; font-size: 1rem; color: #1e293b;">
+                                    <i class="fas fa-check" style="color: #10b981; font-size: 1.125rem;"></i>
+                                    Matching personnalisé avec les associations
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; font-size: 1rem; color: #1e293b;">
+                                    <i class="fas fa-check" style="color: #10b981; font-size: 1.125rem;"></i>
+                                    Impact social et RSE valorisé
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; font-size: 1rem; color: #1e293b;">
+                                    <i class="fas fa-check" style="color: #10b981; font-size: 1.125rem;"></i>
+                                    Accompagnement personnalisé
+                                </li>
+                            </ul>
+                        </div>
+                        <div style="order: 1; position: relative; display: flex; align-items: center; justify-content: center; height: 100%;">
+                            <img src="img/rse.jpg" alt="Soutien associatif" style="width: 100%; height: 280px; object-fit: cover; border-radius: 15px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
+                            <div style="position: absolute; top: 30px; right: 20px; width: 50px; height: 50px; background: linear-gradient(135deg, #ff6b35, #f7931e); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; color: white; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Événements Temporaires -->
+                <div class="card" style="background: white; border-radius: 20px; padding: 3rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; border: 1px solid rgba(0, 0, 0, 0.05);">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; min-height: 320px;">
+                        <div>
+                            <h3 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: #1e293b;">Événements Temporaires</h3>
+                            <p style="font-size: 1.125rem; color: #64748b; margin-bottom: 2rem; line-height: 1.6;">
+                                Organisez des événements temporaires comme des expositions, conférences, 
+                                ateliers... Nous mettons en avant votre événement sur l'application 
+                                pour toucher un maximum de participants.
+                            </p>
+                            <ul style="list-style: none; padding: 0;">
+                                <li style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; font-size: 1rem; color: #1e293b;">
+                                    <i class="fas fa-check" style="color: #10b981; font-size: 1.125rem;"></i>
+                                    Promotion d'événements temporaires
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; font-size: 1rem; color: #1e293b;">
+                                    <i class="fas fa-check" style="color: #10b981; font-size: 1.125rem;"></i>
+                                    Inscription et gestion des participants
+                                </li>
+                                <li style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; font-size: 1rem; color: #1e293b;">
+                                    <i class="fas fa-check" style="color: #10b981; font-size: 1.125rem;"></i>
+                                    Communication ciblée
+                                </li>
+                            </ul>
+                        </div>
+                        <div style="position: relative; display: flex; align-items: center; justify-content: center; height: 100%;">
+                            <img src="img/festival.jpg" alt="Événements temporaires" style="width: 100%; height: 280px; object-fit: cover; border-radius: 15px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);">
+                            <div style="position: absolute; top: 30px; right: 20px; width: 50px; height: 50px; background: linear-gradient(135deg, #ff6b35, #f7931e); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; color: white; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);">
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Types de Partenariats Section End -->
+
+
+    <!-- Contact Section Start -->
+    <section class="section" id="contact" style="background: white; padding: 6rem 0;">
+        <div class="container">
+            <div class="section-title" style="text-align: center; margin-bottom: 4rem;">
+                <p style="color: #ff6b35; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; font-size: 0.875rem;">Contact</p>
+                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #1e293b; margin-bottom: 1rem;">
+                    Parlons de votre partenariat
+                </h2>
+                <p style="font-size: 1.25rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                    Notre équipe est là pour vous accompagner dans votre projet de partenariat.
+                </p>
+            </div>
+            
+            <div class="grid grid-2" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="card" style="background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 1px solid rgba(0, 0, 0, 0.05);">
+                    <h3 style="margin-bottom: 1rem; color: #1e293b;">Informations de contact</h3>
+                    <p style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; color: #64748b;">
+                        <i class="fas fa-map-marker-alt" style="color: #ff6b35;"></i> 3 Résidence du parc, Massy
+                    </p>
+                    <p style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem; color: #64748b;">
+                        <i class="fas fa-phone" style="color: #ff6b35;"></i> +33 782582528
+                    </p>
+                    <p style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 2rem; color: #64748b;">
+                        <i class="fas fa-envelope" style="color: #ff6b35;"></i> pulse.pro.event@gmail.com
+                    </p>
+                    
+                    <div style="display: flex; gap: 0.5rem; margin-top: 2rem;">
+                        <a href="#" class="btn btn-secondary" style="background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0; padding: 0.75rem 1rem; border-radius: 10px; text-decoration: none; transition: all 0.3s ease;">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="btn btn-secondary" style="background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0; padding: 0.75rem 1rem; border-radius: 10px; text-decoration: none; transition: all 0.3s ease;">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="btn btn-secondary" style="background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0; padding: 0.75rem 1rem; border-radius: 10px; text-decoration: none; transition: all 0.3s ease;">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="btn btn-secondary" style="background: #f8fafc; color: #64748b; border: 1px solid #e2e8f0; padding: 0.75rem 1rem; border-radius: 10px; text-decoration: none; transition: all 0.3s ease;">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="card" style="background: white; border-radius: 20px; padding: 2.5rem; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border: 1px solid rgba(0, 0, 0, 0.05);">
+                    <form id="contactForm" action="contact.php" method="POST">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                            <div>
+                                <label for="name" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1e293b;">Nom complet</label>
+                                <input type="text" id="name" name="name" class="form-control" required style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 1rem;">
+                            </div>
+                            <div>
+                                <label for="email" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1e293b;">Email</label>
+                                <input type="email" id="email" name="email" class="form-control" required style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 1rem;">
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 1rem;">
+                            <label for="subject" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1e293b;">Sujet</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 1rem;">
+                        </div>
+                        
+                        <div style="margin-bottom: 2rem;">
+                            <label for="message" style="display: block; margin-bottom: 0.5rem; font-weight: 600; color: #1e293b;">Message</label>
+                            <textarea id="message" name="message" class="form-control" rows="5" required style="width: 100%; padding: 0.75rem; border: 1px solid #e2e8f0; border-radius: 10px; font-size: 1rem; resize: vertical;"></textarea>
+                        </div>
+                        
+                        <div>
+                            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%; background: linear-gradient(135deg, #ff6b35, #f7931e); color: white; border: none; padding: 1rem 2rem; border-radius: 30px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: all 0.3s ease;">
+                                <i class="fas fa-paper-plane"></i>
+                                Envoyer le message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Footer Start -->
+    <footer class="footer" style="background: #0f172a; color: white; padding: 4rem 0 2rem;">
+        <div class="container">
+            <div class="footer-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+                <div class="footer-section">
+                    <h4 style="margin-bottom: 1.5rem; color: white;">Pulse</h4>
+                    <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 0.5rem; display: block;">L'application qui révolutionne la communication universitaire en centralisant tous les événements et informations sur une seule plateforme intuitive.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 style="margin-bottom: 1.5rem; color: white;">Liens rapides</h4>
+                    <a href="index.html#about" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; margin-bottom: 0.5rem; display: block;">À propos</a>
+                    <a href="index.html#features" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; margin-bottom: 0.5rem; display: block;">Fonctionnalités</a>
+                    <a href="index.html#benefits" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; margin-bottom: 0.5rem; display: block;">Avantages</a>
+                    <a href="page2 Nath.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; margin-bottom: 0.5rem; display: block;">L'équipe</a>
+                    <a href="partenariats.html" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; margin-bottom: 0.5rem; display: block;">Partenariats</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 style="margin-bottom: 1.5rem; color: white;">Support</h4>
+                    <a href="mentions-legales.pdf" target="_blank" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; margin-bottom: 0.5rem; display: block;">Mentions légales</a>
+                    <a href="#" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; margin-bottom: 0.5rem; display: block;">Politique de confidentialité</a>
+                    <a href="#" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; margin-bottom: 0.5rem; display: block;">Conditions d'utilisation</a>
+                    <a href="#" style="color: rgba(255, 255, 255, 0.7); text-decoration: none; margin-bottom: 0.5rem; display: block;">FAQ</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 style="margin-bottom: 1.5rem; color: white;">Contact</h4>
+                    <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 0.5rem; display: block;">3 Résidence du parc, Massy</p>
+                    <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 0.5rem; display: block;">+33 782582528</p>
+                    <p style="color: rgba(255, 255, 255, 0.7); margin-bottom: 0.5rem; display: block;">pulse.pro.event@gmail.com</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom" style="border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 2rem; text-align: center; color: rgba(255, 255, 255, 0.7);">
+                <p style="margin: 0;">&copy; 2024 Pulse. Tous droits réservés. Conçu avec ❤️ pour la communauté étudiante.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" style="position: fixed; bottom: 2rem; right: 2rem; width: 50px; height: 50px; background: #ff6b35; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); transition: all 0.3s ease; opacity: 0; visibility: hidden; transform: translateY(20px);">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Custom Cursor Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.querySelector('.custom-cursor');
+            
+            document.addEventListener('mousemove', function(e) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+            
+            // Add hover effect to interactive elements
+            const interactiveElements = document.querySelectorAll('a, button, .nav-link, .dropdown-item, .btn');
+            
+            interactiveElements.forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    cursor.classList.add('hover');
+                });
+                
+                element.addEventListener('mouseleave', function() {
+                    cursor.classList.remove('hover');
+                });
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Back to top functionality
+            const backToTop = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTop.style.opacity = '1';
+                    backToTop.style.visibility = 'visible';
+                    backToTop.style.transform = 'translateY(0)';
+                } else {
+                    backToTop.style.opacity = '0';
+                    backToTop.style.visibility = 'hidden';
+                    backToTop.style.transform = 'translateY(20px)';
+                }
+            });
+
+            backToTop.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Counter animation
+            function animateCounter(element, target, duration = 4000) {
+                let start = 0;
+                const increment = target / (duration / 16);
+                
+                function updateCounter() {
+                    start += increment;
+                    if (start < target) {
+                        element.textContent = Math.floor(start);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        element.textContent = target;
+                    }
+                }
+                updateCounter();
+            }
+
+            // Intersection Observer for counter animation
+            const observerOptions = {
+                threshold: 0.5,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const counterObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const counter = entry.target;
+                        const target = parseInt(counter.getAttribute('data-target'));
+                        animateCounter(counter, target);
+                        counterObserver.unobserve(counter);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all counters
+            document.querySelectorAll('.counter').forEach(counter => {
+                counterObserver.observe(counter);
+            });
+        });
+    </script>
+</body>
+
+</html>

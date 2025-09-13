@@ -447,37 +447,37 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize scroll progress
     initScrollProgress();
     
-    // Add theme toggle (light/dark mode)
-    function initThemeToggle() {
-        const themeToggle = document.createElement('button');
-        themeToggle.innerHTML = '🌙';
-        themeToggle.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: none;
-            background: rgba(255, 255, 255, 0.9);
-            color: #ff6b35;
-            font-size: 20px;
-            cursor: pointer;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        `;
+    // // Add theme toggle (light/dark mode)
+    // function initThemeToggle() {
+    //     const themeToggle = document.createElement('button');
+    //     themeToggle.innerHTML = 'lune';
+    //     themeToggle.style.cssText = `
+    //         position: fixed;
+    //         top: 20px;
+    //         right: 20px;
+    //         width: 50px;
+    //         height: 50px;
+    //         border-radius: 50%;
+    //         border: none;
+    //         background: rgba(255, 255, 255, 0.9);
+    //         color: #ff6b35;
+    //         font-size: 20px;
+    //         cursor: pointer;
+    //         z-index: 1000;
+    //         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    //         transition: all 0.3s ease;
+    //     `;
         
-        document.body.appendChild(themeToggle);
+    //     document.body.appendChild(themeToggle);
         
-        themeToggle.addEventListener('click', function() {
-            document.body.classList.toggle('dark-theme');
-            this.innerHTML = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
-        });
-    }
+    //     themeToggle.addEventListener('click', function() {
+    //         document.body.classList.toggle('dark-theme');
+            // this.innerHTML = document.body.classList.contains('dark-theme') ? 'soleil' : 'lune';
+    //     });
+    // }
     
-    // Initialize theme toggle
-    initThemeToggle();
+    // // Initialize theme toggle
+    // initThemeToggle();
     
     // Add performance monitoring
     function initPerformanceMonitoring() {

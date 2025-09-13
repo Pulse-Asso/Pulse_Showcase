@@ -1,5 +1,5 @@
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>Pulse - L'application étudiante</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -33,5 +33,15 @@
     <!-- Template Stylesheet -->
     <link href="../css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <style>
+    .btn-primary-gradient {
+        background-image: linear-gradient(135deg, #ff6b35, #f7931e);
+        color: #fff;
+        border: none;
+    }
+    .btn-primary-gradient:hover, .btn-primary-gradient:focus {
+        color: #fff;
+        filter: brightness(0.95);
+    }
+    </style>
 </head>
-

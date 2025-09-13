@@ -6,7 +6,7 @@
             </a>
             
             <ul class="navbar-nav">
-                <li><a href="#hero" class="nav-link">À propos</a></li>
+                <li><a href="index.php#hero" class="nav-link">À propos</a></li>
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle">Fonctionnalités</a>
                     <ul class="dropdown-menu">
