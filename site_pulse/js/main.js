@@ -448,63 +448,31 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollProgress();
     
     // Guard: remove any injected dark-mode toggle widgets if present
-    (function removeDarkModeWidgets() {
-        const selectors = [
-            '.darkmode-toggle',
-            '#darkmode-toggle',
-            '[data-theme-toggle]',
-            '.theme-toggle',
-            '.color-mode-toggle',
-            '.darkmode-layer',
-            '.darkmode-background',
-            'button[aria-label*="dark"]',
-            'button[aria-label*="Dark"]',
-            'button[title*="dark"]',
-            'button[title*="Dark"]'
-        ];
-        function prune() {
-            selectors.forEach(sel => {
-                document.querySelectorAll(sel).forEach(el => {
-                    el.remove();
-                });
-            });
-        }
-        prune();
-        const observer = new MutationObserver(prune);
-        observer.observe(document.documentElement, { childList: true, subtree: true });
-    })();
-
-    // // Add theme toggle (light/dark mode)
-    // function initThemeToggle() {
-    //     const themeToggle = document.createElement('button');
-    //     themeToggle.innerHTML = 'lune';
-    //     themeToggle.style.cssText = `
-    //         position: fixed;
-    //         top: 20px;
-    //         right: 20px;
-    //         width: 50px;
-    //         height: 50px;
-    //         border-radius: 50%;
-    //         border: none;
-    //         background: rgba(255, 255, 255, 0.9);
-    //         color: #ff6b35;
-    //         font-size: 20px;
-    //         cursor: pointer;
-    //         z-index: 1000;
-    //         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    //         transition: all 0.3s ease;
-    //     `;
-        
-    //     document.body.appendChild(themeToggle);
-        
-    //     themeToggle.addEventListener('click', function() {
-    //         document.body.classList.toggle('dark-theme');
-            // this.innerHTML = document.body.classList.contains('dark-theme') ? 'soleil' : 'lune';
-    //     });
-    // }
-    
-    // // Initialize theme toggle
-    // initThemeToggle();
+    // (function removeDarkModeWidgets() {
+    //     const selectors = [
+    //         '.darkmode-toggle',
+    //         '#darkmode-toggle',
+    //         '[data-theme-toggle]',
+    //         '.theme-toggle',
+    //         '.color-mode-toggle',
+    //         '.darkmode-layer',
+    //         '.darkmode-background',
+    //         'button[aria-label*="dark"]',
+    //         'button[aria-label*="Dark"]',
+    //         'button[title*="dark"]',
+    //         'button[title*="Dark"]'
+    //     ];
+    //     function prune() {
+    //         selectors.forEach(sel => {
+    //             document.querySelectorAll(sel).forEach(el => {
+    //                 el.remove();
+    //             });
+    //         });
+    //     }
+    //     prune();
+    //     const observer = new MutationObserver(prune);
+    //     observer.observe(document.documentElement, { childList: true, subtree: true });
+    // })();
     
     // Add performance monitoring
     function initPerformanceMonitoring() {
