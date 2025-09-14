@@ -42,7 +42,9 @@ if (empty($_SESSION['csrf_token'])) {
 
             <div style="max-width: 900px; margin: 0 auto;">
                 <div class="card" style="background: #ffffff; border-radius: 20px; padding: 2rem; box-shadow: 0 10px 25px rgba(2,8,20,0.06); border: 1px solid rgba(2,8,20,0.06);">
-                    <form id="contactForm" action="../action/contact.php" method="POST">
+                    
+                    <!-- Début formulaire -->
+                    <form id="contactForm" action="../Actions/contact.php" method="POST">
                         <div style="margin-bottom: 1.25rem;">
                             <label for="choice" style="display:block; font-weight:600; color:#1e293b; margin-bottom: .5rem;">Je souhaite :</label>
                             <select id="choice" name="choice" required style="width:100%; padding: .9rem 1rem; border:1px solid #e2e8f0; border-radius: 12px; background:#fff; color:#0f172a;">
@@ -161,58 +163,10 @@ if (empty($_SESSION['csrf_token'])) {
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <!-- JavaScript Libraries -->
-    <script>
-    (function() {
-        const choiceEl = document.getElementById('choice');
-        const rdvSection = document.getElementById('rendez-vous-section');
-        const qSection = document.getElementById('question-section');
-
-        const rdvRequiredIds = ['rdv_nom','rdv_prenom','etablissement','sites','etudiants','rdv_email','rdv_telephone','disponibilites'];
-        const qRequiredIds = ['q_nom','q_prenom','q_email','q_telephone','message'];
-
-        function setRequired(ids, required) {
-            ids.forEach(id => {
-                const el = document.getElementById(id);
-                if (el) {
-                    if (required) {
-                        el.setAttribute('required','required');
-                    } else {
-                        el.removeAttribute('required');
-                    }
-                }
-            });
-        }
-
-        function toggleSections() {
-            const val = choiceEl.value;
-            if (val === 'rendez-vous') {
-                rdvSection.style.display = '';
-                qSection.style.display = 'none';
-                setRequired(rdvRequiredIds, true);
-                setRequired(qRequiredIds, false);
-            } else if (val === 'question') {
-                rdvSection.style.display = 'none';
-                qSection.style.display = '';
-                setRequired(rdvRequiredIds, false);
-                setRequired(qRequiredIds, true);
-            } else {
-                rdvSection.style.display = 'none';
-                qSection.style.display = 'none';
-                setRequired(rdvRequiredIds, false);
-                setRequired(qRequiredIds, false);
-            }
-        }
-
-        choiceEl.addEventListener('change', toggleSections);
-        toggleSections();
-    })();
-    </script>
-
     <!-- Template Javascript -->
     <script src="../js/main.js"></script>
     <script src="../js/cursor.js"></script>
-    
+    <script src="../js/form-toggle.js"></script>
 </body>
 
 </html>

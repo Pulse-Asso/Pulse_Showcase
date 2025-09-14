@@ -17,7 +17,7 @@
                 </li>
                 <li><a href="equipe.php" class="nav-link">L'équipe</a></li>
                 <li><a href="partenariats.php" class="nav-link">Partenariats</a></li>
-                <li><a href="https://forms.gle/u26uAQ3QdyvvLwHX9" class="btn btn-primary">Obtenir un devis</a></li>
+                <li><a href="contact.php" class="btn btn-primary">Obtenir un devis</a></li>
             </ul>
             
             <button class="navbar-toggler">

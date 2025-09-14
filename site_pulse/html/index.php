@@ -24,7 +24,7 @@
                 <h1 class="hero-title">Booster la vie locale avec <span class="highlight">GENPULSE</span></h1>
                 <p class="hero-subtitle">Un outil unique qui rassemble la vie associative, étudiante et citoyenne en un seul endroit</p>
                 <div class="hero-buttons">
-                    <a href="#features" class="btn btn-primary btn-lg">
+                    <a href="#profile-features" class="btn btn-primary btn-lg">
                         <i class="fas fa-rocket"></i>
                         En savoir plus
                     </a>

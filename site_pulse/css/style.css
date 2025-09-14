@@ -32,54 +32,34 @@
     box-sizing: border-box;
 }
 
-/* Defensive: hide any dark-mode toggle widgets injected by third-party scripts */
-.darkmode-toggle,
-#darkmode-toggle,
-[data-theme-toggle],
-.theme-toggle,
-.color-mode-toggle,
-.darkmode-layer,
-.darkmode-background,
-button[aria-label*="dark"],
-button[aria-label*="Dark"],
-button[title*="dark"],
-button[title*="Dark"] { display: none !important; }
-
-
-/* Masquer le curseur natif partout (y compris liens/boutons) */
-html, body { cursor: none; }
-a, button, .nav-link, .dropdown-item, .btn, [role="button"],
-input[type="button"], input[type="submit"], label, select {
-  cursor: none !important;
+/* Curseur personnalisé - Effet global */
+body {
+    cursor: none;
 }
 
-/* Facultatif: garder l'I‑beam dans les champs de texte */
-/* input, textarea { cursor: text; } */
-
-/* Curseur personnalisé */
 .custom-cursor {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: #ff5a16;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 9999;
-  transition: transform .15s ease, background-color .2s, box-shadow .2s, opacity .2s;
+    position: fixed;
+    width: 40px;
+    height: 40px;
+    background: var(--primary);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transition: all 0s ease;
+    mix-blend-mode: difference;
+    transform: translate(-50%, -50%);
 }
 
-/* Effet au survol d'éléments interactifs */
 .custom-cursor.hover {
-  transform: translate(-50%, -50%) scale(1.5);
-  box-shadow: 0 0 0 3px rgba(255,90,22,.35);
+    background: white;
+    transform: scale(1.5);
 }
 
-.custom-cursor.active{
-  transform: translate(-50%, -50%) scale(0.9) !important;
-  box-shadow: 0 0 0 6px rgba(255,90,22,.25);
+/* Empêcher le curseur de grossir lors du clic sur les boutons */
+.btn:active .custom-cursor,
+button:active .custom-cursor,
+a:active .custom-cursor {
+    transform: scale(1) !important;
 }
 
 body {
@@ -116,9 +96,6 @@ p {
     color: var(--text-secondary);
     margin-bottom: 1rem;
 }
-
-/* 0) Hygiène img pour éviter l'espace fantôme */
-img { display: block; max-width: 100%; height: auto; }
 
 /* Container */
 .container {
@@ -309,7 +286,7 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 .hero-section.association-page {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/im7.jpg') !important;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/assohero.jpg') !important;
     background-size: cover !important;
     background-position: center !important;
     background-attachment: fixed !important;
@@ -317,6 +294,13 @@ img { display: block; max-width: 100%; height: auto; }
 
 .hero-section.commune-page {
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/im10.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+}
+
+.hero-section.partenariats-page {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/partenariat1.jpg') !important;
     background-size: cover !important;
     background-position: center !important;
     background-attachment: fixed !important;
@@ -405,6 +389,58 @@ img { display: block; max-width: 100%; height: auto; }
     animation-delay: 2.2s;
 }
 
+/* Positionnement des bulles pour Partenariats */
+.hero-section.partenariats-page .floating-bubble:nth-child(1) {
+    top: 20%;
+    left: 7%;
+    animation-delay: 0s;
+}
+
+.hero-section.partenariats-page .floating-bubble:nth-child(2) {
+    top: 60%;
+    right: 8%;
+    animation-delay: 1.5s;
+}
+
+.hero-section.partenariats-page .floating-bubble:nth-child(3) {
+    bottom: 25%;
+    left: 15%;
+    animation-delay: 0.5s;
+}
+
+.hero-section.partenariats-page .floating-bubble:nth-child(4) {
+    top: 40%;
+    right: 2%;
+    animation-delay: 2.8s;
+}
+
+/* Hero content pour la page partenariats - une seule colonne centrée */
+.hero-section.partenariats-page .hero-content {
+    grid-template-columns: 1fr !important;
+    text-align: center !important;
+    justify-items: center;
+}
+
+/* Texte centré pour la page partenariats */
+.hero-section.partenariats-page .hero-text {
+    text-align: center !important;
+}
+
+/* Boutons hero pour la page partenariats - toujours côte à côte */
+.hero-section.partenariats-page .hero-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Boutons hero plus petits pour toutes les pages */
+.hero-section .btn-lg {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 0.9rem !important;
+}
+
 .hero-content {
     position: relative;
     z-index: 2;
@@ -491,7 +527,6 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 /* Hero Social Icon */
-
 .hero-social-icon {
     display: flex;
     justify-content: center;
@@ -525,7 +560,7 @@ img { display: block; max-width: 100%; height: auto; }
 /* ===== SECTIONS GÉNÉRALES ===== */
 /* Sections */
 .section {
-    padding: 4rem 0;
+    padding: 6rem 0;
 }
 
 .section-alt {
@@ -562,99 +597,109 @@ img { display: block; max-width: 100%; height: auto; }
     box-shadow: var(--shadow-xl);
 }
 
-/* Grid des features */
+/* Section Fonctionnalités personnalisées - Cartes avec images */
 .profile-features-grid {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
-    grid-template-columns: 1fr;
     margin-top: 3rem;
 }
 
-@media (min-width: 768px) {
-    .profile-features-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (min-width: 1120px) {
-    .profile-features-grid { grid-template-columns: repeat(3, 1fr); }
-}
-
-/* Carte */
 .profile-feature-card {
-    background: #fff;
-    border: 1px solid rgba(0,0,0,.05);
+    background: white;
     border-radius: var(--border-radius-lg);
+    padding: 0;
     box-shadow: var(--shadow);
-    color: inherit;
-    text-decoration: none;
-    display: flex;
-    flex-direction: column;      /* Texte + bouton en colonne */
-    min-height: 450px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    text-align: center;
+    position: relative;
     overflow: hidden;
-    transition: box-shadow .3s ease;
+    min-height: 450px; /* Hauteur minimale pour éviter le chevauchement */
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
-.profile-feature-card:hover { box-shadow: var(--shadow-xl); }
+.profile-feature-card:hover {
+    /* Retrait de l'animation de translation */
+    box-shadow: var(--shadow-xl);
+}
 
-/* Image */
+/* Image de la carte de fonctionnalité */
 .profile-feature-image {
     width: 100%;
     height: 200px;
     overflow: hidden;
+    position: relative;
 }
+
 .profile-feature-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
-    display: block;
+    transition: transform 0.3s ease;
 }
 
-/* Contenu */
-.profile-feature-content {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1.5rem;
-    flex: 1; /* occupe l'espace, pousse le bouton en bas */
+.profile-feature-card:hover .profile-feature-image img {
+    /* Retrait de l'animation de zoom sur l'image */
 }
 
+/* Contenu textuel de la carte */
 .profile-feature-card h3 {
-    font-size: clamp(1.25rem, 1.1rem + .6vw, 1.5rem);
+    font-size: 1.5rem;
     font-weight: 700;
+    margin: 1.5rem 1.5rem 1rem;
     color: var(--text-primary);
-    margin: 0;
 }
 
 .profile-feature-card p {
     color: var(--text-secondary);
+    margin: 0 1.5rem 3rem; /* Plus d'espace en bas pour éviter le chevauchement */
     line-height: 1.6;
-    margin: 0;
-    flex: 1; /* pousse le bouton vers le bas */
 }
 
-/* Bouton */
+/* Bouton de la carte avec effet hover */
 .profile-btn {
-    align-self: flex-end;        /* à droite sur desktop */
-    display: inline-flex;
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 30%;
+    padding: 0;
+    display: flex;
     align-items: center;
     justify-content: center;
-    gap: .5rem;
-    height: 50px;
-    padding: 0 1.25rem;
-    border-radius: 14px;
-    background: #FFE3B2;
-    color: #FF6B35;
+    transition: all 0.15s ease;
+    background: #FFE3B2; /* Nouvelle couleur de fond */
+    color: #FF6B35; /* Nouvelle couleur de la flèche */
     border: none;
-    font-weight: 600;
-    cursor: pointer;
-    transition: transform .2s ease, background .2s ease;
+    box-shadow: none; /* Suppression de toute ombre */
+    pointer-events: none; /* Empêche les clics sur le bouton lui-même */
 }
 
-.profile-btn:focus-visible { outline: 3px solid rgba(255,107,53,.5); outline-offset: 2px; }
-.profile-btn:hover { transform: scale(1.05); background: #FFD38C; }
+.profile-btn:hover {
+    background: #FFE3B2;
+    color: #FF6B35;
+    transform: scale(1.05);
+    box-shadow: none; /* Suppression de toute ombre au hover */
+}
 
-@media (max-width: 479px) {
-    .profile-btn { align-self: center; } /* centré sur mobile étroit */
+/* Effet hover pour transformer le bouton en "Découvrir →" */
+.profile-feature-card:hover .profile-btn {
+    width: auto;
+    padding: 0 1.5rem;
+    border-radius: 15px;
+}
+
+.profile-feature-card:hover .profile-btn::after {
+    content: " Découvrir";
+    margin-left: 0.5rem;
+    font-weight: 600;
+    color: #FF6B35; /* Couleur du texte "Découvrir" */
 }
 
 .card-icon {
@@ -958,7 +1003,7 @@ img { display: block; max-width: 100%; height: auto; }
     font-size: 2rem;
     color: white;
     position: relative;
-    animation: iconPulse 3s ease-in-out infinite;
+    animation: iconGenpulse 3s ease-in-out infinite;
     will-change: transform;
 }
 
@@ -1025,7 +1070,7 @@ img { display: block; max-width: 100%; height: auto; }
 
 .modern-stat-card:hover .stat-glow {
     opacity: 1;
-    animation: glowPulse 2s ease-in-out infinite;
+    animation: glowGenpulse 2s ease-in-out infinite;
 }
 
 /* Éléments décoratifs flottants */
@@ -1101,7 +1146,7 @@ img { display: block; max-width: 100%; height: auto; }
     }
 }
 
-@keyframes iconPulse {
+@keyframes iconGenpulse {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.1); }
 }
@@ -1116,7 +1161,7 @@ img { display: block; max-width: 100%; height: auto; }
     50% { transform: translateY(-5px); }
 }
 
-@keyframes glowPulse {
+@keyframes glowGenpulse {
     0%, 100% { opacity: 0.3; }
     50% { opacity: 0.6; }
 }
@@ -1261,7 +1306,7 @@ img { display: block; max-width: 100%; height: auto; }
 /* WeWard App Showcase Section */
 .app-showcase-section {
     background: white;
-    padding: clamp(3rem, 6vw, 6rem) 0; /* padding responsive et réduit */
+    padding: 10rem 0 6rem 0; /* Augmenté le padding-top de 6rem à 10rem */
     position: relative;
     overflow: hidden;
 }
@@ -1548,7 +1593,7 @@ img { display: block; max-width: 100%; height: auto; }
     font-size: 1rem;
 }
 
-Floating Elements
+/* Floating Elements */
 .floating-coins {
     position: absolute;
     top: 0;
@@ -2094,7 +2139,8 @@ Floating Elements
     display: flex;
     justify-content: center;
     align-items: center;
-    width: min(90vw, 520px);
+    min-height: 420px;
+    width: 380px;
     margin: 0 auto;
 }
 
@@ -2103,19 +2149,18 @@ Floating Elements
     max-width: 100%;
     height: auto;
     filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
-    /* Le téléphone reste dans le flux */
+    /* Retrait de l'animation hover sur le téléphone */
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 /* Icônes flottantes "like" et "notification" - Section "La raison d'être de GENPULSE" */
 .floating-likes img,
 .floating-notifications img {
-    position: absolute; /* décoratif => n'occupe pas de hauteur */
-    z-index: 0;
+    position: absolute;
+    z-index: 30; /* Au premier plan devant le téléphone */
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
     transition: transform 0.3s ease;
-    pointer-events: none;
 }
 
 /* Effet hover sur les icônes flottantes */
@@ -2141,14 +2186,20 @@ Floating Elements
         text-align: center;
     }
     
-    .phone-container { width: min(92vw, 360px); }
+    .phone-container {
+        min-height: 350px;
+        width: 320px;
+    }
     
     .phone-image {
         width: 250px;
     }
     
     .floating-likes img,
-    .floating-notifications img { width: 40px !important; height: 40px !important; }
+    .floating-notifications img {
+        width: 40px !important;
+        height: 40px !important;
+    }
 }
 
 /* Section Partenariats - Slider de logos */
@@ -2440,12 +2491,12 @@ Floating Elements
 .solution-cta {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: 4rem;
     align-items: center;
     background: var(--gradient-primary);
     border-radius: var(--border-radius-xl);
-    padding: 1rem;
-    margin: 2rem 0;
+    padding: 4rem;
+    margin: 4rem 0;
     color: white;
 }
 
@@ -2526,7 +2577,7 @@ Floating Elements
     .solution-cta {
         grid-template-columns: 1fr;
         gap: 2rem;
-        padding: 2rem 2rem 2rem;
+        padding: 2rem;
         text-align: center;
     }
     
@@ -5012,6 +5063,12 @@ Floating Elements
         align-items: center;
     }
     
+    /* Exception pour la page partenariats - boutons côte à côte même sur mobile */
+    .hero-section.partenariats-page .hero-buttons {
+        flex-direction: row !important;
+        justify-content: center;
+    }
+    
     .btn-primary-modern,
     .btn-secondary-modern {
         width: 100%;
@@ -5203,50 +5260,354 @@ Floating Elements
     }
 }
 
-
-/* ===== Ajouts: Boutons réseaux sociaux ===== */
-/* SOCIAL MEDIA START */
-.social a{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:60px;
-    height:60px;
-    border-radius:50%;
-    background:#1f2937;
-    color:#fff;
-    font-size:24px;
-    text-decoration:none;
-    transition:background .2s, transform .1s;
-}
-.social{ gap:16px !important; }
-.social a:hover{ background:#ff4d2d; transform:translateY(-1px); }
-.social a i{ line-height:1; }
-
-/* Responsive desktop */
-@media (min-width:768px){
-    .social a{ width:64px; height:64px; font-size:28px; }
-}
-/* SOCIAL MEDIA END */
-
-/* ===== Ajouts: Utilitaire de hauteur ===== */
-.min-vh-50 {
-    min-height: 50vh;
+/* Phone Mockup Styles */
+.phones-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    transform-origin: center;
 }
 
-/* 1) Bloc "mockup téléphone" générique */
-.hero-mockup { position: relative; width: min(90vw, 520px); margin-inline: auto; }
-.hero-mockup .phone-img { position: relative; z-index: 2; }
-.hero-mockup .bg-plate { position: absolute; inset: 12% -12% -8% -12%; background:#FDE1BC; border-radius:24px; z-index:1; pointer-events:none; }
-.hero-mockup .floaters { position: absolute; inset:0; z-index:0; pointer-events:none; }
+.phone-mockup {
+    width: 200px;
+    height: 400px;
+    background: #000;
+    border-radius: 30px;
+    padding: 8px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
 
-/* 2) Sections: paddings et séparateurs décoratifs */
-.section { padding-block: clamp(3rem, 6vw, 6rem); }
-.section .section-divider,
-.section .decor-dot { position:absolute; left:50%; transform:translateX(-50%); bottom:clamp(-1rem, -2vw, -2rem); pointer-events:none; }
+.phone-left {
+    transform: rotate(-15deg) translateY(-20px);
+    z-index: 2;
+}
 
-/* Contact top spacing */
-#contact.section { padding-top: clamp(2rem, 5vw, 4rem) !important; }
+.phone-right {
+    transform: rotate(15deg) translateY(20px);
+    z-index: 1;
+}
 
-/* 3) Container global (conserve largeur, normalise padding-inline) */
-.container { max-width: 1200px; padding-inline: 1rem; margin-inline: auto; }
+.phone-screen {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 22px;
+    overflow: hidden;
+    position: relative;
+}
+
+.phone-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    background: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.status-icons {
+    display: flex;
+    gap: 4px;
+    color: #000;
+}
+
+.phone-content {
+    padding: 16px;
+    height: calc(100% - 60px);
+    overflow-y: auto;
+}
+
+.location-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    color: #666;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: #f5f5f5;
+    border-radius: 20px;
+    padding: 8px 12px;
+    margin-bottom: 16px;
+    gap: 8px;
+}
+
+.search-bar input {
+    border: none;
+    background: none;
+    outline: none;
+    flex: 1;
+    font-size: 12px;
+}
+
+.categories {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.category-btn {
+    background: #f5f5f5;
+    border: none;
+    border-radius: 15px;
+    padding: 6px 12px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.category-btn.active {
+    background: #ff6b6b;
+    color: white;
+}
+
+.events-section, .popular-section {
+    margin-bottom: 16px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.section-header h3 {
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.see-all {
+    color: #ff6b6b;
+    text-decoration: none;
+    font-size: 10px;
+}
+
+.event-card {
+    background: #f9f9f9;
+    border-radius: 12px;
+    padding: 8px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.event-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.curved-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.event-info {
+    flex: 1;
+}
+
+.event-info h4 {
+    font-size: 10px;
+    margin: 0 0 4px 0;
+    font-weight: 600;
+}
+
+.event-location {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 8px;
+    color: #666;
+}
+
+.join-btn {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 4px 8px;
+    font-size: 8px;
+    cursor: pointer;
+}
+
+.phone-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    padding: 12px;
+    background: #fff;
+    border-top: 1px solid #eee;
+}
+
+.phone-nav i {
+    font-size: 16px;
+    color: #999;
+    cursor: pointer;
+}
+
+.phone-nav i.active {
+    color: #ff6b6b;
+}
+
+/* Phone Right - Collage Style */
+.phone-content.collage {
+    padding: 0;
+    position: relative;
+}
+
+/* Single Image Style */
+.phone-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 22px;
+    display: block;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 2px;
+    height: 100%;
+    padding: 8px;
+}
+
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.grid-item.large {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.overlay-text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 20px 16px 16px;
+    text-align: center;
+}
+
+.overlay-text h3 {
+    font-size: 12px;
+    margin: 0 0 8px 0;
+    font-weight: 600;
+}
+
+.login-btn {
+    background: linear-gradient(45deg, #ff6b6b, #ffa500);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 6px 16px;
+    font-size: 10px;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+.overlay-text p {
+    font-size: 8px;
+    margin: 0;
+    opacity: 0.8;
+}
+
+/* Orange Decorative Shapes */
+.orange-shape {
+    position: absolute;
+    background: linear-gradient(45deg, #ff6b6b, #ffa500);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.shape-1 {
+    width: 120px;
+    height: 60px;
+    top: -30px;
+    right: 50px;
+    border-radius: 60px 60px 0 0;
+    transform: rotate(45deg);
+}
+
+.shape-2 {
+    width: 80px;
+    height: 40px;
+    bottom: 50px;
+    left: 30px;
+    border-radius: 0 0 40px 40px;
+    transform: rotate(-30deg);
+}
+
+/* CTA Compact - Réduire l'espace entre les sections */
+.cta-compact {
+    padding-top: 0.5rem !important;
+    padding-bottom: 3rem !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .phones-container {
+        transform: scale(0.7);
+        gap: 1.5rem;
+    }
+    
+    .phone-mockup {
+        width: 200px;
+        height: 400px;
+    }
+    
+    .phone-left, .phone-right {
+        transform: none;
+    }
+    
+    .cta-compact {
+        padding-top: 0.25rem !important;
+        padding-bottom: 2rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .phones-container {
+        transform: scale(0.5);
+        gap: 1rem;
+    }
+    
+    .cta-compact {
+        padding-top: 0rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+}

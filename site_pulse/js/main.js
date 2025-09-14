@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize all components
     initSpinner();
-    // initNavbar();
+    initNavbar();
     initAnimations();
     initContactForm();
     initBackToTop();
@@ -102,48 +102,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Contact form handling
-    function initContactForm() {
-        const contactForm = document.getElementById('contactForm');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Get form data
-                const formData = new FormData(this);
-                
-                // Show loading state
-                const submitBtn = this.querySelector('button[type="submit"]');
-                const originalText = submitBtn.innerHTML;
-                submitBtn.innerHTML = '<div class="loading"></div> Envoi en cours...';
-                submitBtn.disabled = true;
-                
-                // Send form data
-                fetch('contact.php', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.status === 'success') {
-                        showNotification('Message envoyé avec succès !', 'success');
-                        contactForm.reset();
-                    } else {
-                        showNotification('Erreur : ' + data.message, 'error');
-                    }
-                })
-                .catch(error => {
-                    showNotification('Une erreur est survenue lors de l\'envoi du message.', 'error');
-                    console.error('Error:', error);
-                })
-                .finally(() => {
-                    // Reset button state
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.disabled = false;
-                });
-            });
-        }
-    }
     
     // Notification system
     function showNotification(message, type = 'info') {
