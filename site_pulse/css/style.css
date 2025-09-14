@@ -265,7 +265,7 @@ p {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/im7.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/assohero.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -286,7 +286,7 @@ p {
 }
 
 .hero-section.association-page {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/im7.jpg') !important;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/assohero.jpg') !important;
     background-size: cover !important;
     background-position: center !important;
     background-attachment: fixed !important;
