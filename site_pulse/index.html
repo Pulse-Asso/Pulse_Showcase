@@ -31,6 +31,23 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    
+    <!-- Responsive Stats Styles -->
+    <style>
+        @media (max-width: 768px) {
+            .modern-stats-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1.5rem !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .modern-stats-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -274,73 +291,61 @@
 
 
     <!-- section stats Start -->
-    <section class="section stats-section modern-stats-section">
-        <div class="stats-background">
-            <div class="floating-particles"></div>
-            <div class="gradient-overlay"></div>
-        </div>
-        
+    <section class="section modern-stats-section" style="background: white; padding: 4rem 0;">
         <div class="container">
-            <div class="section-title animated-title">
-                <h2 class="glow-text">Adopté par des milliers d'utilisateurs dans 4 régions</h2>
-                <div class="title-underline"></div>
+            <div class="section-title" style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #1e293b; margin-bottom: 1rem;">
+                    Adopté par des milliers d'utilisateurs dans 4 régions
+                </h2>
+                <p style="font-size: 1.25rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                    Rejoignez une communauté dynamique qui ne cesse de grandir
+                </p>
             </div>
             
-            <div class="stats-grid modern-stats-grid">
-                <div class="stat-item modern-stat-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="stat-icon">
-                        <i class="fas fa-eye"></i>
+            <div class="modern-stats-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 2rem;">
+                <div class="stat-item" style="text-align: center;">
+                    <div style="position: relative; display: inline-block;">
+                        <div style="width: 60px; height: 3px; background: linear-gradient(135deg, #ff6b35, #f7931e); margin: 0 auto 1rem; border-radius: 2px;"></div>
+                        <div style="display: flex; align-items: baseline; justify-content: center; margin-bottom: 0.5rem;">
+                            <span class="counter" data-target="90" style="font-size: 2rem; font-weight: 700; color: #1e293b; font-family: 'Inter', sans-serif; line-height: 1;">0</span>
+                            <span style="font-size: 1.25rem; font-weight: 600; color: #ff6b35; margin-left: 0.25rem;">%</span>
+                        </div>
+                        <p style="font-size: 0.875rem; color: #64748b; margin: 0; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">De visibilité</p>
                     </div>
-                    <div class="stat-content">
-                        <h3 class="counter" data-target="90">0</h3>
-                        <span class="stat-symbol">%</span>
-                        <p>De visibilité</p>
-                    </div>
-                    <div class="stat-glow"></div>
                 </div>
                 
-                <div class="stat-item modern-stat-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stat-icon">
-                        <i class="fas fa-users"></i>
+                <div class="stat-item" style="text-align: center;">
+                    <div style="position: relative; display: inline-block;">
+                        <div style="width: 60px; height: 3px; background: linear-gradient(135deg, #ff6b35, #f7931e); margin: 0 auto 1rem; border-radius: 2px;"></div>
+                        <div style="display: flex; align-items: baseline; justify-content: center; margin-bottom: 0.5rem;">
+                            <span class="counter" data-target="1000" style="font-size: 2rem; font-weight: 700; color: #1e293b; font-family: 'Inter', sans-serif; line-height: 1;">0</span>
+                            <span style="font-size: 1.25rem; font-weight: 600; color: #ff6b35; margin-left: 0.25rem;">+</span>
+                        </div>
+                        <p style="font-size: 0.875rem; color: #64748b; margin: 0; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Étudiants actifs</p>
                     </div>
-                    <div class="stat-content">
-                        <h3 class="counter" data-target="1000">0</h3>
-                        <span class="stat-symbol">+</span>
-                        <p>Étudiants actifs</p>
-                    </div>
-                    <div class="stat-glow"></div>
                 </div>
                 
-                <div class="stat-item modern-stat-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="stat-icon">
-                        <i class="fas fa-calendar-alt"></i>
+                <div class="stat-item" style="text-align: center;">
+                    <div style="position: relative; display: inline-block;">
+                        <div style="width: 60px; height: 3px; background: linear-gradient(135deg, #ff6b35, #f7931e); margin: 0 auto 1rem; border-radius: 2px;"></div>
+                        <div style="display: flex; align-items: baseline; justify-content: center; margin-bottom: 0.5rem;">
+                            <span class="counter" data-target="150" style="font-size: 2rem; font-weight: 700; color: #1e293b; font-family: 'Inter', sans-serif; line-height: 1;">0</span>
+                            <span style="font-size: 1.25rem; font-weight: 600; color: #ff6b35; margin-left: 0.25rem;">+</span>
+                        </div>
+                        <p style="font-size: 0.875rem; color: #64748b; margin: 0; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Événements créés</p>
                     </div>
-                    <div class="stat-content">
-                        <h3 class="counter" data-target="150">0</h3>
-                        <span class="stat-symbol">+</span>
-                        <p>Événements créés</p>
-                    </div>
-                    <div class="stat-glow"></div>
                 </div>
                 
-                <div class="stat-item modern-stat-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="stat-icon">
-                        <i class="fas fa-heart"></i>
+                <div class="stat-item" style="text-align: center;">
+                    <div style="position: relative; display: inline-block;">
+                        <div style="width: 60px; height: 3px; background: linear-gradient(135deg, #ff6b35, #f7931e); margin: 0 auto 1rem; border-radius: 2px;"></div>
+                        <div style="display: flex; align-items: baseline; justify-content: center; margin-bottom: 0.5rem;">
+                            <span class="counter" data-target="100" style="font-size: 2rem; font-weight: 700; color: #1e293b; font-family: 'Inter', sans-serif; line-height: 1;">0</span>
+                            <span style="font-size: 1.25rem; font-weight: 600; color: #ff6b35; margin-left: 0.25rem;">%</span>
+                        </div>
+                        <p style="font-size: 0.875rem; color: #64748b; margin: 0; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Satisfaction utilisateurs</p>
                     </div>
-                    <div class="stat-content">
-                        <h3 class="counter" data-target="100">0</h3>
-                        <span class="stat-symbol">%</span>
-                        <p>Satisfaction utilisateurs</p>
-                    </div>
-                    <div class="stat-glow"></div>
                 </div>
-            </div>
-            
-            <div class="stats-decoration">
-                <div class="floating-element element-1"></div>
-                <div class="floating-element element-2"></div>
-                <div class="floating-element element-3"></div>
-                <div class="floating-element element-4"></div>
             </div>
         </div>
     </section>
