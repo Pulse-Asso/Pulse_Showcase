@@ -1,4 +1,4 @@
-// Main JavaScript file for Pulse website - WeWard Style
+// Main JavaScript file for Genpulse website - WeWard Style
 document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize all components
@@ -509,7 +509,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Video functionality now uses native HTML5 controls
     
     // Add final initialization
-    console.log('Pulse website initialized successfully - WeWard Style with Orange Theme');
+    console.log('Genpulse website initialized successfully - WeWard Style with Orange Theme');
     
     // Dispatch custom event for other scripts
     window.dispatchEvent(new CustomEvent('pulseInitialized', {
