@@ -1,30 +1,32 @@
 // Curseur personnalisé START
         document.addEventListener('DOMContentLoaded', function() {
             const cursor = document.querySelector('.custom-cursor');
-            
-            document.addEventListener('mousemove', function(e) {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-            });
 
-            // Effet au clic
-            document.addEventListener('mousedown', function() {
-                cursor.classList.add('active');
-            });
-            document.addEventListener('mouseup', function() {
-                cursor.classList.remove('active');
-            });
-            
-            // Add hover effect to interactive elements
-            const interactiveElements = document.querySelectorAll('a, button, .nav-link, .dropdown-item, .btn');
-            interactiveElements.forEach(element => {
-                element.addEventListener('mouseenter', function() {
-                    cursor.classList.add('hover');
+            if (cursor) {
+                document.addEventListener('mousemove', function(e) {
+                    cursor.style.left = e.clientX + 'px';
+                    cursor.style.top = e.clientY + 'px';
                 });
-                element.addEventListener('mouseleave', function() {
-                    cursor.classList.remove('hover');
+
+                // Effet au clic
+                document.addEventListener('mousedown', function() {
+                    cursor.classList.add('active');
                 });
-            });
+                document.addEventListener('mouseup', function() {
+                    cursor.classList.remove('active');
+                });
+
+                // Add hover effect to interactive elements
+                const interactiveElements = document.querySelectorAll('a, button, .nav-link, .dropdown-item, .btn');
+                interactiveElements.forEach(element => {
+                    element.addEventListener('mouseenter', function() {
+                        cursor.classList.add('hover');
+                    });
+                    element.addEventListener('mouseleave', function() {
+                        cursor.classList.remove('hover');
+                    });
+                });
+            }
 
             // Animation des compteurs (une seule fois) - Optimisée pour les performances
             let countersAnimated = false;

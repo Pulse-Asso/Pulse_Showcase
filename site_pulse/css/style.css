@@ -55,6 +55,11 @@ body {
     transform: scale(1.5);
 }
 
+.custom-cursor.active {
+    transform: scale(0.85);
+    filter: brightness(1.2);
+}
+
 /* Empêcher le curseur de grossir lors du clic sur les boutons */
 .btn:active .custom-cursor,
 button:active .custom-cursor,

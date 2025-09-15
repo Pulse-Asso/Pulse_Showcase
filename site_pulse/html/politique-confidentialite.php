@@ -2,7 +2,7 @@
 <html lang="fr">
 
 <!-- Head start -->
-<?php include '../components/head.php'; ?>
+<?php include '../Components/head.php'; ?>
 <!-- Head End -->
 
 <body>
@@ -16,7 +16,7 @@
     <!-- Spinner End -->
 
     <!-- Navbar Start -->
-    <?php include '../components/navbar.php'; ?>
+    <?php include '../Components/navbar.php'; ?>
     <!-- Navbar End -->
 
     <!-- Hero Section Start -->
@@ -120,7 +120,7 @@
     <!-- Politique de Confidentialité Content End -->
 
     <!-- Footer Start -->
-    <?php include '../components/footer.php'; ?>
+    <?php include '../Components/footer.php'; ?>
     <!-- Footer End -->
 
     <!-- Back to Top -->

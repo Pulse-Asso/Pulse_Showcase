@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php include '../components/head.php'; ?>
+<?php include '../Components/head.php'; ?>
 
 <body>
     <!-- Custom Cursor -->
@@ -13,7 +13,7 @@
     </div>
     <!-- Spinner End -->
 
-<?php include '../components/navbar.php'; ?>
+<?php include '../Components/navbar.php'; ?>
 
 
     <!-- Hero Section Start -->
@@ -397,11 +397,11 @@
     <!-- section cta End -->
 
     <!-- section contact Start -->
-    <?php include '../components/contact.php'; ?>
+    <?php include '../Components/contact.php'; ?>
     <!-- section contact End -->
 
     <!-- section footer Start -->
-    <?php include '../components/footer.php'; ?>
+    <?php include '../Components/footer.php'; ?>
     <!-- section footer End -->
 
     <!-- Back to Top -->

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php include '../components/head.php'; ?>
+<?php include '../Components/head.php'; ?>
 
 <body>
     <!-- Custom Cursor -->
     <div class="custom-cursor"></div>
     
     <!-- Navbar Start -->
-    <?php include '../components/navbar.php'; ?>
+    <?php include '../Components/navbar.php'; ?>
     <!-- Navbar End -->
      
     <!-- Hero Section Start -->
@@ -217,11 +217,11 @@
     <!-- Types de Partenariats Section End -->
 
     <!-- Contact Section Start -->
-    <?php include '../components/contact.php'; ?>
+    <?php include '../Components/contact.php'; ?>
     <!-- Contact Section End -->
 
     <!-- Footer Start -->
-    <?php include '../components/footer.php'; ?>
+    <?php include '../Components/footer.php'; ?>
     <!-- Footer End -->
 
     <!-- Back to Top -->

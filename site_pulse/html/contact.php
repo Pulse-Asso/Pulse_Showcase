@@ -9,7 +9,7 @@ if (empty($_SESSION['csrf_token'])) {
 <!DOCTYPE html>
 <html lang="fr">
 
-<?php include '../components/head.php'; ?>
+<?php include '../Components/head.php'; ?>
 
 <body>
     <!-- Custom Cursor -->
@@ -21,7 +21,7 @@ if (empty($_SESSION['csrf_token'])) {
     </div>
     <!-- Spinner End -->
 
-<?php include '../components/navbar.php'; ?>
+<?php include '../Components/navbar.php'; ?>
 
     <!-- Contact/Devis Section Start -->
     <section class="section" id="contact" style="background: #fff; padding: 6rem 0;">
@@ -156,7 +156,7 @@ if (empty($_SESSION['csrf_token'])) {
     <!-- Contact/Devis Section End -->
 
     <!-- Footer -->
-    <?php include '../components/footer.php'; ?>
+    <?php include '../Components/footer.php'; ?>
 
     <!-- Back to Top -->
     <a href="#" class="back-to-top">
