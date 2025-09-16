@@ -642,10 +642,7 @@ p {
     image-rendering: crisp-edges;
     transition: transform 0.3s ease;
 }
-
-.profile-feature-card:hover .profile-feature-image img {
-    /* Retrait de l'animation de zoom sur l'image */
-}
+/* hover zoom intentionally removed for better accessibility on mobile */
 
 /* Contenu textuel de la carte */
 .profile-feature-card h3 {
@@ -3524,7 +3521,7 @@ p {
 
 .features-modern-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -3615,7 +3612,7 @@ p {
 /* Responsive pour les fonctionnalités modernes */
 @media (max-width: 1024px) {
     .features-modern-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
@@ -3808,6 +3805,13 @@ p {
 }
 
 /* Responsive */
+@media (max-width: 1200px) {
+    /* Supprime tout décalage horizontal parasite dès les tailles laptop/tablette */
+    .admin-laptop-container {
+        margin-left: 0;
+    }
+}
+
 @media (max-width: 1024px) {
     .admin-management-content {
         grid-template-columns: 1fr;
@@ -3953,6 +3957,13 @@ p {
 }
 
 /* Responsive pour Communication Tool */
+@media (max-width: 1200px) {
+    /* Évite le débordement horizontal lorsque la grille passe en 1 colonne */
+    .communication-laptop-container {
+        margin-left: 0;
+    }
+}
+
 @media (max-width: 1024px) {
     .communication-tool-content {
         grid-template-columns: 1fr;
@@ -4053,9 +4064,7 @@ p {
     transform: translateY(10px); /* Descend les images de 10 pixels */
 }
 
-.visual-item:hover {
-    /* Zoom effect removed */
-}
+/* hover zoom intentionally removed to keep layout stable */
 
 .visual-image {
     width: 100%;
@@ -4365,6 +4374,14 @@ p {
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+    /* Alignements sûrs avant le breakpoint tablette */
+    .communication-laptop-container,
+    .admin-laptop-container {
+        margin-left: 0;
+    }
+}
+
 @media (max-width: 1024px) {
     .campus-pilot-content {
         grid-template-columns: 1fr;
