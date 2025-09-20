@@ -34,25 +34,32 @@
 
 /* Curseur personnalisé - Effet global */
 body {
-    cursor: none;
+    cursor: none !important;
 }
+
+/* Masquer le curseur natif partout (y compris sur les éléments interactifs) */
+html, body, * { cursor: none !important; }
 
 .custom-cursor {
     position: fixed;
-    width: 40px;
-    height: 40px;
+    width: 12px;
+    height: 12px;
     background: var(--primary);
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;
-    transition: all 0s ease;
-    mix-blend-mode: difference;
     transform: translate(-50%, -50%);
+    transition: transform .02s ease, background-color .02s ease, opacity .4s;
+    box-shadow: 0 0 0 0 rgba(255, 107, 53, 0.3);
 }
 
 .custom-cursor.hover {
-    background: white;
-    transform: scale(1.5);
+    transform: translate(-50%, -50%) scale(1.25);
+}
+
+.custom-cursor.active {
+    transform: translate(-50%, -50%) scale(2);
+    box-shadow: 0 0 0 10px rgba(255, 107, 53, 0.15);
 }
 
 /* Empêcher le curseur de grossir lors du clic sur les boutons */
@@ -661,45 +668,40 @@ p {
     line-height: 1.6;
 }
 
-/* Bouton de la carte avec effet hover */
-.profile-btn {
-    position: absolute;
-    bottom: 1.5rem;
-    right: 1.5rem;
-    width: 50px;
-    height: 50px;
-    border-radius: 30%;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.15s ease;
-    background: #FFE3B2; /* Nouvelle couleur de fond */
-    color: #FF6B35; /* Nouvelle couleur de la flèche */
-    border: none;
-    box-shadow: none; /* Suppression de toute ombre */
-    pointer-events: none; /* Empêche les clics sur le bouton lui-même */
+/* Laisse de la place en bas pour le bouton */
+.profile-feature-card{
+  padding-bottom: 5rem;          /* espace pour le bouton */
 }
 
-.profile-btn:hover {
-    background: #FFE3B2;
-    color: #FF6B35;
-    transform: scale(1.05);
-    box-shadow: none; /* Suppression de toute ombre au hover */
+/* Bouton "Découvrir" : orange, centré, pill */
+.profile-btn{
+  position: absolute;
+  left: 50%;
+  bottom: 1.75rem;               /* position de base */
+  transform: translateX(-50%);
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+
+  padding: .7rem 1.1rem;
+  border-radius: 9999px;
+  font-weight: 700;
+  line-height: 1;
+  border: none;
+
+  background: linear-gradient(135deg,#ff6b35,#f7931e);
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(255,107,53,.25);
+  pointer-events: auto;          /* cliquable */
 }
 
-/* Effet hover pour transformer le bouton en "Découvrir →" */
-.profile-feature-card:hover .profile-btn {
-    width: auto;
-    padding: 0 1.5rem;
-    border-radius: 15px;
-}
+/* Aucune génération de libellé via CSS → évite le doublon */
+.profile-btn::after{ content: none !important; }
 
-.profile-feature-card:hover .profile-btn::after {
-    content: " Découvrir";
-    margin-left: 0.5rem;
-    font-weight: 600;
-    color: #FF6B35; /* Couleur du texte "Découvrir" */
+/* Hover doux */
+.profile-btn:hover{
+  filter: brightness(.95);
+  transform: translateX(-50%) translateY(-2px);
 }
 
 .card-icon {
@@ -2134,6 +2136,7 @@ p {
     margin-left: -50px; /* Déplacement vers la gauche */
 }
 
+
 .phone-container {
     position: relative;
     display: flex;
@@ -2177,7 +2180,8 @@ p {
     }
     
     .app-phone-side {
-        order: 2;
+        order: 1;
+        margin: 100px auto !important; /* Centré avec marge automatique */
     }
     
     .app-content {
@@ -3637,7 +3641,7 @@ p {
 /* ===== SECTION ADMIN MANAGEMENT ===== */
 .admin-management-section {
     background: white;
-    padding: 10rem 0 6rem 0; /* Augmenté le padding-top de 6rem à 10rem */
+    padding-bottom: clamp(6rem, 10vw, 8rem);
     position: relative;
     overflow: hidden;
 }
@@ -3652,7 +3656,7 @@ p {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: start;
 }
 
 /* Contenu texte à gauche */
@@ -3735,6 +3739,7 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: clamp(1rem, 3vw, 3rem);
 }
 
 .admin-laptop {
@@ -3744,6 +3749,7 @@ p {
 
 .laptop-screen {
     max-width: 550px;
+    width: min(100%, 520px);
     height: auto;
     border-radius: 8px;
 }
@@ -3751,11 +3757,11 @@ p {
 /* Forme d'accent en arrière-plan */
 .background-accent {
     position: absolute;
-    top: 50%;
+    top: 52%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 350px;
-    height: 450px;
+    width: 320px;
+    height: 400px;
     background: #FFE3B2;
     border-radius: 30px;
     opacity: 0.8;
@@ -3807,6 +3813,41 @@ p {
     }
 }
 
+@media (max-width: 1280px){
+    .admin-laptop-container{ order: 2; margin-top: 1rem; }
+    .laptop-screen{ width: min(100%, 480px); }
+    /* évite le débordement à droite du petit logo décoratif */
+    .floating-logo{ right: 0; }          /* ou: display:none; si tu préfères */
+    
+    .admin-management-content{
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        align-items: start;
+        text-align: center;
+  }
+  /* Texte au-dessus, image en dessous */
+  .admin-text-content{ order: 1; margin-inline: auto; max-width: 680px; }
+  .admin-laptop-container{ order: 2; margin-top: 1rem; }
+
+  /* Réduit la pastille orange derrière le laptop pour éviter l’effet “qui touche” */
+  .background-accent{ width: 260px; height: 320px; top: 56%; }
+  .floating-logo{ display: none; }
+}
+
+/* 2) Communication Tool -> même logique (si nécessaire) */
+@media (max-width: 1280px){
+  .communication-tool-content{
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: start;
+    text-align: center;
+  }
+  .communication-text-content{ order: 1; margin-inline: auto; max-width: 680px; }
+  .communication-laptop-container{ order: 2; margin-top: 1rem; }
+}
+
+
+
 /* Responsive */
 @media (max-width: 1024px) {
     .admin-management-content {
@@ -3841,24 +3882,31 @@ p {
         text-align: left;
     }
     
+    .admin-laptop-container{ 
+        margin-top: 1.5rem; 
+    }
+    
     .laptop-screen {
-        max-width: 350px;
+        width: min(100%, 340px);
     }
     
     .floating-logo {
         width: 40px;
         height: 40px;
+        display: none; 
     }
     
     .background-accent {
-        width: 200px;
-        height: 450px;
+        width: 220px;
+        height: 280px;
+        top: 56%;
     }
 }
 
 /* Section Communication Tool */
 .communication-tool-section {
     padding: 3rem 0;
+    padding-top: clamp(6rem, 8vw, 8rem);
     background: white;
 }
 
@@ -5611,3 +5659,5 @@ p {
         padding-bottom: 1.5rem !important;
     }
 }
+
+/* --------------------------------------------------------------------- */

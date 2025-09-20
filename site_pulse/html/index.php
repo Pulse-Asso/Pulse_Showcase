@@ -174,7 +174,7 @@
             </div>
             
             <div class="profile-features-grid">
-                <a href="fonctionnalites-enseignement.html" class="profile-feature-card">
+                <a href="fonctionnalites-enseignement.php" class="profile-feature-card">
                     <figure class="profile-feature-image">
                         <img src="../img/ecole.jpg" alt="Enseignement supérieur" loading="lazy" width="800" height="450">
                     </figure>
@@ -187,8 +187,8 @@
                         </div>
                     </div>
                 </a>
-                
-                <a href="fonctionnalites-commune.html" class="profile-feature-card">
+
+                <a href="fonctionnalites-commune.php" class="profile-feature-card">
                     <figure class="profile-feature-image">
                         <img src="../img/commune.jpg" alt="Communes & Mairies" loading="lazy" width="800" height="450">
                     </figure>
@@ -202,7 +202,7 @@
                     </div>
                 </a>
                 
-                <a href="fonctionnalites-association.html" class="profile-feature-card">
+                <a href="fonctionnalites-association.php" class="profile-feature-card">
                     <figure class="profile-feature-image">
                         <img src="../img/asso.jpg" alt="Associations" loading="lazy" width="800" height="450">
                     </figure>

@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSpinner();
     initNavbar();
     initAnimations();
-    initContactForm();
+    // initContactForm();
     initBackToTop();
     initSmoothScrolling();
     initMobileMenu();
