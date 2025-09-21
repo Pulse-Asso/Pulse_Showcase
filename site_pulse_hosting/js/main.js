@@ -1,11 +1,11 @@
-// Main JavaScript file for Pulse website - WeWard Style
+// Main JavaScript file for Genpulse website - WeWard Style
 document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize all components
     initSpinner();
     initNavbar();
     initAnimations();
-    // initContactForm();
+    initContactForm();
     initBackToTop();
     initSmoothScrolling();
     initMobileMenu();
@@ -49,11 +49,41 @@ document.addEventListener('DOMContentLoaded', function() {
                 navbarNav.classList.toggle('show');
             });
             
-            // Close mobile menu when clicking on a link
-            const navLinks = document.querySelectorAll('.nav-link');
+            // Handle dropdown toggle on mobile
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
+            if (dropdownToggle) {
+                dropdownToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const dropdown = this.parentElement;
+                    dropdown.classList.toggle('show');
+                    
+                    // Close other dropdowns
+                    document.querySelectorAll('.nav-item.dropdown').forEach(otherDropdown => {
+                        if (otherDropdown !== dropdown) {
+                            otherDropdown.classList.remove('show');
+                        }
+                    });
+                });
+            }
+            
+            // Close mobile menu when clicking on a link (except dropdown toggle)
+            const navLinks = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
             navLinks.forEach(link => {
                 link.addEventListener('click', function() {
                     navbarNav.classList.remove('show');
+                });
+            });
+            
+            // Close mobile menu when clicking on dropdown items
+            const dropdownItems = document.querySelectorAll('.dropdown-item');
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    navbarNav.classList.remove('show');
+                    // Close all dropdowns
+                    document.querySelectorAll('.nav-item.dropdown').forEach(dropdown => {
+                        dropdown.classList.remove('show');
+                    });
                 });
             });
         }
@@ -64,13 +94,17 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offsetTop = target.offsetTop - 80; // Account for fixed navbar
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
+                const href = this.getAttribute('href');
+                // Only process if href is not just "#"
+                if (href && href !== '#') {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
                 }
             });
         });
@@ -102,6 +136,48 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
+    // Contact form handling
+    function initContactForm() {
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = new FormData(this);
+                
+                // Show loading state
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+                submitBtn.innerHTML = '<div class="loading"></div> Envoi en cours...';
+                submitBtn.disabled = true;
+                
+                // Send form data
+                fetch('contact.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        showNotification('Message envoyé avec succès !', 'success');
+                        contactForm.reset();
+                    } else {
+                        showNotification('Erreur : ' + data.message, 'error');
+                    }
+                })
+                .catch(error => {
+                    showNotification('Une erreur est survenue lors de l\'envoi du message.', 'error');
+                    console.error('Error:', error);
+                })
+                .finally(() => {
+                    // Reset button state
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                });
+            });
+        }
+    }
     
     // Notification system
     function showNotification(message, type = 'info') {
@@ -233,19 +309,19 @@ document.addEventListener('DOMContentLoaded', function() {
     document.head.appendChild(style);
     
     // Parallax effect removed to fix image jumping issue
-    function initParallax() {
-        const heroSection = document.querySelector('.hero-section');
-        if (heroSection) {
-            window.addEventListener('scroll', function() {
-                const scrolled = window.pageYOffset;
-                const rate = scrolled * -0.5;
-                heroSection.style.transform = `translateY(${rate}px)`;
-            });
-        }
-    }
+    // function initParallax() {
+    //     const heroSection = document.querySelector('.hero-section');
+    //     if (heroSection) {
+    //         window.addEventListener('scroll', function() {
+    //             const scrolled = window.pageYOffset;
+    //             const rate = scrolled * -0.5;
+    //             heroSection.style.transform = `translateY(${rate}px)`;
+    //         });
+    //     }
+    // }
     
     // Initialize parallax - DISABLED
-    initParallax();
+    // initParallax();
     
     // Add active class to navigation links
     function initActiveNavLinks() {
@@ -405,6 +481,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize scroll progress
     initScrollProgress();
     
+    
     // Add performance monitoring
     function initPerformanceMonitoring() {
         window.addEventListener('load', function() {
@@ -413,7 +490,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-
     // Initialize performance monitoring
     initPerformanceMonitoring();
     
@@ -436,7 +512,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Video functionality now uses native HTML5 controls
     
     // Add final initialization
-    console.log('Pulse website initialized successfully - WeWard Style with Orange Theme');
+    console.log('Genpulse website initialized successfully - WeWard Style with Orange Theme');
     
     // Dispatch custom event for other scripts
     window.dispatchEvent(new CustomEvent('pulseInitialized', {

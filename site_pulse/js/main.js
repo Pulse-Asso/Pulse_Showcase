@@ -49,11 +49,41 @@ document.addEventListener('DOMContentLoaded', function() {
                 navbarNav.classList.toggle('show');
             });
             
-            // Close mobile menu when clicking on a link
-            const navLinks = document.querySelectorAll('.nav-link');
+            // Handle dropdown toggle on mobile
+            const dropdownToggle = document.querySelector('.dropdown-toggle');
+            if (dropdownToggle) {
+                dropdownToggle.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const dropdown = this.parentElement;
+                    dropdown.classList.toggle('show');
+                    
+                    // Close other dropdowns
+                    document.querySelectorAll('.nav-item.dropdown').forEach(otherDropdown => {
+                        if (otherDropdown !== dropdown) {
+                            otherDropdown.classList.remove('show');
+                        }
+                    });
+                });
+            }
+            
+            // Close mobile menu when clicking on a link (except dropdown toggle)
+            const navLinks = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
             navLinks.forEach(link => {
                 link.addEventListener('click', function() {
                     navbarNav.classList.remove('show');
+                });
+            });
+            
+            // Close mobile menu when clicking on dropdown items
+            const dropdownItems = document.querySelectorAll('.dropdown-item');
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    navbarNav.classList.remove('show');
+                    // Close all dropdowns
+                    document.querySelectorAll('.nav-item.dropdown').forEach(dropdown => {
+                        dropdown.classList.remove('show');
+                    });
                 });
             });
         }
@@ -64,13 +94,17 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offsetTop = target.offsetTop - 80; // Account for fixed navbar
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
+                const href = this.getAttribute('href');
+                // Only process if href is not just "#"
+                if (href && href !== '#') {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const offsetTop = target.offsetTop - 80; // Account for fixed navbar
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
                 }
             });
         });
@@ -447,37 +481,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize scroll progress
     initScrollProgress();
     
-    // Add theme toggle (light/dark mode)
-    function initThemeToggle() {
-        const themeToggle = document.createElement('button');
-        themeToggle.innerHTML = '🌙';
-        themeToggle.style.cssText = `
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: none;
-            background: rgba(255, 255, 255, 0.9);
-            color: #ff6b35;
-            font-size: 20px;
-            cursor: pointer;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        `;
-        
-        document.body.appendChild(themeToggle);
-        
-        themeToggle.addEventListener('click', function() {
-            document.body.classList.toggle('dark-theme');
-            this.innerHTML = document.body.classList.contains('dark-theme') ? '☀️' : '🌙';
-        });
-    }
-    
-    // Initialize theme toggle
-    initThemeToggle();
     
     // Add performance monitoring
     function initPerformanceMonitoring() {

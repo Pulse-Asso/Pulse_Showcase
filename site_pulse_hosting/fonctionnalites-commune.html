@@ -1,16 +1,287 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-<!-- Head start -->
-<?php include '../components/head.php'; ?>
-<!-- Head End -->
+<head>
+    <meta charset="utf-8">
+    <title>Fonctionnalités Commune - Genpulse</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Fonctionnalités Genpulse dédiées aux communes et collectivités locales" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css?v=6.4.0" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <!-- Responsive Mobile Styles -->
+    <style>
+        /* Mobile First - Téléphones */
+        @media (max-width: 768px) {
+            /* Réduction générale des tailles de texte */
+            body { font-size: 14px; }
+            h1 { font-size: 1.8rem !important; line-height: 1.2; }
+            h2 { font-size: 1.5rem !important; line-height: 1.3; }
+            h3 { font-size: 1.2rem !important; }
+            h4 { font-size: 1.1rem !important; }
+            p { font-size: 0.9rem !important; line-height: 1.4; }
+            
+            /* Section title - Centré sur mobile */
+            .section-title {
+                text-align: center !important;
+            }
+            
+            /* Hero text - Centré sur mobile */
+            .hero-text {
+                text-align: center !important;
+            }
+            
+            .hero-title {
+                text-align: center !important;
+            }
+            
+            .hero-subtitle {
+                text-align: center !important;
+            }
+            
+            /* Navbar mobile */
+            .navbar-nav { display: none !important; }
+            .navbar-toggler { display: block !important; }
+            .navbar-brand img { height: 40px !important; }
+            
+            /* Footer */
+            .footer-content { grid-template-columns: 1fr !important; gap: 2rem !important; text-align: center; }
+            
+            /* Hero section mobile */
+            .hero-content { text-align: center; padding: 2rem 0; }
+            
+            /* Images plus petites */
+            .solution-feature-card img { width: 60px !important; height: 60px !important; }
+            .profile-feature-card img { width: 100% !important; height: 150px !important; object-fit: cover; }
+            .profile-feature-image { height: 150px !important; overflow: hidden; }
+            
+            /* Cards partenariat mobile */
+            .card { padding: 2rem !important; margin-bottom: 2rem !important; }
+            .card div[style*="grid-template-columns"] {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+                text-align: center;
+            }
+            .card h3 { font-size: 1.5rem !important; margin-bottom: 1rem !important; }
+            .card p { font-size: 0.9rem !important; margin-bottom: 1.5rem !important; }
+            .card img {
+                width: 100% !important; height: 200px !important; object-fit: cover !important; border-radius: 15px !important;
+            }
+            
+            /* Alignement des bullets points à gauche */
+            .card li {
+                justify-content: flex-start !important;
+                text-align: left !important;
+            }
+            .card li i { flex-shrink: 0 !important; }
+            
+            /* CTA Section - Réduction drastique de l'espace */
+            .section.cta-section {
+                padding: 1rem 0 !important;
+                margin-top: -1rem !important;
+                margin-bottom: 0 !important;
+            }
+            
+            .cta-content {
+                padding: 0.5rem 0 !important;
+                margin: 0 !important;
+            }
+            
+            .cta-content h2 {
+                font-size: 1.5rem !important;
+                margin-bottom: 0.5rem !important;
+                margin-top: 0 !important;
+            }
+            
+            .cta-content p {
+                font-size: 0.9rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            /* Image dashboard - Position beaucoup plus basse */
+            .dashboard-image {
+                margin-top: 2rem !important;
+                margin-bottom: 0 !important;
+            }
+            
+            .dashboard-image img {
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+            }
+            
+            /* Dashboard info - Espacement réduit */
+            .dashboard-info {
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .dashboard-info p {
+                margin-bottom: 0 !important;
+            }
+            
+            /* Section Les Visuels - Réduction drastique */
+            .genpulse-visuals-section {
+                padding: 1rem 0 !important;
+                margin: 0 !important;
+            }
+            
+            .genpulse-visuals-header {
+                margin-bottom: 1rem !important;
+            }
+            
+            .genpulse-title {
+                font-size: 1.5rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .genpulse-subtitle {
+                font-size: 0.9rem !important;
+                margin-bottom: 0 !important;
+            }
+            
+            /* Cards visuels - Réduction */
+            .visual-card {
+                padding: 1rem !important;
+                margin-bottom: 1rem !important;
+            }
+            
+            .visual-card img {
+                height: 150px !important;
+                object-fit: cover !important;
+            }
+            
+            /* Correction des superpositions - Layout vertical */
+            .admin-laptop-container {
+                position: relative !important;
+                margin-top: 2rem !important;
+                margin-bottom: 2rem !important;
+            }
+            
+            .communication-laptop-container {
+                position: relative !important;
+                margin-top: 2rem !important;
+                margin-bottom: 2rem !important;
+                order: 2 !important;
+                width: 100% !important;
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+            }
+            
+            .communication-tool-content {
+                display: flex !important;
+                flex-direction: column !important;
+                width: 100% !important;
+            }
+            
+            .communication-text-content {
+                order: 1 !important;
+                width: 100% !important;
+            }
+            
+            .admin-laptop,
+            .communication-laptop {
+                position: relative !important;
+                z-index: 2 !important;
+            }
+            
+            .background-accent {
+                position: absolute !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                width: 70% !important;
+                height: 60px !important;
+                z-index: 1 !important;
+                border-radius: 15px !important;
+            }
+            
+            /* Images laptops - Position en dessous et agrandies */
+            .laptop-screen {
+                width: 100% !important;
+                height: auto !important;
+                max-width: 400px !important;
+                margin: 0 auto !important;
+                display: block !important;
+            }
+            
+            /* Animations flottantes - Supprimées sur mobile */
+            .floating-elements {
+                display: none !important;
+            }
+            
+            .floating-logo,
+            .floating-chart,
+            .floating-graph,
+            .floating-pie {
+                display: none !important;
+            }
+        }
+        
+        /* Très petits écrans */
+        @media (max-width: 480px) {
+            h1 { font-size: 1.6rem !important; }
+            h2 { font-size: 1.3rem !important; }
+            
+            /* Cards partenariat très petits écrans */
+            .card { padding: 1.5rem !important; }
+            .card h3 { font-size: 1.3rem !important; }
+            .card img { height: 150px !important; }
+        }
+        
+        /* Tablettes */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .solution-feature-card img { width: 70px !important; height: 70px !important; }
+            .profile-feature-card img { height: 180px !important; }
+            .profile-feature-image { height: 180px !important; }
+        }
+    </style>
+</head>
 
 <body>
     <!-- Custom Cursor -->
     <div class="custom-cursor"></div>
     
-    <!-- Navbar Start  -->
-    <?php include '../components/navbar.php'; ?>
+    <!-- Navbar Start -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="index.html" class="navbar-brand">
+                    <img src="img/genpulse.png" alt="GenPulse" height="160">
+                </a>
+                
+                <ul class="navbar-nav">
+                    <li><a href="index.html#hero" class="nav-link">À propos</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active">Fonctionnalités</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="fonctionnalites-enseignement.html" class="dropdown-item">Enseignement supérieur</a></li>
+                            <li><a href="fonctionnalites-commune.html" class="dropdown-item active">Commune</a></li>
+                            <li><a href="fonctionnalites-association.html" class="dropdown-item">Association</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="equipe.html" class="nav-link">L'équipe</a></li>
+                    <li><a href="partenariats.html" class="nav-link">Partenariats</a></li>
+                    <li style="visibility: hidden;"><a href="#" class="btn btn-primary">Obtenir un devis</a></li>
+                </ul>
+                
+                <button class="navbar-toggler">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
     <!-- Navbar End -->
 
     <!-- Hero Section Start -->
@@ -21,15 +292,15 @@
         <div class="hero-content" style="position: relative; z-index: 2;">
             <!-- Text Content -->
             <div class="hero-text">
-                <h1 class="hero-title">Modernisez votre <span class="highlight">commune</span> avec Pulse</h1>
+                <h1 class="hero-title">Modernisez votre <span class="highlight">commune</span> avec Genpulse</h1>
                 <p class="hero-subtitle">Une plateforme complète pour dynamiser la vie citoyenne, améliorer la communication locale et créer une communauté engagée</p>
                 <div class="hero-buttons">
                     <a href="#features" class="btn btn-primary btn-lg">
                         <i class="fas fa-rocket"></i>
                         En savoir plus
                     </a>
-                    <a href="#contact" class="btn btn-secondary btn-lg">
-                        <i class="fas fa-play"></i>
+                    <a href="mailto:genpulse.pro@gmail.com?subject=Demande de démonstration" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-envelope"></i>
                         Demander une démo
                     </a>
                 </div>
@@ -81,7 +352,7 @@
                                 <i class="fas fa-check"></i>
                             </div>
                             <div class="admin-feature-content">
-                                <h4>Le plus de GenPulse</h4>
+                                <h4>Le plus de GenGenpulse</h4>
                                 <p>L'application qui vous permet de communiquer directement auprès des étudiants et de leurs écoles.​</p>
                             </div>
                         </div>
@@ -91,9 +362,9 @@
                 
                 <div class="admin-laptop-container">
                     <div class="admin-laptop">
-                        <img src="../img/admin_p.png" alt="Interface d'administration Pulse" class="laptop-screen">
+                        <img src="img/admin_p.png" alt="Interface d'administration Genpulse" class="laptop-screen">
                                                      <div class="floating-elements">
-                                 <img src="../img/logo_admin.png" alt="Logo Admin" class="floating-logo logo-1">
+                                 <img src="img/logo_admin.png" alt="Logo Admin" class="floating-logo logo-1">
                              </div>
                     </div>
                     <div class="background-accent"></div>
@@ -109,9 +380,9 @@
             <div class="communication-tool-content">
                 <div class="communication-laptop-container">
                     <div class="communication-laptop">
-                        <img src="../img/gestion_add.png" alt="Interface de communication Pulse" class="laptop-screen">
+                        <img src="img/gestion_add.png" alt="Interface de communication Genpulse" class="laptop-screen">
                         <div class="floating-elements">
-                            <img src="../img/logo_admin.png" alt="Logo Admin" class="floating-logo">
+                            <img src="img/logo_admin.png" alt="Logo Admin" class="floating-logo">
                         </div>
                     </div>
                     <div class="background-accent"></div>
@@ -249,7 +520,7 @@
         <div class="container">
             <div class="campus-pilot-header">
                 <h2>Pilotez votre commune</h2>
-                <p>Mesurez l'impact de Pulse sur votre collectivité avec des données concrètes</p>
+                <p>Mesurez l'impact de Genpulse sur votre collectivité avec des données concrètes</p>
             </div>
             
             <div class="campus-pilot-content">
@@ -294,7 +565,7 @@
                 
                 <div class="campus-pilot-visual">
                     <div class="dashboard-container">
-                        <img src="../img/dashboard.png" alt="Dashboard analytics" class="dashboard-image">
+                        <img src="img/dashboard.png" alt="Dashboard analytics" class="dashboard-image">
                         <div class="floating-elements">
                             <div class="floating-chart" data-aos="zoom-in" data-aos-delay="800">
                                 <i class="fas fa-chart-bar"></i>
@@ -321,15 +592,15 @@
                     <i class="fas fa-play-circle"></i>
                     <span>Démonstration</span>
                 </div>
-                <h2>Voir Pulse en action</h2>
-                <p class="demo-subtitle">Découvrez comment Pulse peut transformer votre commune en quelques minutes</p>
+                <h2>Voir Genpulse en action</h2>
+                <p class="demo-subtitle">Découvrez comment Genpulse peut transformer votre commune en quelques minutes</p>
             </div>
             
             <div class="modern-demo-content">
                 <div class="video-container">
                     <div class="video-wrapper">
                         <video class="pulse-video" controls>
-                            <source src="../video/teaser pulse.mp4" type="video/mp4">
+                            <source src="video/teaser pulse.mp4" type="video/mp4">
                             Votre navigateur ne supporte pas la lecture de vidéos.
                         </video>
                     </div>
@@ -382,47 +653,47 @@
             <div class="genpulse-visuals-scroll">
                 <div class="genpulse-visuals-track">
                     <div class="visual-item">
-                        <img src="../img/p1.png" alt="Interface Genpulse 1" class="visual-image">
+                        <img src="img/p1.png" alt="Interface Genpulse 1" class="visual-image">
                     </div>
                     <div class="visual-item">
-                        <img src="../img/p2.png" alt="Interface Genpulse 2" class="visual-image">
+                        <img src="img/p2.png" alt="Interface Genpulse 2" class="visual-image">
                     </div>
                     <div class="visual-item">
-                        <img src="../img/p3.png" alt="Interface Genpulse 3" class="visual-image">
+                        <img src="img/c1.png" alt="Interface Genpulse 3" class="visual-image">
                     </div>
                     <div class="visual-item">
-                        <img src="../img/p4.png" alt="Interface Genpulse 4" class="visual-image">
+                        <img src="img/p4.png" alt="Interface Genpulse 4" class="visual-image">
                     </div>
                     <div class="visual-item">
-                        <img src="../img/p5.png" alt="Interface Genpulse 5" class="visual-image">
+                        <img src="img/c2.png" alt="Interface Genpulse 5" class="visual-image">
                     </div>
                     <div class="visual-item">
-                        <img src="../img/p6.png" alt="Interface Genpulse 6" class="visual-image">
+                        <img src="img/p6.png" alt="Interface Genpulse 6" class="visual-image">
                     </div>
                     <div class="visual-item">
-                        <img src="../img/p7.png" alt="Interface Genpulse 7" class="visual-image">
+                        <img src="img/p7.png" alt="Interface Genpulse 7" class="visual-image">
                     </div>
                     <!-- Duplicated images for seamless infinite loop -->
                     <div class="visual-item">
-                        <img src="../img/p1.png" alt="Interface Genpulse 1" class="visual-image">
+                        <img src="img/p1.png" alt="Interface Genpulse 1" class="visual-image">
                     </div>
                     <div class="visual-item">
-                        <img src="../img/p2.png" alt="Interface Genpulse 2" class="visual-image">
+                        <img src="img/p2.png" alt="Interface Genpulse 2" class="visual-image">
                     </div>
                     <div class="visual-item">
-                        <img src="../img/p3.png" alt="Interface Genpulse 3" class="visual-image">
+                        <img src="img/c1.png" alt="Interface Genpulse 3" class="visual-image">
                     </div>
                     <div class="visual-item">
-                        <img src="../img/p4.png" alt="Interface Genpulse 4" class="visual-image">
+                        <img src="img/p4.png" alt="Interface Genpulse 4" class="visual-image">
                     </div>
                     <div class="visual-item">
-                        <img src="../img/p5.png" alt="Interface Genpulse 5" class="visual-image">
+                        <img src="img/c2.png" alt="Interface Genpulse 5" class="visual-image">
                     </div>
                     <div class="visual-item">
-                        <img src="../img/p6.png" alt="Interface Genpulse 6" class="visual-image">
+                        <img src="img/p6.png" alt="Interface Genpulse 6" class="visual-image">
                     </div>
                     <div class="visual-item">
-                        <img src="../img/p7.png" alt="Interface Genpulse 7" class="visual-image">
+                        <img src="img/p7.png" alt="Interface Genpulse 7" class="visual-image">
                     </div>
                 </div>
             </div>
@@ -435,9 +706,9 @@
         <div class="container">
             <div class="cta-content">
                 <h2>Prêt à moderniser votre commune ?</h2>
-                <p>Rejoignez les collectivités qui ont déjà transformé leur communication avec Pulse</p>
-                <a href="https://forms.gle/u26uAQ3QdyvvLwHX9" class="btn btn-primary btn-lg">
-                    <i class="fas fa-rocket"></i>
+                <p>Rejoignez les collectivités qui ont déjà transformé leur communication avec Genpulse</p>
+                <a href="mailto:genpulse.pro@gmail.com?subject=Demande de contact" class="btn btn-primary btn-lg">
+                    <i class="fas fa-envelope"></i>
                     Commencer maintenant
                 </a>
             </div>
@@ -446,9 +717,39 @@
     <!-- CTA Section End -->
 
     <!-- Footer Start -->
-    <?php include '../components/footer.php'; ?>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Genpulse</h4>
+                    <p>L'application qui révolutionne la communication locale en centralisant tous les événements et informations sur une seule plateforme intuitive.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Liens rapides</h4>
+                    <a href="index.html#about">À propos</a>
+                    <a href="index.html#features">Fonctionnalités</a>
+                    <a href="index.html#benefits">Avantages</a>
+                    <a href="page2 Nath.html">L'équipe</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="mentions-legales.pdf" target="_blank">Mentions légales</a>
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">Conditions d'utilisation</a>
+                    <a href="#">FAQ</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Genpulse. Tous droits réservés. Conçu avec ❤️ pour la communauté citoyenne.</p>
+            </div>
+        </div>
+    </footer>
     <!-- Footer End -->
-     
+
     <!-- Back to Top -->
     <a href="#" class="back-to-top">
         <i class="fas fa-arrow-up"></i>
@@ -458,8 +759,32 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="../js/main.js"></script>
-    <script src="../js/cursor.js"></script>
+    <script src="js/main.js"></script>
+    
+    <!-- Custom Cursor Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.querySelector('.custom-cursor');
+            
+            document.addEventListener('mousemove', function(e) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+            
+            // Add hover effect to interactive elements
+            const interactiveElements = document.querySelectorAll('a, button, .nav-link, .dropdown-item, .btn');
+            
+            interactiveElements.forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    cursor.classList.add('hover');
+                });
+                
+                element.addEventListener('mouseleave', function() {
+                    cursor.classList.remove('hover');
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

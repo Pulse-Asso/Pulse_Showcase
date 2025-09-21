@@ -1,0 +1,49 @@
+# Fichiers système
+.DS_Store
+Thumbs.db
+*.tmp
+*.temp
+
+# Fichiers de sauvegarde
+*.bak
+*.backup
+*~
+
+# Fichiers de cache
+.cache/
+*.cache
+
+# Fichiers de logs
+*.log
+logs/
+
+# Fichiers d'environnement
+.env
+.env.local
+.env.production
+
+# Dossiers de dépendances (si vous en ajoutez plus tard)
+node_modules/
+vendor/
+
+# Fichiers de compilation
+*.min.css.map
+*.min.js.map
+
+# Fichiers de développement
+*.scss
+!scss/
+scss/*.css
+scss/*.css.map
+
+# Fichiers temporaires de l'éditeur
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Fichiers de test
+test/
+tests/
+*.test.js
+*.spec.js

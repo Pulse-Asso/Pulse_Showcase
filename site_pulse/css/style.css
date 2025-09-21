@@ -1975,7 +1975,60 @@ p {
     }
     
     .navbar-nav.show {
-        display: flex;
+        display: flex !important;
+    }
+    
+    /* Dropdown menu on mobile - Simple design */
+    .navbar-nav .dropdown-menu {
+        position: static !important;
+        display: none !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: 0.25rem 0 0 1rem !important;
+        margin: 0 !important;
+        width: 100% !important;
+        z-index: 1000 !important;
+    }
+    
+    .navbar-nav .dropdown.show .dropdown-menu {
+        display: block !important;
+    }
+    
+    .navbar-nav .dropdown-item {
+        padding: 0.5rem 0 !important;
+        color: #666 !important;
+        border: none !important;
+        display: block !important;
+        width: 100% !important;
+        text-decoration: none !important;
+        font-size: 0.9rem !important;
+        background: none !important;
+    }
+    
+    .navbar-nav .dropdown-item:hover,
+    .navbar-nav .dropdown-item:active,
+    .navbar-nav .dropdown-item:focus {
+        background: none !important;
+        color: #333 !important;
+    }
+    
+    .navbar-nav .dropdown-toggle::after {
+        content: " ▼" !important;
+        font-size: 0.7em !important;
+        margin-left: 0.3rem !important;
+        color: #999 !important;
+    }
+    
+    /* Ensure dropdown container is visible */
+    .navbar-nav .nav-item.dropdown {
+        position: relative !important;
+        width: 100% !important;
+    }
+    
+    .navbar-nav .nav-item.dropdown.show .dropdown-toggle {
+        color: #333 !important;
     }
     
     .navbar-toggler {
