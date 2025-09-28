@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Genpulse - Plateforme de communication moderne pour associations, communes et enseignement</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="keywords" content="communication digitale, gestion événements, plateforme association, outil communication commune, solution enseignement, événementiel digital, communication moderne, Genpulse, gestion association, communication publique, outil pédagogique">
+    <meta content="Découvrez Genpulse, la solution de communication innovante pour moderniser vos échanges. Gestion d'événements, communication digitale et outils collaboratifs pour associations, communes et enseignement." name="description">
+    <meta name="author" content="Genpulse">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="fr">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Genpulse - Communication moderne pour tous">
+    <meta property="og:description" content="Plateforme de communication innovante pour associations, communes et enseignement. Gestion d'événements et outils collaboratifs.">
+    <meta property="og:image" content="img/Logo_Pulse.png">
+    <meta property="og:url" content="https://genpulse.pro">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Genpulse">
+    <meta property="og:locale" content="fr_FR">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Genpulse - Communication moderne">
+    <meta name="twitter:description" content="Plateforme de communication pour associations, communes et enseignement">
+    <meta name="twitter:image" content="img/Logo_Pulse.png">
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#ff6b35">
+    <meta name="msapplication-TileColor" content="#ff6b35">
+    <meta name="application-name" content="Genpulse">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Genpulse",
+        "description": "Plateforme de communication moderne pour associations, communes et enseignement",
+        "url": "https://genpulse.pro",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "EUR"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Genpulse",
+            "url": "https://genpulse.pro"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "150"
+        }
+    }
+    </script>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://genpulse.pro/">
+    
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <!-- Responsive Mobile Styles -->
+    <style>
+        /* Mobile First - Téléphones */
+        @media (max-width: 768px) {
+            /* Réduction générale des tailles de texte */
+            body {
+                font-size: 14px;
+            }
+            
+            h1 {
+                font-size: 1.8rem !important;
+                line-height: 1.2;
+            }
+            
+            h2 {
+                font-size: 1.5rem !important;
+                line-height: 1.3;
+            }
+            
+            h3 {
+                font-size: 1.2rem !important;
+            }
+            
+            h4 {
+                font-size: 1.1rem !important;
+            }
+            
+            p {
+                font-size: 0.9rem !important;
+                line-height: 1.4;
+            }
+            
+            /* Hero Section - Image téléphone */
+            .phone-image {
+                width: 200px !important;
+                height: auto !important;
+            }
+            
+            .phone-container {
+                width: 280px !important;
+                height: 320px !important;
+                padding: 15px !important;
+            }
+            
+            /* Images flottantes plus petites */
+            .floating-likes img,
+            .floating-notifications img {
+                width: 40px !important;
+                height: 40px !important;
+            }
+            
+            /* Section Features - Images */
+            .solution-feature-card img {
+                width: 60px !important;
+                height: 60px !important;
+            }
+            
+            /* Section Cibles - Images */
+            .profile-feature-card img {
+                width: 100% !important;
+                height: 150px !important;
+                object-fit: cover;
+            }
+            
+            .profile-feature-image {
+                height: 150px !important;
+                overflow: hidden;
+            }
+            
+            /* Logos partenaires */
+            .partner-logo {
+                width: 60px !important;
+                height: 60px !important;
+                object-fit: contain;
+            }
+            
+            /* Stats Grid */
+            .modern-stats-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 1rem !important;
+            }
+            
+            .modern-stats-item {
+                padding: 1rem !important;
+            }
+            
+            .modern-stats-number {
+                font-size: 1.5rem !important;
+            }
+            
+            .modern-stats-label {
+                font-size: 0.8rem !important;
+            }
+            
+            /* Boutons */
+            .btn {
+                font-size: 0.9rem !important;
+                padding: 0.6rem 1.2rem !important;
+            }
+            
+            .btn-lg {
+                font-size: 1rem !important;
+                padding: 0.8rem 1.5rem !important;
+            }
+            
+            /* Espacement réduit */
+            .section {
+                padding: 3rem 0 !important;
+            }
+            
+            .container {
+                padding: 0 1rem !important;
+            }
+            
+            /* Navbar mobile */
+            .navbar-nav {
+                display: none !important;
+            }
+            
+            .navbar-toggler {
+                display: block !important;
+            }
+            
+            .navbar-brand img {
+                height: 30px !important;
+            }
+            
+            /* Footer */
+            .footer-content {
+                grid-template-columns: 1fr !important;
+                gap: 2rem !important;
+                text-align: center;
+            }
+            
+            .footer-section {
+                margin-bottom: 1.5rem;
+            }
+            
+            /* Hero section mobile */
+            .hero-content {
+                text-align: center;
+                padding: 2rem 0;
+            }
+            
+            .app-showcase-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+            
+            .app-phone-side {
+                order: 2;
+            }
+            
+            .app-text-side {
+                order: 1;
+            }
+            
+            /* Alignement des bullets points */
+            .benefits-list {
+                text-align: left !important;
+            }
+            
+            .benefits-list li {
+                text-align: left !important;
+            }
+            
+            /* Section title - Centré sur mobile */
+            .section-title {
+                text-align: center !important;
+            }
+            
+            /* Hero text - Centré sur mobile */
+            .hero-text {
+                text-align: center !important;
+            }
+            
+            .hero-title {
+                text-align: center !important;
+            }
+            
+            .hero-subtitle {
+                text-align: center !important;
+            }
+            
+            /* Section Canal privé - Layout mobile exactement comme Bons Plans */
+            .solution-feature-card {
+                background: white !important;
+                border-radius: 20px !important;
+                padding: 1.5rem !important;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+                border: 1px solid rgba(0, 0, 0, 0.05) !important;
+                margin-bottom: 2rem !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+            
+            .solution-feature-card .feature-content {
+                order: 1;
+                width: 100% !important;
+                text-align: left;
+                margin-bottom: 2rem;
+                max-width: none !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            
+            .solution-feature-card .feature-content h3 {
+                font-size: 2rem !important;
+                font-weight: 700 !important;
+                margin-bottom: 1rem !important;
+                color: #1e293b !important;
+                text-align: center;
+            }
+            
+            .solution-feature-card .feature-content p {
+                font-size: 1.125rem !important;
+                color: #64748b !important;
+                margin-bottom: 2rem !important;
+                line-height: 1.6 !important;
+                text-align: left;
+                width: 100% !important;
+                max-width: none !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            
+            .solution-feature-card .feature-content .feature-benefits {
+                order: 2;
+                display: flex;
+                flex-direction: column;
+                gap: 0.1rem;
+                margin-bottom: 0.25rem;
+                background: none !important;
+                padding: 0 !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                border: none !important;
+                list-style: none;
+                padding-left: 0;
+                text-align: left !important;
+            }
+            
+            .solution-feature-card .feature-content .feature-benefits li {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                font-size: 1rem;
+                color: #1e293b;
+                justify-content: flex-start;
+                text-align: left;
+                margin-bottom: 0.1rem;
+            }
+            
+            .solution-feature-card .feature-content .feature-benefits li i {
+                color: #10b981;
+                font-size: 1.125rem;
+                flex-shrink: 0;
+            }
+            
+            .solution-feature-card .feature-image {
+                order: 3;
+                width: 100% !important;
+                text-align: left;
+                max-width: none !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+            
+            .solution-feature-card .feature-image img {
+                width: 100% !important;
+                height: auto !important;
+                border-radius: 15px !important;
+                box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
+                max-width: none !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+        }
+        
+        /* Très petits écrans */
+        @media (max-width: 480px) {
+            .modern-stats-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+            
+            .phone-image {
+                width: 180px !important;
+            }
+            
+            .phone-container {
+                width: 260px !important;
+                height: 300px !important;
+            }
+            
+            h1 {
+                font-size: 1.6rem !important;
+            }
+            
+            h2 {
+                font-size: 1.3rem !important;
+            }
+            
+            /* Section Canal privé - Très petits écrans */
+            .solution-feature-card {
+                padding: 1rem !important;
+            }
+            
+            .solution-feature-card .feature-content h3 {
+                font-size: 1.5rem !important;
+            }
+            
+            .solution-feature-card .feature-content p {
+                font-size: 1rem !important;
+            }
+            
+            .solution-feature-card .feature-content .feature-benefits {
+                padding: 0 !important;
+            }
+            
+            .solution-feature-card .feature-content .feature-benefits li {
+                font-size: 0.9rem;
+            }
+            
+            .solution-feature-card .feature-image img {
+                width: 100% !important;
+                max-width: none !important;
+            }
+        }
+        
+        /* Tablettes */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .phone-image {
+                width: 250px !important;
+            }
+            
+            .phone-container {
+                width: 320px !important;
+                height: 360px !important;
+            }
+            
+            .solution-feature-card img {
+                width: 70px !important;
+                height: 70px !important;
+            }
+            
+            .profile-feature-card img {
+                height: 180px !important;
+            }
+            
+            .profile-feature-image {
+                height: 180px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    
+    <!-- Spinner Start -->
+    <div id="spinner" class="show position-fixed w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="loading"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="#" class="navbar-brand">
+                    <img src="img/genpulse.png" alt="GenPulse" height="160">
+                </a>
+                
+                <ul class="navbar-nav">
+                    <li><a href="#hero" class="nav-link">À propos</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Fonctionnalités</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="fonctionnalites-enseignement.html" class="dropdown-item">Enseignement supérieur</a></li>
+                            <li><a href="fonctionnalites-commune.html" class="dropdown-item">Commune</a></li>
+                            <li><a href="fonctionnalites-association.html" class="dropdown-item">Association</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="equipe.html" class="nav-link">L'équipe</a></li>
+                    <li><a href="partenariats.html" class="nav-link">Partenariats</a></li>
+                    <li style="visibility: hidden;"><a href="#" class="btn btn-primary">Obtenir un devis</a></li>
+                </ul>
+                
+                <button class="navbar-toggler">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Hero Section Start -->
+    <section class="hero-section" id="hero">
+        <div class="hero-content">
+            <!-- Text Content -->
+            <div class="hero-text">
+                <h1 class="hero-title">Booster la vie locale avec <span class="highlight">GENPULSE</span></h1>
+                <p class="hero-subtitle">Un outil unique qui rassemble la vie associative, étudiante et citoyenne en un seul endroit</p>
+                <div class="hero-buttons">
+                    <a href="#features" class="btn btn-primary btn-lg">
+                        <i class="fas fa-rocket"></i>
+                        En savoir plus
+                    </a>
+                    <a href="mailto:genpulse.pro@gmail.com?subject=Demande de démonstration" class="btn btn-secondary btn-lg">
+                        <i class="fas fa-envelope"></i>
+                        Demander une démo
+                    </a>
+                </div>
+            </div>
+            
+           
+        </div>
+    </section>
+    <!-- Hero Section End -->
+
+    <!-- section raison d etre de genpulse -->
+    <section class="app-showcase-section" id="app-showcase">
+        <div class="app-showcase-container">
+            <!-- Phone Side -->
+            <div class="app-phone-side">
+                <div class="phone-container" style="background-color: #FFE3B2; padding: 20px; border-radius: 20px; position: relative; width: 380px; height: 420px;">
+                    <!-- Phone Image -->
+                    <img src="img/home_e.png" alt="Interface de l'application Genpulse - Plateforme de communication moderne" class="phone-image" style="width: 300px; height: auto; position: relative; z-index: 2;" loading="lazy">
+                    
+                                         <!-- Floating Like Icons -->
+                     <div class="floating-likes" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 30;">
+                         <img src="img/like.png" alt="Like" style="position: absolute; top: 10px; left: 5px; width: 60px; height: 60px; animation: float 3s ease-in-out infinite;">
+                         <img src="img/like.png" alt="Like" style="position: absolute; top: 80px; right: 15px; width: 50px; height: 50px; animation: float 3s ease-in-out infinite 0.5s;">
+                         <img src="img/like.png" alt="Like" style="position: absolute; bottom: 100px; left: 5px; width: 70px; height: 70px; animation: float 3s ease-in-out infinite 1s;">
+                         <img src="img/like.png" alt="Like" style="position: absolute; bottom: 20px; right: 20px; width: 56px; height: 56px; animation: float 3s ease-in-out infinite 1.5s;">
+                     </div>
+                     
+                     <!-- Floating Notification Icons -->
+                     <div class="floating-notifications" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; pointer-events: none; z-index: 30;">
+                         <img src="img/notif.png" alt="Notification" style="position: absolute; top: 50px; left: -60px; width: 64px; height: 64px; animation: float 3s ease-in-out infinite 0.3s;">
+                         <img src="img/notif.png" alt="Notification" style="position: absolute; top: 150px; right: -60px; width: 54px; height: 54px; animation: float 3s ease-in-out infinite 0.8s;">
+                         <img src="img/notif.png" alt="Notification" style="position: absolute; bottom: 50px; left: -40px; width: 66px; height: 66px; animation: float 3s ease-in-out infinite 1.2s;">
+                         <img src="img/notif.png" alt="Notification" style="position: absolute; bottom: 80px; right: -40px; width: 58px; height: 58px; animation: float 3s ease-in-out infinite 1.7s;">
+                     </div>
+                </div>
+            </div>
+            
+            <!-- Content Side -->
+            <div class="app-content">
+                <h2>La <strong>raison d'être de GENPULSE</strong></h2>
+                <p>Pallier les problèmes de communication rencontrés actuellement grâce à notre solution :</p>
+                <ul class="benefits-list">
+                    <li>Rassembler la communication massive éparpillée sur les réseaux sociaux, mails et autres canaux en un seul point d’accès clair</li>
+                    <li>Réduire la surcharge informationnelle en rendant l'information accessible et visible rapidement</li>
+                    <li>Cibler les informations en choisissant à qui vous voulez les partager</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- section raison d etre de genpulse End -->
+
+    <!-- section notre solution Start -->
+    <section class="section solution-section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <p class="section-subtitle">Notre solution</p>
+                <h2>1er canal de communication où tous les acteurs sont interconnectés</h2>
+                <p>Nous rejoindre c'est intégrer un réseau </p>
+            </div>
+            
+            <!-- Canal Privé - Design exact selon l'image -->
+            <div class="solution-feature-card canal-prive">
+                <div class="feature-content">
+                    <h3>Un canal privé</h3>
+                    <p>Un espace dédié aux universités, pour centraliser la vie du campus (associations étudiantes, Crous, administration)</p>
+                    <br>
+                    <ul class="feature-benefits">
+                        <li><i class="fas fa-check"></i> Accès sécurisé</li>
+                        <li><i class="fas fa-check"></i> Communication interne</li>
+                        <li><i class="fas fa-check"></i> Gestion centralisée</li>
+                    </ul>
+                </div>
+                
+                <div class="feature-image">
+                    <img src="img/prive.png" alt="Canal privé universitaire - Communication sécurisée entre étudiants" loading="lazy">
+                    <div class="feature-overlay">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <!-- Bulles flottantes pour le canal privé -->
+                    <div class="floating-bubbles">
+                        <div class="bubble bubble-events">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>événements</span>
+                        </div>
+                        <div class="bubble bubble-communication">
+                            <i class="fas fa-comments"></i>
+                            <span>Communication</span>
+                        </div>
+                        <div class="bubble bubble-secure">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Sécurisé</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Canal Public -->
+            <div class="solution-feature-card canal-public">
+                <div class="feature-image">
+                    <img src="img/public.png" alt="Canal public communautaire - Échanges ouverts et partage d'informations" loading="lazy">
+                    <div class="feature-overlay">
+                        <i class="fas fa-unlock"></i>
+                    </div>
+                    <!-- Bulles flottantes pour le canal public -->
+                    <div class="floating-bubbles">
+                        <div class="bubble bubble-events">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span>événements</span>
+                        </div>
+                        <div class="bubble bubble-communication">
+                            <i class="fas fa-comments"></i>
+                            <span>Communication</span>
+                        </div>
+                        <div class="bubble bubble-public">
+                            <i class="fas fa-users"></i>
+                            <span>Public</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="feature-content">
+                    <h3>Un canal public</h3>
+                    <p>Un espace commun pour les mairies, associations et partenaires locaux, afin de donner de la visibilité aux événements et renforcer le lien social</p>
+                    <br>
+                    <ul class="feature-benefits">
+                        <li><i class="fas fa-check"></i> Visibilité maximale</li>
+                        <li><i class="fas fa-check"></i> Collaboration locale</li>
+                        <li><i class="fas fa-check"></i> Engagement citoyen</li>
+                    </ul>
+                </div>
+            </div>
+            
+
+        </div>
+    </section>
+    <!-- section notre solution End -->
+
+    <!-- section fonctionnalités personnalisées Start -->
+    <section class="section section-alt" id="profile-features">
+        <div class="container">
+            <div class="section-title">
+                <p class="section-subtitle">Fonctionnalités personnalisées</p>
+                <h2>Découvrez les fonctionnalités selon votre profil</h2>
+                <p>Choisissez votre profil pour découvrir les fonctionnalités adaptées à vos besoins</p>
+            </div>
+            
+            <div class="profile-features-grid">
+                <a href="fonctionnalites-enseignement.html" class="profile-feature-card">
+                    <div class="profile-feature-image">
+                        <img src="img/ecole.jpg" alt="Solution de communication pour l'enseignement supérieur - Universités et écoles" loading="lazy">
+                    </div>
+                    <h3>Enseignement supérieur</h3>
+                    <p>Fonctionnalités dédiées aux universités, écoles et établissements d'enseignement supérieur</p>
+                    <div class="btn btn-primary profile-btn">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <a href="fonctionnalites-commune.html" class="profile-feature-card">
+                    <div class="profile-feature-image">
+                        <img src="img/commune.jpg" alt="Plateforme de communication pour communes et mairies - Services publics" loading="lazy">
+                    </div>
+                    <h3>Communes & Mairies</h3>
+                    <p>Solutions adaptées aux mairies et collectivités locales pour dynamiser la vie citoyenne</p>
+                    <div class="btn btn-primary profile-btn">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+                
+                <a href="fonctionnalites-association.html" class="profile-feature-card">
+                    <div class="profile-feature-image">
+                        <img src="img/asso.jpg" alt="Outils de communication pour associations - Gestion d'événements et membres" loading="lazy">
+                    </div>
+                    <h3>Associations</h3>
+                    <p>Outils spécialement conçus pour les associations et organisations à but non lucratif</p>
+                    <div class="btn btn-primary profile-btn">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- section fonctionnalités personnalisées End -->
+
+
+
+    <!-- section stats Start -->
+    <section class="section modern-stats-section" style="background: white; padding: 4rem 0;">
+        <div class="container">
+            <div class="section-title" style="text-align: center; margin-bottom: 3rem;">
+                <h2 style="font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; color: #1e293b; margin-bottom: 1rem;">
+                    Adopté par des milliers d'utilisateurs dans 4 régions
+                </h2>
+                <p style="font-size: 1.25rem; color: #64748b; max-width: 600px; margin: 0 auto;">
+                    Rejoignez une communauté dynamique qui ne cesse de grandir
+                </p>
+            </div>
+            
+            <div class="modern-stats-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; margin-top: 2rem;">
+                <div class="stat-item" style="text-align: center;">
+                    <div style="position: relative; display: inline-block;">
+                        <div style="width: 60px; height: 3px; background: linear-gradient(135deg, #ff6b35, #f7931e); margin: 0 auto 1rem; border-radius: 2px;"></div>
+                        <div style="display: flex; align-items: baseline; justify-content: center; margin-bottom: 0.5rem;">
+                            <span class="counter" data-target="90" style="font-size: 2rem; font-weight: 700; color: #1e293b; font-family: 'Inter', sans-serif; line-height: 1;">0</span>
+                            <span style="font-size: 1.25rem; font-weight: 600; color: #ff6b35; margin-left: 0.25rem;">%</span>
+                        </div>
+                        <p style="font-size: 0.875rem; color: #64748b; margin: 0; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">De visibilité</p>
+                    </div>
+                </div>
+                
+                <div class="stat-item" style="text-align: center;">
+                    <div style="position: relative; display: inline-block;">
+                        <div style="width: 60px; height: 3px; background: linear-gradient(135deg, #ff6b35, #f7931e); margin: 0 auto 1rem; border-radius: 2px;"></div>
+                        <div style="display: flex; align-items: baseline; justify-content: center; margin-bottom: 0.5rem;">
+                            <span class="counter" data-target="1000" style="font-size: 2rem; font-weight: 700; color: #1e293b; font-family: 'Inter', sans-serif; line-height: 1;">0</span>
+                            <span style="font-size: 1.25rem; font-weight: 600; color: #ff6b35; margin-left: 0.25rem;">+</span>
+                        </div>
+                        <p style="font-size: 0.875rem; color: #64748b; margin: 0; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Étudiants actifs</p>
+                    </div>
+                </div>
+                
+                <div class="stat-item" style="text-align: center;">
+                    <div style="position: relative; display: inline-block;">
+                        <div style="width: 60px; height: 3px; background: linear-gradient(135deg, #ff6b35, #f7931e); margin: 0 auto 1rem; border-radius: 2px;"></div>
+                        <div style="display: flex; align-items: baseline; justify-content: center; margin-bottom: 0.5rem;">
+                            <span class="counter" data-target="150" style="font-size: 2rem; font-weight: 700; color: #1e293b; font-family: 'Inter', sans-serif; line-height: 1;">0</span>
+                            <span style="font-size: 1.25rem; font-weight: 600; color: #ff6b35; margin-left: 0.25rem;">+</span>
+                        </div>
+                        <p style="font-size: 0.875rem; color: #64748b; margin: 0; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Événements créés</p>
+                    </div>
+                </div>
+                
+                <div class="stat-item" style="text-align: center;">
+                    <div style="position: relative; display: inline-block;">
+                        <div style="width: 60px; height: 3px; background: linear-gradient(135deg, #ff6b35, #f7931e); margin: 0 auto 1rem; border-radius: 2px;"></div>
+                        <div style="display: flex; align-items: baseline; justify-content: center; margin-bottom: 0.5rem;">
+                            <span class="counter" data-target="100" style="font-size: 2rem; font-weight: 700; color: #1e293b; font-family: 'Inter', sans-serif; line-height: 1;">0</span>
+                            <span style="font-size: 1.25rem; font-weight: 600; color: #ff6b35; margin-left: 0.25rem;">%</span>
+                        </div>
+                        <p style="font-size: 0.875rem; color: #64748b; margin: 0; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Satisfaction utilisateurs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section stats End -->
+
+    <!-- Section Partenariats Start -->
+    <section class="section" id="partenariats">
+        <div class="container">
+            <div class="section-title">
+                <p class="section-subtitle">Partenariats</p>
+                <h2>Nous font confiance</h2>
+            </div>
+            
+            <div class="partners-slider">
+                <div class="partners-track">
+                    <div class="partners-container">
+                        <img src="img/bde.jpg" alt="BDE" class="partner-logo">
+                        <img src="img/uva.png" alt="UVA" class="partner-logo">
+                        <img src="img/bds.jpg" alt="BDS" class="partner-logo">
+                        <img src="img/epf.png" alt="EPF" class="partner-logo">
+                        <img src="img/bde_ice.jpg" alt="BDE ICE" class="partner-logo">
+                        <img src="img/je.jpg" alt="JE" class="partner-logo">
+                    </div>
+                    <div class="partners-container">
+                        <img src="img/bde.jpg" alt="BDE" class="partner-logo">
+                        <img src="img/uva.png" alt="UVA" class="partner-logo">
+                        <img src="img/bds.jpg" alt="BDS" class="partner-logo">
+                        <img src="img/epf.png" alt="EPF" class="partner-logo">
+                        <img src="img/bde_ice.jpg" alt="BDE ICE" class="partner-logo">
+                        <img src="img/je.jpg" alt="JE" class="partner-logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Section Partenariats End -->
+
+
+
+    <!-- Contact Section Start -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <p class="section-subtitle">Contact</p>
+                <h2>Une question ou une démonstration ?</h2>
+                <p>Notre équipe est là pour vous accompagner dans votre transition vers Genpulse.</p>
+            </div>
+            
+            <div class="text-center">
+                <a href="mailto:genpulse.pro@gmail.com?subject=Demande de contact" class="btn btn-primary btn-lg">
+                    <i class="fas fa-envelope me-2"></i>
+                    Envoyer un email
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section End -->
+
+    <!-- Footer Start -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Genpulse</h4>
+                    <p>L'application qui révolutionne la communication universitaire en centralisant tous les événements et informations sur une seule plateforme intuitive.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Liens rapides</h4>
+                    <a href="#about">À propos</a>
+                    <a href="#features">Fonctionnalités</a>
+                    <a href="#benefits">Avantages</a>
+                    <a href="page2 Nath.html">L'équipe</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="mentions-legales.pdf" target="_blank">Mentions légales</a>
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">Conditions d'utilisation</a>
+                    <a href="#">FAQ</a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Genpulse. Tous droits réservés. Conçu avec ❤️ pour la communauté étudiante.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Custom Cursor Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.querySelector('.custom-cursor');
+            
+            document.addEventListener('mousemove', function(e) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+            });
+            
+            // Add hover effect to interactive elements
+            const interactiveElements = document.querySelectorAll('a, button, .nav-link, .dropdown-item, .btn');
+            
+            interactiveElements.forEach(element => {
+                element.addEventListener('mouseenter', function() {
+                    cursor.classList.add('hover');
+                });
+                
+                element.addEventListener('mouseleave', function() {
+                    cursor.classList.remove('hover');
+                });
+            });
+            
+            // Animation des compteurs (une seule fois) - Optimisée pour les performances
+            let countersAnimated = false;
+            
+            function animateCounters() {
+                if (countersAnimated) return; // Évite l'animation multiple
+                
+                const counters = document.querySelectorAll('.counter');
+                
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const duration = 1500; // Réduit à 1.5 secondes
+                    const increment = target / (duration / 16); // 60 FPS
+                    let current = 0;
+                    
+                    const updateCounter = () => {
+                        current += increment;
+                        if (current < target) {
+                            counter.textContent = Math.floor(current);
+                            requestAnimationFrame(updateCounter);
+                        } else {
+                            counter.textContent = target;
+                            counter.classList.add('animate');
+                        }
+                    };
+                    
+                    updateCounter();
+                });
+                
+                countersAnimated = true; // Marque comme animé
+            }
+            
+            // Intersection Observer optimisé pour déclencher les animations
+            const observerOptions = {
+                threshold: 0.3, // Réduit le seuil pour déclencher plus tôt
+                rootMargin: '0px 0px -50px 0px' // Réduit la marge
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target.classList.contains('modern-stats-section')) {
+                            // Délai réduit pour une meilleure réactivité
+                            setTimeout(animateCounters, 500);
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            // Observer la section stats
+            const statsSection = document.querySelector('.modern-stats-section');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+            
+            // Animation au scroll optimisée pour les cartes
+            const cardObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            }, { threshold: 0.05 }); // Seuil réduit pour déclencher plus tôt
+            
+            const statCards = document.querySelectorAll('.modern-stat-card');
+            statCards.forEach(card => {
+                card.style.animationPlayState = 'paused';
+                cardObserver.observe(card);
+            });
+        });
+    </script>
+</body>
+
+</html>
