@@ -241,9 +241,6 @@
 </head>
 
 <body>
-    <!-- Custom Cursor -->
-    <div class="custom-cursor"></div>
-    
     <!-- Spinner Start -->
     <div id="spinner" class="show position-fixed w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="loading"></div>
@@ -420,38 +417,6 @@
     <!-- Template Javascript -->
     <script src="js/main.js?v=2.1"></script>
     
-    <!-- Custom Cursor Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Désactiver le custom cursor sur mobile/tactile
-            const isMobile = window.matchMedia('(max-width: 768px)').matches || 
-                           ('ontouchstart' in window || navigator.maxTouchPoints > 0);
-            
-            if (!isMobile) {
-                const cursor = document.querySelector('.custom-cursor');
-                
-                if (cursor) {
-                    document.addEventListener('mousemove', (e) => {
-                        cursor.style.left = e.clientX + 'px';
-                        cursor.style.top = e.clientY + 'px';
-                    });
-                    
-                    // Add hover effect to interactive elements
-                    const hoverElements = document.querySelectorAll('a, button, .team-card, .team-image, .team-content, h1, h2, h3, h4, h5, h6, p, img');
-                    
-                    hoverElements.forEach(element => {
-                        element.addEventListener('mouseenter', () => {
-                            cursor.classList.add('hover');
-                        });
-                        
-                        element.addEventListener('mouseleave', () => {
-                            cursor.classList.remove('hover');
-                        });
-                    });
-                }
-            }
-        });
-    </script>
 </body>
 
 </html>

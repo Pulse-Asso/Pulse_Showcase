@@ -320,9 +320,6 @@
 </head>
 
 <body>
-    <!-- Custom Cursor -->
-    <div class="custom-cursor"></div>
-    
     <!-- Navbar Start -->
     <nav class="navbar">
         <div class="container">
@@ -624,36 +621,6 @@
     <!-- Template Javascript -->
     <script src="js/main.js?v=2.1"></script>
     
-    <!-- Custom Cursor Script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Désactiver le custom cursor sur mobile/tactile
-            const isMobile = window.matchMedia('(max-width: 768px)').matches || 
-                           ('ontouchstart' in window || navigator.maxTouchPoints > 0);
-            
-            if (!isMobile) {
-                const cursor = document.querySelector('.custom-cursor');
-                
-                if (cursor) {
-                    document.addEventListener('mousemove', function(e) {
-                        cursor.style.left = e.clientX + 'px';
-                        cursor.style.top = e.clientY + 'px';
-                    });
-                    
-                    // Add hover effect to interactive elements
-                    const interactiveElements = document.querySelectorAll('a, button, .nav-link, .dropdown-item, .btn');
-                    
-                    interactiveElements.forEach(element => {
-                        element.addEventListener('mouseenter', function() {
-                            cursor.classList.add('hover');
-                        });
-                        
-                        element.addEventListener('mouseleave', function() {
-                            cursor.classList.remove('hover');
-                        });
-                    });
-                }
-            }
 
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
