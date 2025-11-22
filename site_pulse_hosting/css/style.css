@@ -2160,6 +2160,16 @@ p {
     outline-offset: 2px;
 }
 
+.solution-feature-card,
+.solution-feature-card * {
+    -webkit-tap-highlight-color: transparent !important;
+    tap-highlight-color: transparent !important;
+}
+
+.solution-feature-card *:focus {
+    outline: none !important;
+}
+
 /* Print styles */
 @media print {
     .navbar,
@@ -2462,13 +2472,100 @@ p {
     background: white;
     border-radius: var(--border-radius-xl);
     padding: 3rem;
-    box-shadow: var(--shadow-lg);
-    transition: transform 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+    transition: none !important;
+    cursor: default !important;
+    pointer-events: auto !important;
+    -webkit-tap-highlight-color: transparent !important;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .solution-feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-xl);
+    transform: none !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+}
+
+.solution-feature-card:active {
+    transform: none !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+.solution-feature-card:focus {
+    transform: none !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+    outline: none !important;
+}
+
+.solution-feature-card:focus-visible {
+    transform: none !important;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+    outline: none !important;
+}
+
+.solution-feature-card *:focus {
+    outline: none !important;
+}
+
+.solution-feature-card *:active {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+.solution-feature-card,
+.solution-feature-card * {
+    -webkit-tap-highlight-color: transparent !important;
+    tap-highlight-color: transparent !important;
+}
+
+/* Désactiver tous les effets d'ombre au clic - Forcer l'ombre à rester constante */
+.solution-feature-card:active,
+.solution-feature-card:focus,
+.solution-feature-card:focus-within,
+.solution-feature-card:focus-visible,
+.solution-feature-card:visited,
+.solution-feature-card[tabindex]:focus,
+.solution-feature-card[tabindex]:active {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05) !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+}
+
+/* Désactiver tous les effets d'ombre sur les enfants au clic */
+.solution-feature-card *:active,
+.solution-feature-card *:focus,
+.solution-feature-card *:focus-visible,
+.solution-feature-card *:focus-within {
+    box-shadow: none !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    outline: none !important;
+}
+
+/* Désactiver les effets sur les pseudo-éléments */
+.solution-feature-card::before,
+.solution-feature-card::after,
+.solution-feature-card *::before,
+.solution-feature-card *::after {
+    box-shadow: none !important;
+    transition: none !important;
+}
+
+/* Empêcher tout changement d'ombre via les transitions */
+.solution-feature-card,
+.solution-feature-card *,
+.solution-feature-card::before,
+.solution-feature-card::after,
+.solution-feature-card *::before,
+.solution-feature-card *::after {
+    transition: none !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
 }
 
 
@@ -2484,11 +2581,23 @@ p {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: none !important;
 }
 
 .solution-feature-card:hover .feature-image img {
-    transform: scale(1.05);
+    transform: none !important;
+}
+
+.solution-feature-card:active .feature-image img {
+    transform: none !important;
+}
+
+.solution-feature-card .feature-image img:active {
+    transform: none !important;
+}
+
+.solution-feature-card .feature-image img:hover {
+    transform: none !important;
 }
 
 .feature-overlay {
@@ -5662,5 +5771,61 @@ p {
     .cta-compact {
         padding-top: 0rem !important;
         padding-bottom: 1.5rem !important;
+    }
+}
+
+/* ===== CORRECTIONS SPÉCIFIQUES POUR iOS ===== */
+/* Désactiver background-attachment: fixed sur iOS pour éviter les problèmes de zoom d'images */
+
+/* Correction pour iOS Safari - Détection avec @supports */
+@supports (-webkit-touch-callout: none) {
+    /* iOS Safari uniquement */
+    .hero-section {
+        background-attachment: scroll !important;
+        -webkit-background-size: cover !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+    }
+    
+    .hero-section.enseignement-page,
+    .hero-section.association-page,
+    .hero-section.commune-page,
+    .hero-section.partenariats-page {
+        background-attachment: scroll !important;
+        -webkit-background-size: cover !important;
+        background-size: cover !important;
+        background-position: center center !important;
+    }
+}
+
+/* Correction pour tous les appareils mobiles */
+@media (max-width: 768px) {
+    .hero-section {
+        background-attachment: scroll !important;
+        -webkit-background-size: cover !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+        min-height: 60vh !important;
+    }
+    
+    .hero-section.enseignement-page,
+    .hero-section.association-page,
+    .hero-section.commune-page,
+    .hero-section.partenariats-page {
+        background-attachment: scroll !important;
+        -webkit-background-size: cover !important;
+        background-size: cover !important;
+        background-position: center center !important;
+        min-height: 60vh !important;
+    }
+}
+
+/* Correction supplémentaire pour très petits écrans iOS */
+@media (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+    .hero-section {
+        background-size: 100% auto !important;
+        background-position: center top !important;
     }
 }
