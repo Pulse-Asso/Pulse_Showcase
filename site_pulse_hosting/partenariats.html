@@ -99,6 +99,29 @@
                 line-height: 1.4;
             }
             
+            /* Hero text - Centré sur mobile - Même style que index.html */
+            .hero-text {
+                text-align: center !important;
+            }
+            
+            .hero-title {
+                text-align: center !important;
+                font-size: 1.8rem !important;
+                line-height: 1.2 !important;
+            }
+            
+            .hero-subtitle {
+                text-align: center !important;
+                font-size: 0.9rem !important;
+                line-height: 1.4 !important;
+            }
+            
+            /* Hero section mobile - Même style que index.html */
+            .hero-content {
+                text-align: center;
+                padding: 2rem 0;
+            }
+            
             /* Images partenaires */
             .partner-logo {
                 width: 60px !important;
@@ -225,6 +248,11 @@
             
             .footer-section {
                 margin-bottom: 1.5rem;
+            }
+            
+            /* Désactiver le custom cursor sur mobile */
+            .custom-cursor {
+                display: none !important;
             }
         }
         
@@ -389,7 +417,7 @@
                     <div style="position: relative; display: inline-block;">
                         <div style="width: 60px; height: 3px; background: linear-gradient(135deg, #ff6b35, #f7931e); margin: 0 auto 1rem; border-radius: 2px;"></div>
                         <div style="display: flex; align-items: baseline; justify-content: center; margin-bottom: 0.5rem;">
-                            <span class="counter" data-target="1000" style="font-size: 2rem; font-weight: 700; color: #1e293b; font-family: 'Inter', sans-serif; line-height: 1;">0</span>
+                            <span class="counter" data-target="2000" style="font-size: 2rem; font-weight: 700; color: #1e293b; font-family: 'Inter', sans-serif; line-height: 1;">0</span>
                             <span style="font-size: 1.25rem; font-weight: 600; color: #ff6b35; margin-left: 0.25rem;">+</span>
                         </div>
                         <p style="font-size: 0.875rem; color: #64748b; margin: 0; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Étudiants actifs</p>
@@ -465,9 +493,9 @@
                         <div style="order: 2;">
                             <h3 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: #1e293b;">Soutien Associatif</h3>
                             <p style="font-size: 1.125rem; color: #64748b; margin-bottom: 2rem; line-height: 1.6;">
-                                Soutenez des associations et projets associatifs. Nous vous accompagnons 
+                                Vous êtes une entreprise et vous voulez soutenir des associations et projets associatifs. Nous vous accompagnons 
                                 pour trouver la bonne association selon la catégorie, le projet, 
-                                la localisation et les événements qui vous correspondent.
+                                la localisation et les événements que vous voulez sponsoriser.
                             </p>
                             <ul style="list-style: none; padding: 0;">
                                 <li style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; font-size: 1rem; color: #1e293b;">
@@ -500,13 +528,13 @@
                             <h3 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem; color: #1e293b;">Événements Temporaires</h3>
                             <p style="font-size: 1.125rem; color: #64748b; margin-bottom: 2rem; line-height: 1.6;">
                                 Organisez des événements temporaires comme des expositions, conférences, 
-                                ateliers... Nous mettons en avant votre événement sur l'application 
+                                ateliers... Mettez en avant votre événement sur l'application 
                                 pour toucher un maximum de participants.
                             </p>
                             <ul style="list-style: none; padding: 0;">
                                 <li style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; font-size: 1rem; color: #1e293b;">
                                     <i class="fas fa-check" style="color: #10b981; font-size: 1.125rem;"></i>
-                                    Promotion d'événements temporaires
+                                    Redirection vers votre plateforme
                                 </li>
                                 <li style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem; font-size: 1rem; color: #1e293b;">
                                     <i class="fas fa-check" style="color: #10b981; font-size: 1.125rem;"></i>
@@ -599,25 +627,33 @@
     <!-- Custom Cursor Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const cursor = document.querySelector('.custom-cursor');
+            // Désactiver le custom cursor sur mobile/tactile
+            const isMobile = window.matchMedia('(max-width: 768px)').matches || 
+                           ('ontouchstart' in window || navigator.maxTouchPoints > 0);
             
-            document.addEventListener('mousemove', function(e) {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-            });
-            
-            // Add hover effect to interactive elements
-            const interactiveElements = document.querySelectorAll('a, button, .nav-link, .dropdown-item, .btn');
-            
-            interactiveElements.forEach(element => {
-                element.addEventListener('mouseenter', function() {
-                    cursor.classList.add('hover');
-                });
+            if (!isMobile) {
+                const cursor = document.querySelector('.custom-cursor');
                 
-                element.addEventListener('mouseleave', function() {
-                    cursor.classList.remove('hover');
-                });
-            });
+                if (cursor) {
+                    document.addEventListener('mousemove', function(e) {
+                        cursor.style.left = e.clientX + 'px';
+                        cursor.style.top = e.clientY + 'px';
+                    });
+                    
+                    // Add hover effect to interactive elements
+                    const interactiveElements = document.querySelectorAll('a, button, .nav-link, .dropdown-item, .btn');
+                    
+                    interactiveElements.forEach(element => {
+                        element.addEventListener('mouseenter', function() {
+                            cursor.classList.add('hover');
+                        });
+                        
+                        element.addEventListener('mouseleave', function() {
+                            cursor.classList.remove('hover');
+                        });
+                    });
+                }
+            }
 
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {

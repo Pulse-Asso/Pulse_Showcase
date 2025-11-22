@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>GenPulse : l'application d'événements</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" name="viewport">
     <meta name="keywords" content="communication digitale, gestion événements, plateforme association, outil communication commune, solution enseignement, événementiel digital, communication moderne, Genpulse, gestion association, communication publique, outil pédagogique">
     <meta content="GenPulse : l'application d'événements pour moderniser vos échanges. Gestion d'événements, communication digitale et outils collaboratifs pour associations, communes et enseignement." name="description">
     <meta name="author" content="Genpulse">
@@ -139,6 +139,10 @@
             }
             
             /* Section Cibles - Images */
+            .profile-feature-card {
+                min-height: 300px !important;
+            }
+            
             .profile-feature-card img {
                 width: 100% !important;
                 height: 150px !important;
@@ -148,6 +152,22 @@
             .profile-feature-image {
                 height: 150px !important;
                 overflow: hidden;
+            }
+            
+            .profile-feature-card h3 {
+                margin: 1rem 1.5rem 0.5rem !important;
+                font-size: 1.3rem !important;
+            }
+            
+            .profile-feature-card p {
+                margin: 0 1.5rem 2rem !important;
+                font-size: 0.95rem !important;
+                line-height: 1.4 !important;
+            }
+            
+            .profile-btn {
+                bottom: 0.75rem !important;
+                right: 0.75rem !important;
             }
             
             /* Logos partenaires */
@@ -225,6 +245,11 @@
                 padding: 2rem 0;
             }
             
+            /* Désactiver le custom cursor sur mobile */
+            .custom-cursor {
+                display: none !important;
+            }
+            
             .app-showcase-container {
                 flex-direction: column;
                 gap: 2rem;
@@ -259,10 +284,14 @@
             
             .hero-title {
                 text-align: center !important;
+                font-size: 1.8rem !important;
+                line-height: 1.2 !important;
             }
             
             .hero-subtitle {
                 text-align: center !important;
+                font-size: 0.9rem !important;
+                line-height: 1.4 !important;
             }
             
             /* Section Canal privé - Layout mobile exactement comme Bons Plans */
@@ -390,6 +419,27 @@
                 font-size: 1.3rem !important;
             }
             
+            /* Section Cibles - Cartes encore plus petites sur très petits écrans */
+            .profile-feature-card {
+                min-height: 300px !important;
+            }
+            
+            .profile-feature-card h3 {
+                margin: 0.75rem 1rem 0.5rem !important;
+                font-size: 1.2rem !important;
+            }
+            
+            .profile-feature-card p {
+                margin: 0 1rem 1.75rem !important;
+                font-size: 0.9rem !important;
+                line-height: 1.4 !important;
+            }
+            
+            .profile-btn {
+                bottom: 0.5rem !important;
+                right: 0.5rem !important;
+            }
+            
             /* Section Canal privé - Très petits écrans */
             .solution-feature-card {
                 padding: 1rem !important;
@@ -414,6 +464,51 @@
             .solution-feature-card .feature-image img {
                 width: 100% !important;
                 max-width: none !important;
+            }
+        }
+        
+        /* Corrections spécifiques pour iOS - Images de header */
+        @supports (-webkit-touch-callout: none) {
+            /* Détection iOS Safari */
+            .hero-section {
+                background-attachment: scroll !important;
+                -webkit-background-size: cover !important;
+                background-size: cover !important;
+                background-position: center center !important;
+                background-repeat: no-repeat !important;
+            }
+            
+            .hero-section.enseignement-page,
+            .hero-section.association-page,
+            .hero-section.commune-page,
+            .hero-section.partenariats-page {
+                background-attachment: scroll !important;
+                -webkit-background-size: cover !important;
+                background-size: cover !important;
+                background-position: center center !important;
+            }
+        }
+        
+        /* Corrections pour tous les appareils mobiles */
+        @media (max-width: 768px) {
+            .hero-section {
+                background-attachment: scroll !important;
+                -webkit-background-size: cover !important;
+                background-size: cover !important;
+                background-position: center center !important;
+                background-repeat: no-repeat !important;
+                min-height: 60vh !important;
+            }
+            
+            .hero-section.enseignement-page,
+            .hero-section.association-page,
+            .hero-section.commune-page,
+            .hero-section.partenariats-page {
+                background-attachment: scroll !important;
+                -webkit-background-size: cover !important;
+                background-size: cover !important;
+                background-position: center center !important;
+                min-height: 60vh !important;
             }
         }
         
@@ -712,7 +807,7 @@
                     <div style="position: relative; display: inline-block;">
                         <div style="width: 60px; height: 3px; background: linear-gradient(135deg, #ff6b35, #f7931e); margin: 0 auto 1rem; border-radius: 2px;"></div>
                         <div style="display: flex; align-items: baseline; justify-content: center; margin-bottom: 0.5rem;">
-                            <span class="counter" data-target="1000" style="font-size: 2rem; font-weight: 700; color: #1e293b; font-family: 'Inter', sans-serif; line-height: 1;">0</span>
+                            <span class="counter" data-target="2000" style="font-size: 2rem; font-weight: 700; color: #1e293b; font-family: 'Inter', sans-serif; line-height: 1;">0</span>
                             <span style="font-size: 1.25rem; font-weight: 600; color: #ff6b35; margin-left: 0.25rem;">+</span>
                         </div>
                         <p style="font-size: 0.875rem; color: #64748b; margin: 0; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Étudiants actifs</p>
@@ -723,7 +818,7 @@
                     <div style="position: relative; display: inline-block;">
                         <div style="width: 60px; height: 3px; background: linear-gradient(135deg, #ff6b35, #f7931e); margin: 0 auto 1rem; border-radius: 2px;"></div>
                         <div style="display: flex; align-items: baseline; justify-content: center; margin-bottom: 0.5rem;">
-                            <span class="counter" data-target="150" style="font-size: 2rem; font-weight: 700; color: #1e293b; font-family: 'Inter', sans-serif; line-height: 1;">0</span>
+                            <span class="counter" data-target="200" style="font-size: 2rem; font-weight: 700; color: #1e293b; font-family: 'Inter', sans-serif; line-height: 1;">0</span>
                             <span style="font-size: 1.25rem; font-weight: 600; color: #ff6b35; margin-left: 0.25rem;">+</span>
                         </div>
                         <p style="font-size: 0.875rem; color: #64748b; margin: 0; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em;">Événements créés</p>
@@ -846,25 +941,33 @@
     <!-- Custom Cursor Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const cursor = document.querySelector('.custom-cursor');
+            // Désactiver le custom cursor sur mobile/tactile
+            const isMobile = window.matchMedia('(max-width: 768px)').matches || 
+                           ('ontouchstart' in window || navigator.maxTouchPoints > 0);
             
-            document.addEventListener('mousemove', function(e) {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-            });
-            
-            // Add hover effect to interactive elements
-            const interactiveElements = document.querySelectorAll('a, button, .nav-link, .dropdown-item, .btn');
-            
-            interactiveElements.forEach(element => {
-                element.addEventListener('mouseenter', function() {
-                    cursor.classList.add('hover');
-                });
+            if (!isMobile) {
+                const cursor = document.querySelector('.custom-cursor');
                 
-                element.addEventListener('mouseleave', function() {
-                    cursor.classList.remove('hover');
-                });
-            });
+                if (cursor) {
+                    document.addEventListener('mousemove', function(e) {
+                        cursor.style.left = e.clientX + 'px';
+                        cursor.style.top = e.clientY + 'px';
+                    });
+                    
+                    // Add hover effect to interactive elements
+                    const interactiveElements = document.querySelectorAll('a, button, .nav-link, .dropdown-item, .btn');
+                    
+                    interactiveElements.forEach(element => {
+                        element.addEventListener('mouseenter', function() {
+                            cursor.classList.add('hover');
+                        });
+                        
+                        element.addEventListener('mouseleave', function() {
+                            cursor.classList.remove('hover');
+                        });
+                    });
+                }
+            }
             
             // Animation des compteurs (une seule fois) - Optimisée pour les performances
             let countersAnimated = false;

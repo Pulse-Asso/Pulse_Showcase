@@ -160,6 +160,58 @@
             .footer-section {
                 margin-bottom: 1.5rem;
             }
+            
+            /* Hero text - Centré sur mobile - Même style que index.html */
+            .hero-text {
+                text-align: center !important;
+            }
+            
+            .hero-title {
+                text-align: center !important;
+                font-size: 1.8rem !important;
+                line-height: 1.2 !important;
+            }
+            
+            .hero-subtitle {
+                text-align: center !important;
+                font-size: 0.9rem !important;
+                line-height: 1.4 !important;
+            }
+            
+            /* Hero section mobile - Même style que index.html */
+            .hero-content {
+                text-align: center;
+                padding: 2rem 0;
+            }
+            
+            /* Désactiver le custom cursor sur mobile */
+            .custom-cursor {
+                display: none !important;
+            }
+        }
+        
+        /* Corrections spécifiques pour iOS - Images de header */
+        @supports (-webkit-touch-callout: none) {
+            /* Détection iOS Safari */
+            .hero-section {
+                background-attachment: scroll !important;
+                -webkit-background-size: cover !important;
+                background-size: cover !important;
+                background-position: center center !important;
+                background-repeat: no-repeat !important;
+            }
+        }
+        
+        /* Corrections pour tous les appareils mobiles */
+        @media (max-width: 768px) {
+            .hero-section {
+                background-attachment: scroll !important;
+                -webkit-background-size: cover !important;
+                background-size: cover !important;
+                background-position: center center !important;
+                background-repeat: no-repeat !important;
+                min-height: 60vh !important;
+            }
         }
         
         /* Très petits écrans */
@@ -371,26 +423,32 @@
     <!-- Custom Cursor Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const cursor = document.querySelector('.custom-cursor');
+            // Désactiver le custom cursor sur mobile/tactile
+            const isMobile = window.matchMedia('(max-width: 768px)').matches || 
+                           ('ontouchstart' in window || navigator.maxTouchPoints > 0);
             
-            if (cursor) {
-                document.addEventListener('mousemove', (e) => {
-                    cursor.style.left = e.clientX + 'px';
-                    cursor.style.top = e.clientY + 'px';
-                });
+            if (!isMobile) {
+                const cursor = document.querySelector('.custom-cursor');
                 
-                // Add hover effect to interactive elements
-                const hoverElements = document.querySelectorAll('a, button, .team-card, .team-image, .team-content, h1, h2, h3, h4, h5, h6, p, img');
-                
-                hoverElements.forEach(element => {
-                    element.addEventListener('mouseenter', () => {
-                        cursor.classList.add('hover');
+                if (cursor) {
+                    document.addEventListener('mousemove', (e) => {
+                        cursor.style.left = e.clientX + 'px';
+                        cursor.style.top = e.clientY + 'px';
                     });
                     
-                    element.addEventListener('mouseleave', () => {
-                        cursor.classList.remove('hover');
+                    // Add hover effect to interactive elements
+                    const hoverElements = document.querySelectorAll('a, button, .team-card, .team-image, .team-content, h1, h2, h3, h4, h5, h6, p, img');
+                    
+                    hoverElements.forEach(element => {
+                        element.addEventListener('mouseenter', () => {
+                            cursor.classList.add('hover');
+                        });
+                        
+                        element.addEventListener('mouseleave', () => {
+                            cursor.classList.remove('hover');
+                        });
                     });
-                });
+                }
             }
         });
     </script>

@@ -23,6 +23,25 @@
     
     <!-- Responsive Mobile Styles -->
     <style>
+        /* Version desktop - Étirer la zone de texte du titre pour la page commune */
+        /* Garder la même position que les autres pages (max-width: 1200px) mais permettre au texte de s'étendre plus vers la droite */
+        @media (min-width: 1025px) {
+            .hero-section.commune-page .hero-content {
+                max-width: 1200px !important;
+                grid-template-columns: 1.2fr 0.8fr !important;
+            }
+            
+            .hero-section.commune-page .hero-text {
+                max-width: none !important;
+                width: 100% !important;
+            }
+            
+            .hero-section.commune-page .hero-title {
+                max-width: none !important;
+                width: 100% !important;
+            }
+        }
+        
         /* Mobile First - Téléphones */
         @media (max-width: 768px) {
             /* Réduction générale des tailles de texte */
@@ -45,10 +64,14 @@
             
             .hero-title {
                 text-align: center !important;
+                font-size: 1.8rem !important;
+                line-height: 1.2 !important;
             }
             
             .hero-subtitle {
                 text-align: center !important;
+                font-size: 0.9rem !important;
+                line-height: 1.4 !important;
             }
             
             /* Navbar mobile */
@@ -61,6 +84,11 @@
             
             /* Hero section mobile */
             .hero-content { text-align: center; padding: 2rem 0; }
+            
+            /* Désactiver le custom cursor sur mobile */
+            .custom-cursor {
+                display: none !important;
+            }
             
             /* Images plus petites */
             .solution-feature-card img { width: 60px !important; height: 60px !important; }
@@ -292,8 +320,8 @@
         <div class="hero-content" style="position: relative; z-index: 2;">
             <!-- Text Content -->
             <div class="hero-text">
-                <h1 class="hero-title">Modernisez votre <span class="highlight">commune</span> avec Genpulse</h1>
-                <p class="hero-subtitle">Une plateforme complète pour dynamiser la vie citoyenne, améliorer la communication locale et créer une communauté engagée</p>
+                <h1 class="hero-title">Dynamisez votre commune <span class="highlight">sans effort</span> avec Genpulse</h1>
+                <p class="hero-subtitle">Une plateforme clé en main pour dynamiser la vie citoyenne, améliorer la communication locale et créer une communauté engagée</p>
                 <div class="hero-buttons">
                     <a href="#features" class="btn btn-primary btn-lg">
                         <i class="fas fa-rocket"></i>
@@ -314,8 +342,8 @@
         <div class="admin-management-container">
             <div class="admin-management-content">
                 <div class="admin-text-content">
-                    <h2>Une seule appli pour tout dire,<span class="highlight-orange">un seul clic</span> pour tout savoir.​</h2>
-                    <p class="admin-subtitle">Toutes vos informations, en un seul endroit, directement dans la poche de vos citoyens..</p>
+                    <h2>Fédérez tous <span class="highlight-orange">les acteurs</span> de la vie locale​</h2>
+                    <p class="admin-subtitle">Validez les acteurs de confiance pour leur permettre de publier leurs événements dans l'application.</p>
                     
                     <div class="admin-features-list">
                         <div class="admin-feature-item">
@@ -323,8 +351,8 @@
                                 <i class="fas fa-check"></i>
                             </div>
                             <div class="admin-feature-content">
-                                <h4>Informer instantanément</h4>
-                                <p>Alertes sms, actualités, travaux… des informations vues instantanément.​</p>
+                                <h4>Gain de temps</h4>
+                                <p>Devenez modérateur plûtot que relais de l'information. Et l'équipe GenPulse vous aide à sourcer les événements autour de vous.​</p>
                             </div>
                         </div>
                         
@@ -343,7 +371,7 @@
                             </div>
                             <div class="admin-feature-content">
                                 <h4>Gagner en visibilité</h4>
-                                <p>Renforcer au maximum votre visibilité en bénéficiant d'un espace dédié ​.​</p>
+                                <p>Renforcer au maximum votre visibilité en bénéficiant d'un espace dédié​.​</p>
                             </div>
                         </div>
                         
@@ -507,9 +535,29 @@
                      <div class="feature-icon">
                          <i class="far fa-star"></i>
                      </div>
-                     <h3>Bons plans</h3>
+                     <h3>Bons plans & appels à projets</h3>
                  </div>
                  <p>Partagez et découvrez les offres, réductions et opportunités spéciales pour les citoyens de votre commune.</p>
+             </div>
+             
+             <div class="feature-modern-card">
+                 <div class="feature-header">
+                     <div class="feature-icon">
+                         <i class="fas fa-flag"></i>
+                     </div>
+                     <h3>Signalement citoyen</h3>
+                 </div>
+                 <p>Permettez à vos citoyens de signaler rapidement les problèmes rencontrés dans la commune (arbre sur la chaussée, panne d'éclairage, etc.).</p>
+             </div>
+             
+             <div class="feature-modern-card">
+                 <div class="feature-header">
+                     <div class="feature-icon">
+                         <i class="fas fa-globe"></i>
+                     </div>
+                     <h3>Site internet</h3>
+                 </div>
+                 <p>Accédez à toutes les fonctionnalités directement depuis votre navigateur web, disponible sur tous vos appareils.</p>
              </div>
         </div>
     </section>
@@ -705,7 +753,7 @@
     <section class="section cta-section">
         <div class="container">
             <div class="cta-content">
-                <h2>Prêt à moderniser votre commune ?</h2>
+                <h2>Prêt à dynamiser votre commune ?</h2>
                 <p>Rejoignez les collectivités qui ont déjà transformé leur communication avec Genpulse</p>
                 <a href="mailto:genpulse.pro@gmail.com?subject=Demande de contact" class="btn btn-primary btn-lg">
                     <i class="fas fa-envelope"></i>
@@ -764,25 +812,33 @@
     <!-- Custom Cursor Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const cursor = document.querySelector('.custom-cursor');
+            // Désactiver le custom cursor sur mobile/tactile
+            const isMobile = window.matchMedia('(max-width: 768px)').matches || 
+                           ('ontouchstart' in window || navigator.maxTouchPoints > 0);
             
-            document.addEventListener('mousemove', function(e) {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-            });
-            
-            // Add hover effect to interactive elements
-            const interactiveElements = document.querySelectorAll('a, button, .nav-link, .dropdown-item, .btn');
-            
-            interactiveElements.forEach(element => {
-                element.addEventListener('mouseenter', function() {
-                    cursor.classList.add('hover');
-                });
+            if (!isMobile) {
+                const cursor = document.querySelector('.custom-cursor');
                 
-                element.addEventListener('mouseleave', function() {
-                    cursor.classList.remove('hover');
-                });
-            });
+                if (cursor) {
+                    document.addEventListener('mousemove', function(e) {
+                        cursor.style.left = e.clientX + 'px';
+                        cursor.style.top = e.clientY + 'px';
+                    });
+                    
+                    // Add hover effect to interactive elements
+                    const interactiveElements = document.querySelectorAll('a, button, .nav-link, .dropdown-item, .btn');
+                    
+                    interactiveElements.forEach(element => {
+                        element.addEventListener('mouseenter', function() {
+                            cursor.classList.add('hover');
+                        });
+                        
+                        element.addEventListener('mouseleave', function() {
+                            cursor.classList.remove('hover');
+                        });
+                    });
+                }
+            }
         });
     </script>
 </body>

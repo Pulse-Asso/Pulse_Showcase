@@ -45,10 +45,14 @@
             
             .hero-title {
                 text-align: center !important;
+                font-size: 1.8rem !important;
+                line-height: 1.2 !important;
             }
             
             .hero-subtitle {
                 text-align: center !important;
+                font-size: 0.9rem !important;
+                line-height: 1.4 !important;
             }
             
             /* Navbar mobile */
@@ -61,6 +65,11 @@
             
             /* Hero section mobile */
             .hero-content { text-align: center; padding: 2rem 0; }
+            
+            /* Désactiver le custom cursor sur mobile */
+            .custom-cursor {
+                display: none !important;
+            }
             
             /* Images plus petites */
             .solution-feature-card img { width: 60px !important; height: 60px !important; }
@@ -778,25 +787,33 @@
     <!-- Custom Cursor Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const cursor = document.querySelector('.custom-cursor');
+            // Désactiver le custom cursor sur mobile/tactile
+            const isMobile = window.matchMedia('(max-width: 768px)').matches || 
+                           ('ontouchstart' in window || navigator.maxTouchPoints > 0);
             
-            document.addEventListener('mousemove', function(e) {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-            });
-            
-            // Add hover effect to interactive elements
-            const interactiveElements = document.querySelectorAll('a, button, .nav-link, .dropdown-item, .btn');
-            
-            interactiveElements.forEach(element => {
-                element.addEventListener('mouseenter', function() {
-                    cursor.classList.add('hover');
-                });
+            if (!isMobile) {
+                const cursor = document.querySelector('.custom-cursor');
                 
-                element.addEventListener('mouseleave', function() {
-                    cursor.classList.remove('hover');
-                });
-            });
+                if (cursor) {
+                    document.addEventListener('mousemove', function(e) {
+                        cursor.style.left = e.clientX + 'px';
+                        cursor.style.top = e.clientY + 'px';
+                    });
+                    
+                    // Add hover effect to interactive elements
+                    const interactiveElements = document.querySelectorAll('a, button, .nav-link, .dropdown-item, .btn');
+                    
+                    interactiveElements.forEach(element => {
+                        element.addEventListener('mouseenter', function() {
+                            cursor.classList.add('hover');
+                        });
+                        
+                        element.addEventListener('mouseleave', function() {
+                            cursor.classList.remove('hover');
+                        });
+                    });
+                }
+            }
         });
     </script>
 </body>
