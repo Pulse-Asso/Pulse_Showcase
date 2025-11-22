@@ -1,6 +1,56 @@
 // Main JavaScript file for Genpulse website - WeWard Style
 document.addEventListener('DOMContentLoaded', function() {
     
+    // Optimized scroll handler with throttling using requestAnimationFrame
+    let scrollTimeout;
+    let ticking = false;
+    
+    function optimizedScrollHandler() {
+        if (!ticking) {
+            window.requestAnimationFrame(function() {
+                handleScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }
+    
+    function handleScroll() {
+        const scrollY = window.scrollY;
+        
+        // Navbar effects
+        const navbar = document.querySelector('.navbar');
+        if (navbar) {
+            if (scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = 'none';
+            }
+        }
+        
+        // Back to top button
+        const backToTop = document.querySelector('.back-to-top');
+        if (backToTop) {
+            if (scrollY > 300) {
+                backToTop.classList.add('show');
+            } else {
+                backToTop.classList.remove('show');
+            }
+        }
+        
+        // Scroll progress (throttled separately)
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(function() {
+            const progressBar = document.querySelector('[data-scroll-progress]');
+            if (progressBar) {
+                const scrolled = (scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+                progressBar.style.width = Math.min(scrolled, 100) + '%';
+            }
+        }, 16); // ~60fps
+    }
+    
     // Initialize all components
     initSpinner();
     initNavbar();
@@ -23,20 +73,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Navbar effects
+    // Navbar effects - Now using optimized scroll handler
     function initNavbar() {
-        const navbar = document.querySelector('.navbar');
-        if (navbar) {
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 50) {
-                    navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-                    navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-                } else {
-                    navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-                    navbar.style.boxShadow = 'none';
-                }
-            });
-        }
+        window.addEventListener('scroll', optimizedScrollHandler, { passive: true });
     }
     
     // Mobile menu toggle
@@ -226,18 +265,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 5000);
     }
     
-    // Back to top button
+    // Back to top button - Now using optimized scroll handler
     function initBackToTop() {
         const backToTop = document.querySelector('.back-to-top');
         if (backToTop) {
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 300) {
-                    backToTop.classList.add('show');
-                } else {
-                    backToTop.classList.remove('show');
-                }
-            });
-            
             backToTop.addEventListener('click', function(e) {
                 e.preventDefault();
                 window.scrollTo({
@@ -323,28 +354,34 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize parallax - DISABLED
     // initParallax();
     
-    // Add active class to navigation links
+    // Add active class to navigation links - Optimized with throttling
     function initActiveNavLinks() {
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('.nav-link');
+        let activeNavTimeout;
         
         window.addEventListener('scroll', function() {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionHeight = section.clientHeight;
-                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                    current = section.getAttribute('id');
-                }
-            });
-            
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) {
-                    link.classList.add('active');
-                }
-            });
-        });
+            clearTimeout(activeNavTimeout);
+            activeNavTimeout = setTimeout(function() {
+                let current = '';
+                const scrollY = window.scrollY;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + current) {
+                        link.classList.add('active');
+                    }
+                });
+            }, 100); // Throttle to every 100ms
+        }, { passive: true });
     }
     
     // Initialize active nav links
@@ -457,9 +494,10 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize loading states
     initLoadingStates();
     
-    // Add scroll progress indicator
+    // Add scroll progress indicator - Optimized (already throttled in handleScroll)
     function initScrollProgress() {
         const progressBar = document.createElement('div');
+        progressBar.setAttribute('data-scroll-progress', 'true');
         progressBar.style.cssText = `
             position: fixed;
             top: 0;
@@ -469,13 +507,9 @@ document.addEventListener('DOMContentLoaded', function() {
             background: linear-gradient(90deg, #ff6b35, #f7931e);
             z-index: 10001;
             transition: width 0.3s ease;
+            will-change: width;
         `;
         document.body.appendChild(progressBar);
-        
-        window.addEventListener('scroll', function() {
-            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-            progressBar.style.width = scrolled + '%';
-        });
     }
     
     // Initialize scroll progress
