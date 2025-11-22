@@ -303,6 +303,46 @@ p {
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     contain: layout style paint;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Désactiver les animations des bulles flottantes sur la page commune pour réduire le lag */
+.hero-section.commune-page .floating-bubble {
+    animation: none !important;
+    transform: translate3d(0, 0, 0) !important;
+}
+
+/* Désactiver toutes les animations du header sur la page commune pour éliminer le lag au scroll */
+.hero-section.commune-page .hero-title,
+.hero-section.commune-page .hero-subtitle,
+.hero-section.commune-page .hero-buttons {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    will-change: auto !important;
+}
+
+/* Optimiser le hero-content pour éviter le lag au scroll */
+.hero-section.commune-page .hero-content {
+    will-change: auto !important;
+    transform: translate3d(0, 0, 0) !important;
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+}
+
+.hero-section.commune-page .hero-text {
+    will-change: auto !important;
+    transform: translate3d(0, 0, 0) !important;
+}
+
+/* Désactiver les transitions qui pourraient causer du lag au scroll sur le header de la page commune */
+.hero-section.commune-page .hero-title,
+.hero-section.commune-page .hero-subtitle,
+.hero-section.commune-page .hero-text,
+.hero-section.commune-page .hero-content,
+.hero-section.commune-page .hero-overlay {
+    transition: none !important;
 }
 
 .hero-section.partenariats-page {
