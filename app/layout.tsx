@@ -6,6 +6,7 @@ import Spinner from '@/components/Spinner'
 import BackToTop from '@/components/BackToTop'
 import CustomCursor from '@/components/CustomCursor'
 import ScrollEffects from '@/components/ScrollEffects'
+import FirebaseAnalytics from '@/components/FirebaseAnalytics'
 
 const BASE_URL = 'https://genpulse.pro'
 
@@ -112,6 +113,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <BackToTop />
         <ScrollEffects />
+        <FirebaseAnalytics />
       </body>
     </html>
   )
