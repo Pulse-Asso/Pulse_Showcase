@@ -55,6 +55,40 @@ export default function ScrollEffects() {
       revealObserver.observe(el)
     })
 
+    // iOS fix: force-load feature-card images that may not render on Safari
+    const isIOS =
+      /iPad|iPhone|iPod/.test(navigator.userAgent) ||
+      (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+
+    if (isIOS) {
+      const featureImages = document.querySelectorAll<HTMLImageElement>(
+        '.solution-feature-card .feature-image img'
+      )
+      featureImages.forEach((img) => {
+        img.removeAttribute('loading')
+        const src = img.src
+        img.src = ''
+        img.src = src
+        img.style.display = 'block'
+        img.style.visibility = 'visible'
+        img.style.opacity = '1'
+        new window.Image().src = src
+      })
+
+      const iosObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const img = entry.target as HTMLImageElement
+            if (entry.isIntersecting && !img.complete) {
+              img.src = img.src
+            }
+          })
+        },
+        { threshold: 0.01 }
+      )
+      featureImages.forEach((img) => iosObserver.observe(img))
+    }
+
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => {
       window.removeEventListener('scroll', handleScroll)

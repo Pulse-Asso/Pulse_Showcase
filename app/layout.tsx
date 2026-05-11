@@ -4,7 +4,6 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Spinner from '@/components/Spinner'
 import BackToTop from '@/components/BackToTop'
-import CustomCursor from '@/components/CustomCursor'
 import ScrollEffects from '@/components/ScrollEffects'
 import FirebaseAnalytics from '@/components/FirebaseAnalytics'
 
@@ -106,7 +105,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
-        <CustomCursor />
         <Spinner />
         <Navbar />
         <main>{children}</main>

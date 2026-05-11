@@ -32,35 +32,12 @@
     box-sizing: border-box;
 }
 
-/* Curseur personnalisé - Effet global */
-body {
-    cursor: none;
+html {
+    cursor: auto !important;
 }
 
-.custom-cursor {
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    background: var(--primary);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    transition: all 0s ease;
-    mix-blend-mode: difference;
-    transform: translate(-50%, -50%);
-}
-
-.custom-cursor.hover {
-    background: white;
-    transform: scale(1.5);
-}
-
-/* Empêcher le curseur de grossir lors du clic sur les boutons */
-.btn:active .custom-cursor,
-button:active .custom-cursor,
-a:active .custom-cursor {
-    transform: scale(1) !important;
-}
+/* Curseur personnalisé - Effet global (désactivé) */
+/* Styles du curseur personnalisé désactivés - le curseur par défaut est utilisé */
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -68,6 +45,24 @@ body {
     color: var(--text-primary);
     background: var(--bg-primary);
     overflow-x: hidden;
+    cursor: auto !important;
+}
+
+/* Forcer l'affichage du curseur sur tous les éléments */
+* {
+    cursor: auto !important;
+}
+
+/* S'assurer que les éléments interactifs ont le bon curseur */
+a, button, input, select, textarea, [role="button"], [tabindex], label {
+    cursor: pointer !important;
+}
+
+/* S'assurer que le texte reste du texte et ne devient pas une image */
+p, h1, h2, h3, h4, h5, h6, span, div, a, li, td, th {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
 }
 
 /* Typography */
@@ -2793,7 +2788,64 @@ p {
     }
     
     .feature-image {
-        height: 250px;
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        overflow: visible !important;
+    }
+    
+    .solution-feature-card .feature-image {
+        overflow: visible !important;
+        height: auto !important;
+        max-height: none !important;
+    }
+    
+    .feature-image img {
+        max-height: none !important;
+        height: auto !important;
+        object-fit: contain !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* S'assurer que les overlays et bulles sont visibles sur mobile */
+    .feature-overlay {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 10 !important;
+    }
+    
+    .floating-bubbles {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        z-index: 5 !important;
+    }
+    
+    .solution-feature-card .bubble {
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    .canal-prive .feature-image,
+    .canal-public .feature-image {
+        overflow: visible !important;
+        height: auto !important;
+        max-height: none !important;
+        position: relative !important;
+    }
+    
+    .canal-prive .feature-image img,
+    .canal-public .feature-image img {
+        object-fit: contain !important;
+        height: auto !important;
+        max-height: none !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
     
     .solution-cta {
@@ -2967,7 +3019,9 @@ p {
 /* Responsive pour les canaux */
 @media (max-width: 768px) {
     .solution-feature-card .bubble {
-        display: none;
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
 }
 

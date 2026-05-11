@@ -187,7 +187,7 @@ export default function HomePage() {
               </ul>
             </div>
             <div className="feature-image">
-              <Image src="/img/prive.png" alt="Canal privé universitaire" width={500} height={350} loading="lazy" />
+              <Image src="/img/prive.png" alt="Canal privé universitaire" width={500} height={350} priority />
               <div className="feature-overlay"><i className="fas fa-lock"></i></div>
               <div className="floating-bubbles">
                 <div className="bubble bubble-events"><i className="fas fa-calendar-alt"></i><span>événements</span></div>
@@ -200,7 +200,7 @@ export default function HomePage() {
           {/* Canal Public */}
           <div className="solution-feature-card canal-public">
             <div className="feature-image">
-              <Image src="/img/public.png" alt="Canal public communautaire" width={500} height={350} loading="lazy" />
+              <Image src="/img/public.png" alt="Canal public communautaire" width={500} height={350} priority />
               <div className="feature-overlay"><i className="fas fa-unlock"></i></div>
               <div className="floating-bubbles">
                 <div className="bubble bubble-events"><i className="fas fa-calendar-alt"></i><span>événements</span></div>

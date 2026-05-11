@@ -41,7 +41,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css?v=2.1" rel="stylesheet">
+    <link href="css/style.css?v=2.2" rel="stylesheet">
     
     <!-- Responsive Mobile Styles -->
     <style>
@@ -320,9 +320,6 @@
 </head>
 
 <body>
-    <!-- Custom Cursor -->
-    <div class="custom-cursor"></div>
-    
     <!-- Navbar Start -->
     <nav class="navbar">
         <div class="container">
@@ -624,37 +621,8 @@
     <!-- Template Javascript -->
     <script src="js/main.js?v=2.1"></script>
     
-    <!-- Custom Cursor Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Désactiver le custom cursor sur mobile/tactile
-            const isMobile = window.matchMedia('(max-width: 768px)').matches || 
-                           ('ontouchstart' in window || navigator.maxTouchPoints > 0);
-            
-            if (!isMobile) {
-                const cursor = document.querySelector('.custom-cursor');
-                
-                if (cursor) {
-                    document.addEventListener('mousemove', function(e) {
-                        cursor.style.left = e.clientX + 'px';
-                        cursor.style.top = e.clientY + 'px';
-                    });
-                    
-                    // Add hover effect to interactive elements
-                    const interactiveElements = document.querySelectorAll('a, button, .nav-link, .dropdown-item, .btn');
-                    
-                    interactiveElements.forEach(element => {
-                        element.addEventListener('mouseenter', function() {
-                            cursor.classList.add('hover');
-                        });
-                        
-                        element.addEventListener('mouseleave', function() {
-                            cursor.classList.remove('hover');
-                        });
-                    });
-                }
-            }
-
             // Smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
@@ -672,25 +640,27 @@
             // Back to top functionality
             const backToTop = document.querySelector('.back-to-top');
             
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    backToTop.style.opacity = '1';
-                    backToTop.style.visibility = 'visible';
-                    backToTop.style.transform = 'translateY(0)';
-                } else {
-                    backToTop.style.opacity = '0';
-                    backToTop.style.visibility = 'hidden';
-                    backToTop.style.transform = 'translateY(20px)';
-                }
-            });
-
-            backToTop.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
+            if (backToTop) {
+                window.addEventListener('scroll', function() {
+                    if (window.pageYOffset > 300) {
+                        backToTop.style.opacity = '1';
+                        backToTop.style.visibility = 'visible';
+                        backToTop.style.transform = 'translateY(0)';
+                    } else {
+                        backToTop.style.opacity = '0';
+                        backToTop.style.visibility = 'hidden';
+                        backToTop.style.transform = 'translateY(20px)';
+                    }
                 });
-            });
+
+                backToTop.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
 
             // Counter animation
             function animateCounter(element, target, duration = 4000) {
@@ -720,8 +690,10 @@
                     if (entry.isIntersecting) {
                         const counter = entry.target;
                         const target = parseInt(counter.getAttribute('data-target'));
-                        animateCounter(counter, target);
-                        counterObserver.unobserve(counter);
+                        if (!isNaN(target)) {
+                            animateCounter(counter, target);
+                            counterObserver.unobserve(counter);
+                        }
                     }
                 });
             }, observerOptions);

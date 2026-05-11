@@ -79,7 +79,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css?v=2.1" rel="stylesheet">
+    <link href="css/style.css?v=2.2" rel="stylesheet">
     
     <!-- Responsive Mobile Styles -->
     <style>
@@ -380,18 +380,83 @@
                 max-width: none !important;
                 margin-left: 0 !important;
                 margin-right: 0 !important;
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
                 padding-left: 0 !important;
                 padding-right: 0 !important;
+                height: auto !important;
+                min-height: auto !important;
+                max-height: none !important;
+                overflow: visible !important;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                position: relative !important;
+            }
+            
+            /* S'assurer que les icônes cadenas et bulles sont visibles sur mobile */
+            .solution-feature-card .feature-overlay {
+                display: flex !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                z-index: 10 !important;
+                position: absolute !important;
+                top: 0.5rem !important;
+                right: 0.5rem !important;
+                width: 45px !important;
+                height: 45px !important;
+                font-size: 1.2rem !important;
+            }
+            
+            .solution-feature-card .floating-bubbles {
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                z-index: 5 !important;
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                pointer-events: none !important;
+            }
+            
+            .solution-feature-card .bubble {
+                display: flex !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                font-size: 0.7rem !important;
+                padding: 0.4rem 0.6rem !important;
+                gap: 0.3rem !important;
+            }
+            
+            .solution-feature-card .bubble i {
+                font-size: 0.9rem !important;
             }
             
             .solution-feature-card .feature-image img {
                 width: 100% !important;
                 height: auto !important;
+                max-height: none !important;
+                min-height: auto !important;
                 border-radius: 15px !important;
                 box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
                 max-width: none !important;
                 margin-left: 0 !important;
                 margin-right: 0 !important;
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+                padding: 0 !important;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                pointer-events: auto !important;
+                -webkit-transform: translateZ(0) !important;
+                transform: translateZ(0) !important;
+                object-fit: contain !important;
+                object-position: center !important;
+                position: relative !important;
+                z-index: 1 !important;
             }
         }
         
@@ -487,6 +552,26 @@
                 background-size: cover !important;
                 background-position: center center !important;
             }
+            
+            /* Forcer l'affichage des images dans les cartes Canal privé et public sur iOS */
+            .solution-feature-card .feature-image img {
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                max-width: 100% !important;
+                height: auto !important;
+                object-fit: cover !important;
+                -webkit-transform: translateZ(0) !important;
+                transform: translateZ(0) !important;
+            }
+            
+            .solution-feature-card .feature-image {
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                overflow: visible !important;
+                position: relative !important;
+            }
         }
         
         /* Corrections pour tous les appareils mobiles */
@@ -540,9 +625,6 @@
 </head>
 
 <body>
-    <!-- Custom Cursor -->
-    <div class="custom-cursor"></div>
-    
     <!-- Spinner Start -->
     <div id="spinner" class="show position-fixed w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="loading"></div>
@@ -668,7 +750,7 @@
                 </div>
                 
                 <div class="feature-image">
-                    <img src="img/prive.png" alt="Canal privé universitaire - Communication sécurisée entre étudiants" loading="lazy">
+                    <img src="img/prive.png" alt="Canal privé universitaire - Communication sécurisée entre étudiants" loading="eager">
                     <div class="feature-overlay">
                         <i class="fas fa-lock"></i>
                     </div>
@@ -693,7 +775,7 @@
             <!-- Canal Public -->
             <div class="solution-feature-card canal-public">
                 <div class="feature-image">
-                    <img src="img/public.png" alt="Canal public communautaire - Échanges ouverts et partage d'informations" loading="lazy">
+                    <img src="img/public.png" alt="Canal public communautaire - Échanges ouverts et partage d'informations" loading="eager">
                     <div class="feature-overlay">
                         <i class="fas fa-unlock"></i>
                     </div>
@@ -938,37 +1020,8 @@
     <!-- Template Javascript -->
     <script src="js/main.js?v=2.1"></script>
     
-    <!-- Custom Cursor Script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Désactiver le custom cursor sur mobile/tactile
-            const isMobile = window.matchMedia('(max-width: 768px)').matches || 
-                           ('ontouchstart' in window || navigator.maxTouchPoints > 0);
-            
-            if (!isMobile) {
-                const cursor = document.querySelector('.custom-cursor');
-                
-                if (cursor) {
-                    document.addEventListener('mousemove', function(e) {
-                        cursor.style.left = e.clientX + 'px';
-                        cursor.style.top = e.clientY + 'px';
-                    });
-                    
-                    // Add hover effect to interactive elements
-                    const interactiveElements = document.querySelectorAll('a, button, .nav-link, .dropdown-item, .btn');
-                    
-                    interactiveElements.forEach(element => {
-                        element.addEventListener('mouseenter', function() {
-                            cursor.classList.add('hover');
-                        });
-                        
-                        element.addEventListener('mouseleave', function() {
-                            cursor.classList.remove('hover');
-                        });
-                    });
-                }
-            }
-            
             // Animation des compteurs (une seule fois) - Optimisée pour les performances
             let countersAnimated = false;
             
@@ -1037,6 +1090,47 @@
                 card.style.animationPlayState = 'paused';
                 cardObserver.observe(card);
             });
+            
+            // Forcer le chargement des images sur iOS pour les cartes Canal privé et public
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || 
+                         (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+            
+            if (isIOS) {
+                // Forcer le chargement immédiat des images
+                const featureImages = document.querySelectorAll('.solution-feature-card .feature-image img');
+                featureImages.forEach(img => {
+                    // Retirer loading="lazy" si présent
+                    img.removeAttribute('loading');
+                    // Forcer le rechargement de l'image
+                    const src = img.src;
+                    img.src = '';
+                    img.src = src;
+                    // S'assurer que l'image est visible
+                    img.style.display = 'block';
+                    img.style.visibility = 'visible';
+                    img.style.opacity = '1';
+                    // Précharger l'image
+                    const preloadImg = new Image();
+                    preloadImg.src = src;
+                });
+                
+                // Observer pour forcer le chargement quand visible
+                const imageObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            if (img.tagName === 'IMG' && !img.complete) {
+                                img.loading = 'eager';
+                                img.src = img.src; // Force reload
+                            }
+                        }
+                    });
+                }, { threshold: 0.01 });
+                
+                featureImages.forEach(img => {
+                    imageObserver.observe(img);
+                });
+            }
         });
     </script>
 </body>
