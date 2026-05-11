@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
 
     await transporter.sendMail({
       from: `"${name}" <${process.env.SMTP_USER}>`,
-      to: 'genpulse.pro@gmail.com',
+      to: 'pulse.pro.event@gmail.com',
       replyTo: email,
       subject: subject ?? `Contact depuis le site - ${name}`,
       text: message,

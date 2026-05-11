@@ -92,7 +92,7 @@ export default function PartenariatsPage() {
               <a href="#types-partenariats" className="btn btn-primary btn-lg">
                 <i className="fas fa-handshake"></i> Découvrir les partenariats
               </a>
-              <a href="#contact" className="btn btn-secondary btn-lg">
+              <a href="/contact" className="btn btn-secondary btn-lg">
                 <i className="fas fa-envelope"></i> Nous contacter
               </a>
             </div>
@@ -184,8 +184,8 @@ export default function PartenariatsPage() {
             <p>Notre équipe est là pour mettre en avant votre communication</p>
           </div>
           <div className="text-center">
-            <a href="mailto:genpulse.pro@gmail.com?subject=Demande de contact" className="btn btn-primary btn-lg">
-              <i className="fas fa-envelope me-2"></i> Envoyer un email
+            <a href="/contact" className="btn btn-primary btn-lg">
+              <i className="fas fa-envelope me-2"></i> Nous contacter
             </a>
           </div>
         </div>

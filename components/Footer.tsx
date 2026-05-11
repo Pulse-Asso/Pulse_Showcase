@@ -19,7 +19,7 @@ export default function Footer() {
             <Link href="/#profile-features">Fonctionnalités</Link>
             <Link href="/equipe">L&apos;équipe</Link>
             <Link href="/partenariats">Partenariats</Link>
-            <Link href="/#contact">Contact</Link>
+            <Link href="/contact">Contact</Link>
           </div>
 
           <div className="footer-section">

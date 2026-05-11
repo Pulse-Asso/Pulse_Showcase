@@ -64,7 +64,7 @@ export default function HomePage() {
                 <i className="fas fa-rocket"></i> En savoir plus
               </a>
               <a
-                href="mailto:genpulse.pro@gmail.com?subject=Demande de démonstration"
+                href="/contact"
                 className="btn btn-secondary btn-lg"
               >
                 <i className="fas fa-envelope"></i> Demander une démo
@@ -339,8 +339,8 @@ export default function HomePage() {
             <p>Notre équipe est là pour vous accompagner dans votre transition vers Genpulse.</p>
           </div>
           <div className="text-center">
-            <a href="mailto:genpulse.pro@gmail.com?subject=Demande de contact" className="btn btn-primary btn-lg">
-              <i className="fas fa-envelope me-2"></i> Envoyer un email
+            <a href="/contact" className="btn btn-primary btn-lg">
+              <i className="fas fa-envelope me-2"></i> Nous contacter
             </a>
           </div>
         </div>

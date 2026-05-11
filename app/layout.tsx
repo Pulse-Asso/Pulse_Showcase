@@ -77,7 +77,7 @@ const organizationSchema = {
   logo: `${BASE_URL}/img/genpulse.png`,
   contactPoint: {
     '@type': 'ContactPoint',
-    email: 'genpulse.pro@gmail.com',
+    email: 'pulse.pro.event@gmail.com',
     contactType: 'customer support',
     availableLanguage: 'French',
   },

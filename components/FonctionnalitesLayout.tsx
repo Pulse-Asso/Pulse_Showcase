@@ -59,7 +59,7 @@ export default function FonctionnalitesLayout({
               <a href="#features" className="btn btn-primary btn-lg">
                 <i className="fas fa-rocket"></i> En savoir plus
               </a>
-              <a href="mailto:genpulse.pro@gmail.com?subject=Demande de démonstration" className="btn btn-secondary btn-lg">
+              <a href="/contact" className="btn btn-secondary btn-lg">
                 <i className="fas fa-envelope"></i> Demander une démo
               </a>
             </div>
@@ -253,7 +253,7 @@ export default function FonctionnalitesLayout({
           <div className="cta-content">
             <h2>{ctaTitle}</h2>
             <p>{ctaDesc}</p>
-            <a href="mailto:genpulse.pro@gmail.com?subject=Demande de contact" className="btn btn-primary btn-lg">
+            <a href="/contact" className="btn btn-primary btn-lg">
               <i className="fas fa-envelope"></i> Commencer maintenant
             </a>
           </div>
