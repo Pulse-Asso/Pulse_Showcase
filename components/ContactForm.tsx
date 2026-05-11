@@ -118,8 +118,8 @@ export default function ContactForm() {
         <p style={{ color: '#ef4444', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.95rem' }}>
           <i className="fas fa-exclamation-circle"></i>
           Une erreur est survenue. Veuillez réessayer ou nous écrire à{' '}
-          <a href="mailto:pulse.pro.event@gmail.com" style={{ color: '#ff6b35', textDecoration: 'underline' }}>
-            pulse.pro.event@gmail.com
+          <a href="mailto:genpulse.pro@gmail.com" style={{ color: '#ff6b35', textDecoration: 'underline' }}>
+            genpulse.pro@gmail.com
           </a>.
         </p>
       )}

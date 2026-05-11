@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Paramètres de l'e-mail
-    $to = "pulse.pro.event@gmail.com"; // Adresse destinataire
+    $to = "genpulse.pro@gmail.com"; // Adresse destinataire
     $headers = "From: " . $email . "\r\n" . "Reply-To: " . $email . "\r\n";
     $mail_subject = "Nouveau message de contact : " . $subject;
     $mail_message = "Nom: $name\nEmail: $email\nSujet: $subject\n\nMessage:\n$message";

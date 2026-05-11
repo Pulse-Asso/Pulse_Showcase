@@ -32,8 +32,8 @@ const infoCards = [
   {
     icon: 'fas fa-envelope',
     title: 'Email',
-    value: 'pulse.pro.event@gmail.com',
-    href: 'mailto:pulse.pro.event@gmail.com',
+    value: 'genpulse.pro@gmail.com',
+    href: 'mailto:genpulse.pro@gmail.com',
   },
   {
     icon: 'fas fa-clock',
