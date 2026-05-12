@@ -5945,7 +5945,7 @@ p {
 /* Correction supplémentaire pour très petits écrans iOS */
 @media (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
     .hero-section {
-        background-size: 100% auto !important;
-        background-position: center top !important;
+        background-size: cover !important;
+        background-position: center center !important;
     }
 }
