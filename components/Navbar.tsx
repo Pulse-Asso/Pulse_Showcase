@@ -18,7 +18,7 @@ export default function Navbar() {
       <div className="container">
         <div className="d-flex justify-content-between align-items-center">
           <Link href="/" className="navbar-brand">
-            <Image src="/img/genpulse.png" alt="GenPulse" height={160} width={200} style={{ height: '55px', width: 'auto' }} priority />
+            <Image src="/img/genpulse.png" alt="GenPulse" height={160} width={200} style={{ maxHeight: '55px', width: 'auto', height: 'auto' }} priority />
           </Link>
 
           <ul className={`navbar-nav${menuOpen ? ' show' : ''}`}>
