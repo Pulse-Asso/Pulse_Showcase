@@ -95,7 +95,7 @@ export default function HomePage() {
                 className="phone-image"
                 width={300}
                 height={400}
-                style={{ width: '300px', height: 'auto', position: 'relative', zIndex: 2 }}
+                style={{ width: '300px', height: 'auto', position: 'relative', zIndex: 2, maxWidth: '100%' }}
                 loading="lazy"
               />
 
@@ -187,7 +187,7 @@ export default function HomePage() {
               </ul>
             </div>
             <div className="feature-image">
-              <Image src="/img/prive.png" alt="Canal privé universitaire" width={500} height={350} priority />
+              <Image src="/img/prive.png" alt="Canal privé universitaire" width={500} height={350} priority style={{ width: '100%', height: 'auto' }} />
               <div className="feature-overlay"><i className="fas fa-lock"></i></div>
               <div className="floating-bubbles">
                 <div className="bubble bubble-events"><i className="fas fa-calendar-alt"></i><span>événements</span></div>
@@ -200,7 +200,7 @@ export default function HomePage() {
           {/* Canal Public */}
           <div className="solution-feature-card canal-public">
             <div className="feature-image">
-              <Image src="/img/public.png" alt="Canal public communautaire" width={500} height={350} priority />
+              <Image src="/img/public.png" alt="Canal public communautaire" width={500} height={350} priority style={{ width: '100%', height: 'auto' }} />
               <div className="feature-overlay"><i className="fas fa-unlock"></i></div>
               <div className="floating-bubbles">
                 <div className="bubble bubble-events"><i className="fas fa-calendar-alt"></i><span>événements</span></div>

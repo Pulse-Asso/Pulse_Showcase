@@ -85,7 +85,7 @@ export default function PartenariatsPage() {
               Rejoignez notre <span className="highlight">réseau de partenaires</span>
             </h1>
             <p className="hero-subtitle">
-              Boostez votre visibilité auprès de <strong>+70 associations</strong> et de milliers
+              Boostez votre visibilité auprès de <strong>+70 associations </strong> et de milliers
               d&apos;étudiants dans <strong>4 régions</strong>
             </p>
             <div className="hero-buttons" style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>

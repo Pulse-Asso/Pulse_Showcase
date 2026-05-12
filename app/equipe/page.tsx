@@ -46,7 +46,7 @@ const team = [
     name: 'Vianney Otton',
     role: 'Co-fondateur',
     school: 'EM Lyon & EPF',
-    desc: 'Possède une double formation Ingénieur-Commerce et plusieurs expériences en création d\'entreprises dans la tech',
+    desc: 'Possède une double formation Ingénieur-Commerce et plusieurs expérience en création d\'entreprises dans la tech',
   },
   {
     img: '/img/na.png',
@@ -60,7 +60,7 @@ const team = [
     name: 'Damien Drozd',
     role: 'Co-fondateur',
     school: 'Ynov',
-    desc: 'Développeur avec plus de 3 ans d\'expériences en développement d\'applications mobiles',
+    desc: 'Développeur avec plus de 3 ans d\'expérience en développement d\'applications mobiles',
   },
 ]
 

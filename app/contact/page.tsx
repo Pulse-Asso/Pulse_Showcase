@@ -71,7 +71,7 @@ export default function ContactPage() {
       {/* Info cards */}
       <section style={{ background: 'white', padding: '3rem 0' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', maxWidth: '800px', margin: '0 auto' }}>
+          <div className="contact-info-grid">
             {infoCards.map((card) => (
               <div
                 key={card.title}
@@ -111,7 +111,7 @@ export default function ContactPage() {
               </h2>
             </div>
 
-            <div style={{ background: 'white', borderRadius: '20px', padding: '3rem', boxShadow: '0 4px 24px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.05)' }}>
+            <div className="contact-form-wrapper">
               <ContactForm />
             </div>
           </div>

@@ -4066,6 +4066,12 @@ p {
     animation-delay: 0s;
 }
 
+.logo-comm {
+    top: 10%;
+    left: -30%;
+    animation-delay: 0.3s;
+}
+
 
 
 @keyframes float-logo {

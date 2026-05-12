@@ -62,7 +62,31 @@
     margin-left: 0 !important; margin-right: 0 !important;
     padding-left: 0 !important; padding-right: 0 !important;
   }
-  .solution-feature-card .feature-image { order: 3; width: 100% !important; }
+  .solution-feature-card .feature-image {
+    order: 3;
+    width: 100% !important;
+    height: auto !important;
+    position: relative !important;
+  }
+  /* Override des règles globales canal-prive/public qui ont max-width: 45% */
+  .canal-prive .feature-image,
+  .canal-public .feature-image {
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    overflow: visible !important;
+    flex: none !important;
+  }
+  .canal-prive .feature-image img,
+  .canal-public .feature-image img {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: cover !important;
+  }
+  /* Override hauteur fixe du conteneur générique */
+  .feature-image {
+    height: auto !important;
+  }
   .solution-feature-card .feature-image img {
     width: 100% !important; height: auto !important;
     border-radius: 15px !important; box-shadow: 0 8px 25px rgba(0,0,0,0.15) !important;
@@ -138,16 +162,14 @@
   .admin-laptop-container { position: relative !important; margin-top: 2rem !important; margin-bottom: 2rem !important; }
   .communication-laptop-container {
     position: relative !important; margin-top: 2rem !important; margin-bottom: 2rem !important;
-    order: 2 !important; width: 100% !important;
+    order: 2 !important; width: 100% !important; margin-left: 0 !important; margin-right: 0 !important;
     display: flex !important; justify-content: center !important; align-items: center !important;
   }
   .communication-tool-content { display: flex !important; flex-direction: column !important; width: 100% !important; }
   .communication-text-content { order: 1 !important; width: 100% !important; }
   .admin-laptop, .communication-laptop { position: relative !important; z-index: 2 !important; }
   .background-accent {
-    position: absolute !important; top: 50% !important; left: 50% !important;
-    transform: translate(-50%, -50%) !important; width: 70% !important;
-    height: 60px !important; z-index: 1 !important; border-radius: 15px !important;
+    display: none !important;
   }
   .laptop-screen { width: 100% !important; height: auto !important; max-width: 400px !important; margin: 0 auto !important; display: block !important; }
   .floating-elements, .floating-logo, .floating-chart, .floating-graph, .floating-pie { display: none !important; }
@@ -170,6 +192,20 @@
   .team-member { text-align: center; margin-bottom: 2rem; }
   .team-member h4 { font-size: 1.1rem !important; margin: 1rem 0 0.5rem 0; }
   .team-member p  { font-size: 0.85rem !important; margin-bottom: 0.5rem; }
+
+  /* Contact page */
+  .contact-info-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 100% !important;
+    gap: 1rem !important;
+  }
+  .contact-form-wrapper {
+    padding: 1.5rem !important;
+    border-radius: 16px !important;
+  }
+  .contact-fields-grid {
+    grid-template-columns: 1fr !important;
+  }
 
   /* Commune specific */
   .stat-item { padding: 1rem !important; }
@@ -219,6 +255,11 @@
 
 /* Tablettes */
 @media (min-width: 769px) and (max-width: 1024px) {
+  .background-accent {
+    display: block !important;
+    width: 200px !important;
+    height: 450px !important;
+  }
   .phone-image { width: 250px !important; }
   .phone-container { width: 320px !important; height: 360px !important; }
   .solution-feature-card img { width: 70px !important; height: 70px !important; }
@@ -234,6 +275,44 @@
   .hero-section.commune-page .hero-content { max-width: 1200px !important; grid-template-columns: 1.2fr 0.8fr !important; }
   .hero-section.commune-page .hero-text  { max-width: none !important; width: 100% !important; }
   .hero-section.commune-page .hero-title { max-width: none !important; width: 100% !important; }
+}
+
+/* Contact page */
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.contact-form-wrapper {
+  background: white;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  border: 1px solid rgba(0,0,0,0.05);
+}
+.contact-fields-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* Counter numbers in stat sections */
+.stat-item .counter {
+  font-size: clamp(2.5rem, 5vw, 3rem);
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1;
+}
+
+/* Equipe — override section-subtitle pour ne pas hériter du style orange/uppercase global */
+.team-section .section-subtitle {
+  color: #64748b !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  font-size: 1.1rem !important;
+  font-weight: 400 !important;
 }
 
 /* Team image style */

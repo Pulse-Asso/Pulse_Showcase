@@ -93,7 +93,7 @@ export default function FonctionnalitesLayout({
                 <div className="admin-laptop">
                   <Image src={adminImage} alt={adminImageAlt} className="laptop-screen" width={600} height={400} loading="lazy" />
                   <div className="floating-elements">
-                    <Image src="/img/logo_admin.png" alt="Logo Admin" className="floating-logo logo-1" width={60} height={60} loading="lazy" />
+                    <Image src="/img/logo_admin.png" alt="Logo Admin" className="floating-logo logo-1" width={155} height={201} loading="lazy" />
                   </div>
                 </div>
                 <div className="background-accent"></div>
@@ -111,7 +111,7 @@ export default function FonctionnalitesLayout({
               <div className="communication-laptop">
                 <Image src="/img/gestion_add.png" alt="Interface de communication Genpulse" className="laptop-screen" width={600} height={400} loading="lazy" />
                 <div className="floating-elements">
-                  <Image src="/img/logo_admin.png" alt="Logo Admin" className="floating-logo" width={60} height={60} loading="lazy" />
+                  <Image src="/img/logo_admin.png" alt="Logo Admin" className="floating-logo logo-comm" width={155} height={201} loading="lazy" />
                 </div>
               </div>
               <div className="background-accent"></div>
