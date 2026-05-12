@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Contactez l'équipe GenPulse pour une démonstration, un partenariat ou toute question. Nous vous répondons rapidement.",
   keywords: ['contact GenPulse', 'démonstration GenPulse', 'partenariat GenPulse', 'support GenPulse'],
-  alternates: { canonical: 'https://genpulse.pro/contact' },
+  alternates: { canonical: 'https://genpulse.fr/contact' },
   openGraph: {
     title: 'Contactez GenPulse',
     description: "Demandez une démonstration ou posez vos questions à l'équipe GenPulse.",
@@ -18,12 +18,12 @@ const contactSchema = {
   '@context': 'https://schema.org',
   '@type': 'ContactPage',
   name: 'Contact GenPulse',
-  url: 'https://genpulse.pro/contact',
+  url: 'https://genpulse.fr/contact',
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://genpulse.pro' },
-      { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://genpulse.pro/contact' },
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://genpulse.fr' },
+      { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://genpulse.fr/contact' },
     ],
   },
 }

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'GenPulse commune',
     'vie locale numérique',
   ],
-  alternates: { canonical: 'https://genpulse.pro/fonctionnalites/commune' },
+  alternates: { canonical: 'https://genpulse.fr/fonctionnalites/commune' },
   openGraph: {
     title: 'GenPulse pour les communes – Canal public collectivités',
     description:
@@ -29,13 +29,13 @@ const communeSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'GenPulse pour les communes et mairies',
-  url: 'https://genpulse.pro/fonctionnalites/commune',
+  url: 'https://genpulse.fr/fonctionnalites/commune',
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://genpulse.pro' },
-      { '@type': 'ListItem', position: 2, name: 'Fonctionnalités', item: 'https://genpulse.pro' },
-      { '@type': 'ListItem', position: 3, name: 'Communes & Mairies', item: 'https://genpulse.pro/fonctionnalites/commune' },
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://genpulse.fr' },
+      { '@type': 'ListItem', position: 2, name: 'Fonctionnalités', item: 'https://genpulse.fr' },
+      { '@type': 'ListItem', position: 3, name: 'Communes & Mairies', item: 'https://genpulse.fr/fonctionnalites/commune' },
     ],
   },
 }

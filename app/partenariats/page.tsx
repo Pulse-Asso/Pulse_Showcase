@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     'événement temporaire',
     'partenariat BDE',
   ],
-  alternates: { canonical: 'https://genpulse.pro/partenariats' },
+  alternates: { canonical: 'https://genpulse.fr/partenariats' },
   openGraph: {
     title: 'Partenariats GenPulse – Boostez votre visibilité',
     description:
@@ -28,12 +28,12 @@ const partenariatsSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'Partenariats GenPulse',
-  url: 'https://genpulse.pro/partenariats',
+  url: 'https://genpulse.fr/partenariats',
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://genpulse.pro' },
-      { '@type': 'ListItem', position: 2, name: 'Partenariats', item: 'https://genpulse.pro/partenariats' },
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://genpulse.fr' },
+      { '@type': 'ListItem', position: 2, name: 'Partenariats', item: 'https://genpulse.fr/partenariats' },
     ],
   },
 }

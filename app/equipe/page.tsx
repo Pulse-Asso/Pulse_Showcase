@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     'fondateurs startup',
     'communication digitale',
   ],
-  alternates: { canonical: 'https://genpulse.pro/equipe' },
+  alternates: { canonical: 'https://genpulse.fr/equipe' },
   openGraph: {
     title: "L'équipe GenPulse – Fondateurs",
     description: "Trois profils complémentaires, une vision commune : révolutionner la communication événementielle.",
@@ -25,12 +25,12 @@ const teamSchema = {
   '@context': 'https://schema.org',
   '@type': 'AboutPage',
   name: "L'équipe GenPulse",
-  url: 'https://genpulse.pro/equipe',
+  url: 'https://genpulse.fr/equipe',
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://genpulse.pro' },
-      { '@type': 'ListItem', position: 2, name: "L'équipe", item: 'https://genpulse.pro/equipe' },
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://genpulse.fr' },
+      { '@type': 'ListItem', position: 2, name: "L'équipe", item: 'https://genpulse.fr/equipe' },
     ],
   },
   mentions: [

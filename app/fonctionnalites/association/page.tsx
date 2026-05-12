@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'GenPulse association',
     'vie associative numérique',
   ],
-  alternates: { canonical: 'https://genpulse.pro/fonctionnalites/association' },
+  alternates: { canonical: 'https://genpulse.fr/fonctionnalites/association' },
   openGraph: {
     title: 'GenPulse pour les associations – Gratuit et complet',
     description:
@@ -29,13 +29,13 @@ const associationSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'GenPulse pour les associations',
-  url: 'https://genpulse.pro/fonctionnalites/association',
+  url: 'https://genpulse.fr/fonctionnalites/association',
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://genpulse.pro' },
-      { '@type': 'ListItem', position: 2, name: 'Fonctionnalités', item: 'https://genpulse.pro' },
-      { '@type': 'ListItem', position: 3, name: 'Associations', item: 'https://genpulse.pro/fonctionnalites/association' },
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://genpulse.fr' },
+      { '@type': 'ListItem', position: 2, name: 'Fonctionnalités', item: 'https://genpulse.fr' },
+      { '@type': 'ListItem', position: 3, name: 'Associations', item: 'https://genpulse.fr/fonctionnalites/association' },
     ],
   },
 }

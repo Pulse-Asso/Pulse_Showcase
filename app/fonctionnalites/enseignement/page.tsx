@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     'SSO université',
     'GenPulse enseignement',
   ],
-  alternates: { canonical: 'https://genpulse.pro/fonctionnalites/enseignement' },
+  alternates: { canonical: 'https://genpulse.fr/fonctionnalites/enseignement' },
   openGraph: {
     title: 'GenPulse pour l\'enseignement supérieur – Canal privé campus',
     description:
@@ -29,13 +29,13 @@ const enseignementSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
   name: 'GenPulse pour l\'enseignement supérieur',
-  url: 'https://genpulse.pro/fonctionnalites/enseignement',
+  url: 'https://genpulse.fr/fonctionnalites/enseignement',
   breadcrumb: {
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://genpulse.pro' },
-      { '@type': 'ListItem', position: 2, name: 'Fonctionnalités', item: 'https://genpulse.pro' },
-      { '@type': 'ListItem', position: 3, name: 'Enseignement supérieur', item: 'https://genpulse.pro/fonctionnalites/enseignement' },
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://genpulse.fr' },
+      { '@type': 'ListItem', position: 2, name: 'Fonctionnalités', item: 'https://genpulse.fr' },
+      { '@type': 'ListItem', position: 3, name: 'Enseignement supérieur', item: 'https://genpulse.fr/fonctionnalites/enseignement' },
     ],
   },
 }

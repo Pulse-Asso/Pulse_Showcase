@@ -7,7 +7,7 @@ import BackToTop from '@/components/BackToTop'
 import ScrollEffects from '@/components/ScrollEffects'
 import FirebaseAnalytics from '@/components/FirebaseAnalytics'
 
-const BASE_URL = 'https://genpulse.pro'
+const BASE_URL = 'https://genpulse.fr'
 
 export const viewport: Viewport = {
   themeColor: '#ff6b35',

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     'billetterie étudiante',
     'GenPulse',
   ],
-  alternates: { canonical: 'https://genpulse.pro/' },
+  alternates: { canonical: 'https://genpulse.fr/' },
   openGraph: {
     title: "GenPulse : l'application d'événements",
     description:
@@ -31,11 +31,11 @@ const softwareSchema = {
   '@type': 'SoftwareApplication',
   name: 'GenPulse',
   description: "GenPulse : l'application d'événements pour associations, communes et enseignement",
-  url: 'https://genpulse.pro',
+  url: 'https://genpulse.fr',
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web, iOS, Android',
   offers: { '@type': 'Offer', price: '0', priceCurrency: 'EUR' },
-  author: { '@type': 'Organization', name: 'GenPulse', url: 'https://genpulse.pro' },
+  author: { '@type': 'Organization', name: 'GenPulse', url: 'https://genpulse.fr' },
   aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.8', ratingCount: '150' },
 }
 

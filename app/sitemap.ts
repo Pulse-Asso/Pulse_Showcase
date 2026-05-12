@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 
-const BASE_URL = 'https://genpulse.pro'
+const BASE_URL = 'https://genpulse.fr'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
