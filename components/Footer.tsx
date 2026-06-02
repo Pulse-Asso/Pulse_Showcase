@@ -24,9 +24,7 @@ export default function Footer() {
 
           <div className="footer-section">
             <h4>Support</h4>
-            <a href="/mentions-legales.pdf" target="_blank" rel="noopener noreferrer">
-              Mentions légales
-            </a>
+            <Link href="/mentions-legales">Mentions légales</Link>
             <a href="#">Politique de confidentialité</a>
             <a href="#">Conditions d&apos;utilisation</a>
             <a href="#">FAQ</a>
