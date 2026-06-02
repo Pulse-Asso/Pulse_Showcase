@@ -40,10 +40,26 @@ const communeSchema = {
   },
 }
 
+const communeVideoSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoObject',
+  name: 'Découvrez GenPulse en action – Teaser',
+  description: 'Découvrez comment GenPulse transforme la communication de votre commune : événements, bons plans, billetterie, signalement citoyen et analytics en temps réel.',
+  thumbnailUrl: 'https://www.genpulse.fr/img/im10.jpg',
+  uploadDate: '2026-03-01',
+  contentUrl: 'https://www.genpulse.fr/video/teaser-pulse.mp4',
+  publisher: {
+    '@type': 'Organization',
+    name: 'GenPulse',
+    url: 'https://www.genpulse.fr',
+  },
+}
+
 export default function CommunePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(communeSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(communeVideoSchema) }} />
       <FonctionnalitesLayout
       heroClass="commune-page"
       heroBg="/img/im10.jpg"

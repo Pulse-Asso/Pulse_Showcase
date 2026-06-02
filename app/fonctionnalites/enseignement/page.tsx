@@ -40,10 +40,26 @@ const enseignementSchema = {
   },
 }
 
+const enseignementVideoSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoObject',
+  name: 'Découvrez GenPulse en action – Teaser',
+  description: 'Découvrez comment GenPulse centralise la vie de votre campus : événements, bons plans, billetterie, SSO et analytics. Un canal privé sécurisé pour universités et grandes écoles.',
+  thumbnailUrl: 'https://www.genpulse.fr/img/im9.jpg',
+  uploadDate: '2026-03-01',
+  contentUrl: 'https://www.genpulse.fr/video/teaser-pulse.mp4',
+  publisher: {
+    '@type': 'Organization',
+    name: 'GenPulse',
+    url: 'https://www.genpulse.fr',
+  },
+}
+
 export default function EnseignementPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(enseignementSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(enseignementVideoSchema) }} />
       <FonctionnalitesLayout
       heroClass="enseignement-page"
       heroBg="/img/im9.jpg"

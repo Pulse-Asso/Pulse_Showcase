@@ -40,6 +40,21 @@ const associationSchema = {
   },
 }
 
+const associationVideoSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoObject',
+  name: 'Découvrez GenPulse en action – Teaser',
+  description: 'Découvrez comment GenPulse centralise la vie associative : événements, bons plans, billetterie, notifications push et analytics. Gratuit pour toutes les associations.',
+  thumbnailUrl: 'https://www.genpulse.fr/img/assohero.jpg',
+  uploadDate: '2026-03-01',
+  contentUrl: 'https://www.genpulse.fr/video/teaser-pulse.mp4',
+  publisher: {
+    '@type': 'Organization',
+    name: 'GenPulse',
+    url: 'https://www.genpulse.fr',
+  },
+}
+
 const PhonesMockup = () => (
   <div className="phones-container">
     <div className="phone-mockup phone-left">
@@ -61,6 +76,7 @@ export default function AssociationPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(associationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(associationVideoSchema) }} />
       <FonctionnalitesLayout
       heroClass="association-page"
       heroBg="/img/assohero.jpg"
