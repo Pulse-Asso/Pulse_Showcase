@@ -203,7 +203,7 @@ export default function FonctionnalitesLayout({
           <div className="modern-demo-content">
             <div className="video-container">
               <div className="video-wrapper">
-                <video className="pulse-video" controls>
+                <video className="pulse-video" controls poster="/img/cover.jpg">
                   <source src="/video/teaser-pulse.mp4" type="video/mp4" />
                   Votre navigateur ne supporte pas la lecture de vidéos.
                 </video>

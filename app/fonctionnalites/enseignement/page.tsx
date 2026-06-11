@@ -43,15 +43,16 @@ const enseignementSchema = {
 const enseignementVideoSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoObject',
-  name: 'Découvrez GenPulse en action – Teaser',
-  description: 'Découvrez comment GenPulse centralise la vie de votre campus : événements, bons plans, billetterie, SSO et analytics. Un canal privé sécurisé pour universités et grandes écoles.',
-  thumbnailUrl: 'https://www.genpulse.fr/img/im9.jpg',
+  name: 'Teaser GenPulse – Découvrez l\'application en action',
+  description: 'Découvrez GenPulse en action : la plateforme qui centralise événements, communication et billetterie pour associations, communes et campus.',
+  thumbnailUrl: 'https://genpulse.fr/img/cover.jpg',
   uploadDate: '2026-03-01',
-  contentUrl: 'https://www.genpulse.fr/video/teaser-pulse.mp4',
+  contentUrl: 'https://genpulse.fr/video/teaser-pulse.mp4',
+  embedUrl: 'https://genpulse.fr/video/teaser',
   publisher: {
     '@type': 'Organization',
     name: 'GenPulse',
-    url: 'https://www.genpulse.fr',
+    url: 'https://genpulse.fr',
   },
 }
 

@@ -43,15 +43,16 @@ const communeSchema = {
 const communeVideoSchema = {
   '@context': 'https://schema.org',
   '@type': 'VideoObject',
-  name: 'Découvrez GenPulse en action – Teaser',
-  description: 'Découvrez comment GenPulse transforme la communication de votre commune : événements, bons plans, billetterie, signalement citoyen et analytics en temps réel.',
-  thumbnailUrl: 'https://www.genpulse.fr/img/im10.jpg',
+  name: 'Teaser GenPulse – Découvrez l\'application en action',
+  description: 'Découvrez GenPulse en action : la plateforme qui centralise événements, communication et billetterie pour associations, communes et campus.',
+  thumbnailUrl: 'https://genpulse.fr/img/cover.jpg',
   uploadDate: '2026-03-01',
-  contentUrl: 'https://www.genpulse.fr/video/teaser-pulse.mp4',
+  contentUrl: 'https://genpulse.fr/video/teaser-pulse.mp4',
+  embedUrl: 'https://genpulse.fr/video/teaser',
   publisher: {
     '@type': 'Organization',
     name: 'GenPulse',
-    url: 'https://www.genpulse.fr',
+    url: 'https://genpulse.fr',
   },
 }
 
