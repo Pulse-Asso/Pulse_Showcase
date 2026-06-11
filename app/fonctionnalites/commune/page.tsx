@@ -46,7 +46,7 @@ const communeVideoSchema = {
   name: 'Teaser GenPulse – Découvrez l\'application en action',
   description: 'Découvrez GenPulse en action : la plateforme qui centralise événements, communication et billetterie pour associations, communes et campus.',
   thumbnailUrl: 'https://genpulse.fr/img/cover.jpg',
-  uploadDate: '2026-03-01',
+  uploadDate: '2026-03-01T00:00:00+01:00',
   contentUrl: 'https://genpulse.fr/video/teaser-pulse.mp4',
   embedUrl: 'https://genpulse.fr/video/teaser',
   publisher: {
